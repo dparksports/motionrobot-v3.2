@@ -6,17 +6,32 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
+@import CoreMotion;
+
 #import "FirstViewController.h"
+#import "MJMotionManager.h"
 
 @interface FirstViewController ()
-
+@property (nonatomic, strong) MJMotionManager *motionManager;
 @end
 
-@implementation FirstViewController
+@implementation FirstViewController {
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    NSLog(@"%s", __func__);
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"%s", __func__);
+
+    if ([MJMotionManager checkActivityAvailableUI]) {
+        [self setMotionManager:[MJMotionManager sharedInstance]];
+        [_motionManager checkAuthorizationUI];
+        [_motionManager startPedometerUpdates];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
