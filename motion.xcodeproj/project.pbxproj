@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		591BA6871A0758C500B9278D /* MJMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BA6861A0758C500B9278D /* MJMotionManager.m */; };
+		5906B1CD1A08468E00925D4D /* MJLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5906B1CC1A08468E00925D4D /* MJLogController.m */; };
+		591BA6871A0758C500B9278D /* MJPedoMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BA6861A0758C500B9278D /* MJPedoMeter.m */; };
+		596C8A751A0829990099F9FF /* MJActivityTypeMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C8A741A0829990099F9FF /* MJActivityTypeMeter.m */; };
+		596C8A781A082C3A0099F9FF /* MJTimeKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C8A771A082C3A0099F9FF /* MJTimeKeeper.m */; };
+		596C8A7B1A0838B50099F9FF /* CMPedometerData+MJPedometerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C8A7A1A0838B50099F9FF /* CMPedometerData+MJPedometerData.m */; };
+		596C8A7E1A083DB20099F9FF /* CMMotionActivity+MJMotionActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C8A7D1A083DB20099F9FF /* CMMotionActivity+MJMotionActivity.m */; };
 		59D4D5A01A07344900A715B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D4D59F1A07344900A715B0 /* main.m */; };
 		59D4D5A31A07344900A715B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D4D5A21A07344900A715B0 /* AppDelegate.m */; };
 		59D4D5A61A07344900A715B0 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D4D5A51A07344900A715B0 /* FirstViewController.m */; };
@@ -29,8 +34,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		591BA6851A0758C500B9278D /* MJMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJMotionManager.h; sourceTree = "<group>"; };
-		591BA6861A0758C500B9278D /* MJMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJMotionManager.m; sourceTree = "<group>"; };
+		5906B1CB1A08468E00925D4D /* MJLogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJLogController.h; sourceTree = "<group>"; };
+		5906B1CC1A08468E00925D4D /* MJLogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJLogController.m; sourceTree = "<group>"; };
+		591BA6851A0758C500B9278D /* MJPedoMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPedoMeter.h; sourceTree = "<group>"; };
+		591BA6861A0758C500B9278D /* MJPedoMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPedoMeter.m; sourceTree = "<group>"; };
+		596C8A731A0829990099F9FF /* MJActivityTypeMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJActivityTypeMeter.h; sourceTree = "<group>"; };
+		596C8A741A0829990099F9FF /* MJActivityTypeMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJActivityTypeMeter.m; sourceTree = "<group>"; };
+		596C8A761A082C390099F9FF /* MJTimeKeeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTimeKeeper.h; sourceTree = "<group>"; };
+		596C8A771A082C3A0099F9FF /* MJTimeKeeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTimeKeeper.m; sourceTree = "<group>"; };
+		596C8A791A0838B50099F9FF /* CMPedometerData+MJPedometerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMPedometerData+MJPedometerData.h"; sourceTree = "<group>"; };
+		596C8A7A1A0838B50099F9FF /* CMPedometerData+MJPedometerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMPedometerData+MJPedometerData.m"; sourceTree = "<group>"; };
+		596C8A7C1A083DB20099F9FF /* CMMotionActivity+MJMotionActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMMotionActivity+MJMotionActivity.h"; sourceTree = "<group>"; };
+		596C8A7D1A083DB20099F9FF /* CMMotionActivity+MJMotionActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMMotionActivity+MJMotionActivity.m"; sourceTree = "<group>"; };
 		59D4D59A1A07344900A715B0 /* motion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = motion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59D4D59E1A07344900A715B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59D4D59F1A07344900A715B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -66,6 +81,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		596C8A7F1A083DBC0099F9FF /* description */ = {
+			isa = PBXGroup;
+			children = (
+				596C8A7C1A083DB20099F9FF /* CMMotionActivity+MJMotionActivity.h */,
+				596C8A7D1A083DB20099F9FF /* CMMotionActivity+MJMotionActivity.m */,
+				596C8A791A0838B50099F9FF /* CMPedometerData+MJPedometerData.h */,
+				596C8A7A1A0838B50099F9FF /* CMPedometerData+MJPedometerData.m */,
+			);
+			name = description;
+			sourceTree = "<group>";
+		};
 		59D4D5911A07344900A715B0 = {
 			isa = PBXGroup;
 			children = (
@@ -87,17 +113,24 @@
 		59D4D59C1A07344900A715B0 /* motion */ = {
 			isa = PBXGroup;
 			children = (
-				591BA6851A0758C500B9278D /* MJMotionManager.h */,
-				591BA6861A0758C500B9278D /* MJMotionManager.m */,
-				59D4D5A11A07344900A715B0 /* AppDelegate.h */,
-				59D4D5A21A07344900A715B0 /* AppDelegate.m */,
+				596C8A761A082C390099F9FF /* MJTimeKeeper.h */,
+				596C8A771A082C3A0099F9FF /* MJTimeKeeper.m */,
+				596C8A731A0829990099F9FF /* MJActivityTypeMeter.h */,
+				596C8A741A0829990099F9FF /* MJActivityTypeMeter.m */,
+				591BA6851A0758C500B9278D /* MJPedoMeter.h */,
+				591BA6861A0758C500B9278D /* MJPedoMeter.m */,
+				5906B1CB1A08468E00925D4D /* MJLogController.h */,
+				5906B1CC1A08468E00925D4D /* MJLogController.m */,
 				59D4D5A41A07344900A715B0 /* FirstViewController.h */,
 				59D4D5A51A07344900A715B0 /* FirstViewController.m */,
 				59D4D5A71A07344900A715B0 /* SecondViewController.h */,
 				59D4D5A81A07344900A715B0 /* SecondViewController.m */,
+				59D4D5A11A07344900A715B0 /* AppDelegate.h */,
+				59D4D5A21A07344900A715B0 /* AppDelegate.m */,
 				59D4D5AA1A07344900A715B0 /* Main.storyboard */,
 				59D4D5AD1A07344900A715B0 /* Images.xcassets */,
 				59D4D5AF1A07344900A715B0 /* LaunchScreen.xib */,
+				596C8A7F1A083DBC0099F9FF /* description */,
 				59D4D59D1A07344900A715B0 /* Supporting Files */,
 			);
 			path = motion;
@@ -230,11 +263,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				591BA6871A0758C500B9278D /* MJMotionManager.m in Sources */,
+				596C8A781A082C3A0099F9FF /* MJTimeKeeper.m in Sources */,
+				591BA6871A0758C500B9278D /* MJPedoMeter.m in Sources */,
 				59D4D5A91A07344900A715B0 /* SecondViewController.m in Sources */,
+				5906B1CD1A08468E00925D4D /* MJLogController.m in Sources */,
 				59D4D5A31A07344900A715B0 /* AppDelegate.m in Sources */,
+				596C8A7B1A0838B50099F9FF /* CMPedometerData+MJPedometerData.m in Sources */,
+				596C8A751A0829990099F9FF /* MJActivityTypeMeter.m in Sources */,
 				59D4D5A61A07344900A715B0 /* FirstViewController.m in Sources */,
 				59D4D5A01A07344900A715B0 /* main.m in Sources */,
+				596C8A7E1A083DB20099F9FF /* CMMotionActivity+MJMotionActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

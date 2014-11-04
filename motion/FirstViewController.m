@@ -7,12 +7,13 @@
 //
 
 @import CoreMotion;
-
 #import "FirstViewController.h"
-#import "MJMotionManager.h"
+#import "MJPedoMeter.h"
+#import "MJActivityTypeMeter.h"
 
 @interface FirstViewController ()
-@property (nonatomic, strong) MJMotionManager *motionManager;
+@property (nonatomic, strong) MJPedoMeter *pedometerManager;
+@property (nonatomic, strong) MJActivityTypeMeter *typeManager;
 @end
 
 @implementation FirstViewController {
@@ -27,16 +28,22 @@
     [super viewDidAppear:animated];
     NSLog(@"%s", __func__);
 
-    if ([MJMotionManager checkActivityAvailableUI]) {
-        [self setMotionManager:[MJMotionManager sharedInstance]];
-        [_motionManager checkAuthorizationUI];
-        [_motionManager startPedometerUpdates];
+    if ([MJPedoMeter checkPedometerAvailableUI]) {
+        [self setPedometerManager:[MJPedoMeter sharedInstance]];
+        [_pedometerManager checkAuthorizationUI];
+        [_pedometerManager startPedometerUpdates];
+    }
+    
+    if ([MJActivityTypeMeter checkActivityTypeAvailableUI]) {
+        [self setTypeManager:[MJActivityTypeMeter sharedInstance]];
+        [_typeManager checkAuthorizationUI];
+        [_typeManager startActivityUpdatesToQueue];
     }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSLog(@"%s", __func__);
 }
 
 @end

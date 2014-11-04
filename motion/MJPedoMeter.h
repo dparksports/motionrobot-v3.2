@@ -6,13 +6,14 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface MJMotionManager : NSObject
-@property (nonatomic, readonly) NSMutableArray *movements;
+@import Foundation;
+@import UIKit;
+@import CoreMotion;
+@interface MJPedoMeter : NSObject
+@property (nonatomic, readonly) NSMutableArray *records;
 
 + (instancetype)sharedInstance;
-+ (BOOL)checkActivityAvailableUI;
++ (BOOL)checkPedometerAvailableUI;
 - (void)checkAuthorizationUI;
 
 - (void)stopPedometerUpdates;

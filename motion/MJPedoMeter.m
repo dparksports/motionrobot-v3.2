@@ -6,17 +6,30 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
-@import UIKit;
-@import CoreMotion;
 
-#import "MJMotionManager.h"
+#import "MJPedoMeter.h"
+#import "MJTimeKeeper.h"
+#import "CMPedometerData+MJPedometerData.h"
 
-@interface MJMotionManager ()
+@interface MJPedoMeter ()
 @property (nonatomic, strong) CMPedometer *pedometer;
-@property (nonatomic, strong) NSMutableArray *movements;
+@property (nonatomic, strong) NSMutableArray *records;
 @end
 
-@implementation MJMotionManager
+@implementation MJPedoMeter
+
+- (void)dealloc {
+    [self setPedometer:nil];
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        id instance = [CMPedometer new];
+        [self setPedometer:instance];
+    }
+    return self;
+}
 
 + (instancetype)sharedInstance{
     static id sharedInstance = nil;
@@ -29,31 +42,25 @@
     return sharedInstance;
 }
 
-+ (NSDate *)startActivityDate{
-    NSLog(@"%s", __func__);
-    static NSDate *startTime = nil;
-    if (! startTime) {
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            startTime = [NSDate date];
-        });
-    }
-    return startTime;
-}
-
-+ (BOOL)checkActivityAvailableUI{
++ (BOOL)checkPedometerAvailableUI{
     NSLog(@"%s", __func__);
     static BOOL available = NO;
     if (! available) {
-        available = [CMMotionActivityManager isActivityAvailable];
-        available &= [CMPedometer isDistanceAvailable];
-        available &= [CMPedometer isFloorCountingAvailable];
-        
+        available = [CMPedometer isStepCountingAvailable];
         if (! available) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                            message:@"No activity or step counting is available"
+                                                            message:@"No step counting is available"
                                                            delegate:nil
                                                   cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        
+        if (! [CMPedometer isDistanceAvailable]) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                            message:@"No distance estimation is available"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
             [alert show];
         }
@@ -63,13 +70,12 @@
 
 - (void)checkAuthorizationUI{
     NSLog(@"%s", __func__);
-    NSDate *startTime = [self.class startActivityDate];
+    NSDate *startTime = [MJTimeKeeper startActivityDate];
     [_pedometer queryPedometerDataFromDate:startTime
                                     toDate:startTime
                                withHandler:^(CMPedometerData *pedometerData, NSError *error)
      {
-         BOOL notAuthorized = error || error.code == CMErrorMotionActivityNotAuthorized;
-         if (notAuthorized) {
+         if (error) {
              UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
                                    
                                                              message:@"Please enable Motion Activity for this application."
@@ -81,18 +87,6 @@
      }];
 }
 
-- (void)dealloc {
-}
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        id instance = [CMPedometer new];
-        [self setPedometer:instance];
-    }
-    return self;
-}
-
 - (void)stopPedometerUpdates{
     [_pedometer stopPedometerUpdates];
 }
@@ -100,13 +94,13 @@
 - (void)startPedometerUpdates{
     NSLog(@"%s", __func__);
 
-    if (! _movements) {
+    if (! _records) {
         NSUInteger initialCapacity = 10 * 24 * 7;
         id instance = [[NSMutableArray alloc] initWithCapacity:initialCapacity];
-        [self setMovements:instance];
+        [self setRecords:instance];
     }
     
-    NSDate *startTime = [self.class startActivityDate];
+    NSDate *startTime = [MJTimeKeeper startActivityDate];
     [_pedometer stopPedometerUpdates];
     [_pedometer startPedometerUpdatesFromDate:startTime withHandler:^(CMPedometerData *pedometerData, NSError *error)
     {
@@ -114,8 +108,8 @@
             NSLog(@"%s: Description:%@, RecoverySuggestion:%@, FailureReason:%@", __func__, [error localizedDescription], [error localizedRecoverySuggestion], [error localizedFailureReason]);
         }
         else {
-            [_movements addObject:pedometerData];
-            NSLog(@"%s: Description:%@, debugDescription:%@", __func__, [pedometerData description], [pedometerData debugDescription]);
+            [_records insertObject:pedometerData atIndex:0];
+            NSLog(@"%s: %@", __func__, [pedometerData debugDescription]);
         }
     }];
 }
