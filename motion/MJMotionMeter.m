@@ -101,7 +101,7 @@
 }
 
 - (void)startAccelerometerUpdatesToQueue {
-    [_motionManager setAccelerometerUpdateInterval:1/1.0];
+    [_motionManager setAccelerometerUpdateInterval:1/10.0];
     [_motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:
      ^(CMAccelerometerData *accelerometerData, NSError *error)
     {

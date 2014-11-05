@@ -7,7 +7,9 @@
 //
 
 #import "MJMotionMeter.h"
+#import "MGLiveMeterView.h"
 #import "CMGyroData+MJGyroData.h"
+#import "CMAccelerometerData+MJAccelerometerData.h"
 
 #import "MJGaugeController.h"
 
@@ -16,6 +18,10 @@
 @end
 
 @implementation MJGaugeController {    
+    __weak IBOutlet MGLiveMeterView *liveMeterX;
+    __weak IBOutlet MGLiveMeterView *liveMeterY;
+    __weak IBOutlet MGLiveMeterView *liveMeterZ;
+    
     __weak IBOutlet UILabel *xGyroLabel;
     __weak IBOutlet UILabel *yGyroLabel;
     __weak IBOutlet UILabel *zGyroLabel;
@@ -23,6 +29,7 @@
     __weak IBOutlet UILabel *xAccelerationLabel;
     __weak IBOutlet UILabel *yAccelerationLabel;
     __weak IBOutlet UILabel *zAccelerationLabel;
+    
 }
 
 - (void)dealloc {
@@ -36,6 +43,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addGauge];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -49,6 +57,18 @@
     [super viewDidDisappear:animated];
 }
 
+#pragma mark - addGauge
+
+- (void)addGauge {
+    [liveMeterX setupLayerTree];
+    [liveMeterY setupLayerTree];
+    [liveMeterZ setupLayerTree];
+    
+    [liveMeterX setShadowColor:[UIColor orangeColor]];
+    [liveMeterY setShadowColor:[UIColor cyanColor]];
+    [liveMeterZ setShadowColor:[UIColor yellowColor]];
+}
+
 #pragma mark - MJMotionMeterDelegate
 
 - (void)updateGyroData:(CMGyroData*)gyroData {
@@ -60,11 +80,15 @@
 }
 
 - (void)updateAccelerometerData:(CMAccelerometerData*)accelerometerData {
-    NSLog(@"%s: %@", __func__, [accelerometerData description]);
+//    NSLog(@"%s: %@", __func__, [accelerometerData xDescription]);
     
     xAccelerationLabel.text = [NSString stringWithFormat:@"%1.4f", accelerometerData.acceleration.x];
     yAccelerationLabel.text = [NSString stringWithFormat:@"%1.4f", accelerometerData.acceleration.y];
     zAccelerationLabel.text = [NSString stringWithFormat:@"%1.4f", accelerometerData.acceleration.z];
+    
+    [liveMeterX setValue:accelerometerData.acceleration.x];
+    [liveMeterY setValue:accelerometerData.acceleration.y];
+    [liveMeterZ setValue:accelerometerData.acceleration.z];
 }
 
 

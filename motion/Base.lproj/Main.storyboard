@@ -191,6 +191,28 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUB-p9-N5T" userLabel="Gauge Container">
+                                <rect key="frame" x="140" y="64" width="320" height="150"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6cN-d2-xeZ" userLabel="liveMeterX" customClass="MGLiveMeterView">
+                                        <rect key="frame" x="10" y="12" width="300" height="125"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0nF-3N-YQT" userLabel="liveMeterY" customClass="MGLiveMeterView">
+                                        <rect key="frame" x="10" y="13" width="300" height="125"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ktk-Xh-hTV" userLabel="liveMeterZ" customClass="MGLiveMeterView">
+                                        <rect key="frame" x="10" y="13" width="300" height="125"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="VVx-4m-WHW"/>
+                                    <constraint firstAttribute="width" constant="320" id="g8Y-83-ldr"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -204,8 +226,10 @@
                             <constraint firstItem="PMd-4S-Lav" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="B14-tX-m3G"/>
                             <constraint firstItem="M7a-3y-fB6" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="GPp-wS-Stb"/>
                             <constraint firstItem="VFp-tv-bnm" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-16" id="K3O-VG-8ZO"/>
+                            <constraint firstItem="gUB-p9-N5T" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="44" id="S0U-QM-o2t"/>
                             <constraint firstItem="5a4-Ll-WyU" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="TfN-Te-ylw"/>
                             <constraint firstItem="hOe-SU-MWb" firstAttribute="top" secondItem="5a4-Ll-WyU" secondAttribute="bottom" constant="8" id="VgY-jD-7fM"/>
+                            <constraint firstAttribute="centerX" secondItem="gUB-p9-N5T" secondAttribute="centerX" id="XWF-iF-ASr"/>
                             <constraint firstItem="hOe-SU-MWb" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="XiH-QJ-68m"/>
                             <constraint firstItem="tis-eP-4Qv" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="Yzp-Kf-qdD"/>
                             <constraint firstItem="O3f-gl-eOx" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="cw3-Yl-AD1"/>
@@ -213,10 +237,19 @@
                             <constraint firstItem="PMd-4S-Lav" firstAttribute="top" secondItem="8eG-Md-4co" secondAttribute="bottom" constant="8" id="fNh-Dx-5Lz"/>
                             <constraint firstItem="8eG-Md-4co" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="kWp-pb-3aI"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="tis-eP-4Qv" secondAttribute="bottom" constant="8" id="so5-Dl-yaY"/>
+                            <constraint firstAttribute="centerY" secondItem="gUB-p9-N5T" secondAttribute="centerY" constant="161" id="xOG-1G-iki"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="xOG-1G-iki"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="liveMeterX" destination="6cN-d2-xeZ" id="Vc6-l3-p3V"/>
+                        <outlet property="liveMeterY" destination="0nF-3N-YQT" id="Uph-xX-g5m"/>
+                        <outlet property="liveMeterZ" destination="Ktk-Xh-hTV" id="H2b-A0-DNz"/>
                         <outlet property="xAccelerationLabel" destination="hOe-SU-MWb" id="tBw-c3-Uys"/>
                         <outlet property="xGyroLabel" destination="8eG-Md-4co" id="xO4-hZ-6Ym"/>
                         <outlet property="yAccelerationLabel" destination="gFp-vn-AoQ" id="N7V-uC-uGV"/>

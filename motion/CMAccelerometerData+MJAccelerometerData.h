@@ -10,4 +10,7 @@
 
 @interface CMAccelerometerData (MJAccelerometerData)
 
+- (NSString *)xDescription;
+- (NSString *)description;
+- (NSString *)debugDescription;
 @end

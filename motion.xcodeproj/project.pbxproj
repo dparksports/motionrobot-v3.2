@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		5906B1CD1A08468E00925D4D /* MJLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5906B1CC1A08468E00925D4D /* MJLogController.m */; };
 		591BA6871A0758C500B9278D /* MJPedoMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BA6861A0758C500B9278D /* MJPedoMeter.m */; };
+		5921E9CF1A09F20D00C069CB /* MGLiveMeterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5921E9C81A09F20D00C069CB /* MGLiveMeterController.xib */; };
+		5921E9D11A09F20D00C069CB /* MGLiveMeterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5921E9CA1A09F20D00C069CB /* MGLiveMeterView.m */; };
+		5960958A1A09F309006DCDE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5960957F1A09F2AF006DCDE6 /* CoreGraphics.framework */; };
+		5960958B1A09F309006DCDE6 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596095801A09F2AF006DCDE6 /* CoreMotion.framework */; };
+		5960958C1A09F309006DCDE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596095811A09F2AF006DCDE6 /* Foundation.framework */; };
+		5960958D1A09F309006DCDE6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596095821A09F2AF006DCDE6 /* QuartzCore.framework */; };
+		5960958E1A09F309006DCDE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596095831A09F2AF006DCDE6 /* UIKit.framework */; };
+		596095921A09FB3D006DCDE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 596095911A09FB3D006DCDE6 /* Images.xcassets */; };
 		596C8A751A0829990099F9FF /* MJActivityTypeMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C8A741A0829990099F9FF /* MJActivityTypeMeter.m */; };
 		596C8A781A082C3A0099F9FF /* MJTimeKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C8A771A082C3A0099F9FF /* MJTimeKeeper.m */; };
 		596C8A7B1A0838B50099F9FF /* CMPedometerData+MJPedometerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C8A7A1A0838B50099F9FF /* CMPedometerData+MJPedometerData.m */; };
@@ -21,7 +29,6 @@
 		59D4D5A01A07344900A715B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D4D59F1A07344900A715B0 /* main.m */; };
 		59D4D5A31A07344900A715B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D4D5A21A07344900A715B0 /* AppDelegate.m */; };
 		59D4D5AC1A07344900A715B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59D4D5AA1A07344900A715B0 /* Main.storyboard */; };
-		59D4D5AE1A07344900A715B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59D4D5AD1A07344900A715B0 /* Images.xcassets */; };
 		59D4D5B11A07344900A715B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59D4D5AF1A07344900A715B0 /* LaunchScreen.xib */; };
 		59D4D5BD1A07344900A715B0 /* motionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D4D5BC1A07344900A715B0 /* motionTests.m */; };
 /* End PBXBuildFile section */
@@ -41,6 +48,19 @@
 		5906B1CC1A08468E00925D4D /* MJLogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJLogController.m; sourceTree = "<group>"; };
 		591BA6851A0758C500B9278D /* MJPedoMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPedoMeter.h; sourceTree = "<group>"; };
 		591BA6861A0758C500B9278D /* MJPedoMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPedoMeter.m; sourceTree = "<group>"; };
+		5921E9C81A09F20D00C069CB /* MGLiveMeterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGLiveMeterController.xib; sourceTree = "<group>"; };
+		5921E9C91A09F20D00C069CB /* MGLiveMeterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLiveMeterController.m; sourceTree = "<group>"; };
+		5921E9CA1A09F20D00C069CB /* MGLiveMeterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLiveMeterView.m; sourceTree = "<group>"; };
+		5921E9CB1A09F20D00C069CB /* MGRoundGuage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGRoundGuage.m; sourceTree = "<group>"; };
+		5921E9CC1A09F20D00C069CB /* MGLiveMeterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLiveMeterController.h; sourceTree = "<group>"; };
+		5921E9CD1A09F20D00C069CB /* MGRoundGuage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGRoundGuage.h; sourceTree = "<group>"; };
+		5921E9CE1A09F20D00C069CB /* MGLiveMeterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLiveMeterView.h; sourceTree = "<group>"; };
+		5960957F1A09F2AF006DCDE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		596095801A09F2AF006DCDE6 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		596095811A09F2AF006DCDE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		596095821A09F2AF006DCDE6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		596095831A09F2AF006DCDE6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		596095911A09FB3D006DCDE6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		596C8A731A0829990099F9FF /* MJActivityTypeMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJActivityTypeMeter.h; sourceTree = "<group>"; };
 		596C8A741A0829990099F9FF /* MJActivityTypeMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJActivityTypeMeter.m; sourceTree = "<group>"; };
 		596C8A761A082C390099F9FF /* MJTimeKeeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTimeKeeper.h; sourceTree = "<group>"; };
@@ -65,7 +85,6 @@
 		59D4D5A11A07344900A715B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59D4D5A21A07344900A715B0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		59D4D5AB1A07344900A715B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		59D4D5AD1A07344900A715B0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		59D4D5B01A07344900A715B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		59D4D5B61A07344900A715B0 /* motionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = motionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59D4D5BB1A07344900A715B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +96,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5960958A1A09F309006DCDE6 /* CoreGraphics.framework in Frameworks */,
+				5960958B1A09F309006DCDE6 /* CoreMotion.framework in Frameworks */,
+				5960958C1A09F309006DCDE6 /* Foundation.framework in Frameworks */,
+				5960958D1A09F309006DCDE6 /* QuartzCore.framework in Frameworks */,
+				5960958E1A09F309006DCDE6 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +167,13 @@
 		59D4D59C1A07344900A715B0 /* motion */ = {
 			isa = PBXGroup;
 			children = (
+				5921E9CC1A09F20D00C069CB /* MGLiveMeterController.h */,
+				5921E9C91A09F20D00C069CB /* MGLiveMeterController.m */,
+				5921E9C81A09F20D00C069CB /* MGLiveMeterController.xib */,
+				5921E9CE1A09F20D00C069CB /* MGLiveMeterView.h */,
+				5921E9CA1A09F20D00C069CB /* MGLiveMeterView.m */,
+				5921E9CD1A09F20D00C069CB /* MGRoundGuage.h */,
+				5921E9CB1A09F20D00C069CB /* MGRoundGuage.m */,
 				59B7AE581A09B4CB006F71BE /* meters */,
 				5906B1CB1A08468E00925D4D /* MJLogController.h */,
 				5906B1CC1A08468E00925D4D /* MJLogController.m */,
@@ -151,8 +182,8 @@
 				59D4D5A11A07344900A715B0 /* AppDelegate.h */,
 				59D4D5A21A07344900A715B0 /* AppDelegate.m */,
 				59D4D5AA1A07344900A715B0 /* Main.storyboard */,
-				59D4D5AD1A07344900A715B0 /* Images.xcassets */,
 				59D4D5AF1A07344900A715B0 /* LaunchScreen.xib */,
+				596095911A09FB3D006DCDE6 /* Images.xcassets */,
 				596C8A7F1A083DBC0099F9FF /* description */,
 				59D4D59D1A07344900A715B0 /* Supporting Files */,
 			);
@@ -164,6 +195,11 @@
 			children = (
 				59D4D59E1A07344900A715B0 /* Info.plist */,
 				59D4D59F1A07344900A715B0 /* main.m */,
+				5960957F1A09F2AF006DCDE6 /* CoreGraphics.framework */,
+				596095801A09F2AF006DCDE6 /* CoreMotion.framework */,
+				596095811A09F2AF006DCDE6 /* Foundation.framework */,
+				596095821A09F2AF006DCDE6 /* QuartzCore.framework */,
+				596095831A09F2AF006DCDE6 /* UIKit.framework */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -267,8 +303,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				59D4D5AC1A07344900A715B0 /* Main.storyboard in Resources */,
+				596095921A09FB3D006DCDE6 /* Images.xcassets in Resources */,
 				59D4D5B11A07344900A715B0 /* LaunchScreen.xib in Resources */,
-				59D4D5AE1A07344900A715B0 /* Images.xcassets in Resources */,
+				5921E9CF1A09F20D00C069CB /* MGLiveMeterController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +328,7 @@
 				59B7AE571A09B249006F71BE /* CMGyroData+MJGyroData.m in Sources */,
 				59B7AE511A09ADFB006F71BE /* MJMotionMeter.m in Sources */,
 				59CEE8F61A09D9DC00CBCC55 /* CMAccelerometerData+MJAccelerometerData.m in Sources */,
+				5921E9D11A09F20D00C069CB /* MGLiveMeterView.m in Sources */,
 				5906B1CD1A08468E00925D4D /* MJLogController.m in Sources */,
 				59D4D5A31A07344900A715B0 /* AppDelegate.m in Sources */,
 				596C8A7B1A0838B50099F9FF /* CMPedometerData+MJPedometerData.m in Sources */,

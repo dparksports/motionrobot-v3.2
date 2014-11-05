@@ -11,6 +11,12 @@
 
 @implementation CMAccelerometerData (MJAccelerometerData)
 
+- (NSString *)xDescription{
+    return [NSString stringWithFormat:@"x:%1.5f, timestamp:%@",
+            self.acceleration.x,
+            [self timestampShortString]];
+}
+
 - (NSString *)description{
     return [NSString stringWithFormat:@"x:%1.5f, y:%1.5f, z:%1.5f, timestamp:%@",
             self.acceleration.x,
