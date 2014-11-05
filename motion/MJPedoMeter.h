@@ -9,12 +9,17 @@
 @import Foundation;
 @import UIKit;
 @import CoreMotion;
+
 @interface MJPedoMeter : NSObject
 @property (nonatomic, readonly) NSMutableArray *records;
 
 + (instancetype)sharedInstance;
+
 + (BOOL)checkPedometerAvailableUI;
 - (void)checkAuthorizationUI;
+
+- (void)unregisterObserverKVO:(NSObject *)anObserver;
+- (void)registerObserverKVO:(NSObject *)anObserver;
 
 - (void)stopPedometerUpdates;
 - (void)startPedometerUpdates;

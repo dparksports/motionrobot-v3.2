@@ -11,7 +11,6 @@
 @implementation MJTimeKeeper
 
 + (NSDate *)startActivityDate{
-    NSLog(@"%s", __func__);
     static NSDate *startTime = nil;
     if (! startTime) {
         static dispatch_once_t onceToken;

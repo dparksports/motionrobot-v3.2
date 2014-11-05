@@ -12,15 +12,15 @@
 
 - (NSString *)activityTypeString {
     if (self.walking) {
-        return @"walking";
+        return @"Walking";
     } else if (self.running) {
-        return @"running";
+        return @"Running";
     } else if (self.automotive) {
-        return @"automotive";
+        return @"Automotive";
     } else if (self.stationary) {
-        return @"stationary";
+        return @"Stationary";
     } else if (!self.unknown) {
-        return @"unknown";
+        return @"Unknown";
     } else {
         return @"Unassigned";
     }
@@ -69,27 +69,21 @@
 }
 
 - (NSString *)timestampString {
-    NSLog(@"%s", __func__);
-    
     NSString *startString = [NSDateFormatter localizedStringFromDate:self.startDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterMediumStyle];
-    return [NSString stringWithFormat:@"%@", startString ];
+    return startString;
 }
 
 - (NSString *)description {
-    NSLog(@"%s", __func__);
-    
-    NSString *confidenceString = [self confidenceLetter];
-    NSString *activityTypeString = [self activityTypeShortString];
+    NSString *confidenceString = [self confidenceString];
+    NSString *activityTypeString = [self activityTypeString];
     return [NSString stringWithFormat:@"%@ %@",
             confidenceString, activityTypeString];
 }
 
 - (NSString *)debugDescription {
-    NSLog(@"%s", __func__);
-    
     NSString *confidenceString = [self confidenceString];
     NSString *activityTypeString = [self activityTypeString];
-    NSString *startString = [NSDateFormatter localizedStringFromDate:self.startDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterMediumStyle];
+    NSString *startString = [self timestampString];
 
     return [NSString stringWithFormat:@"activity:%@, confidence:%@, start:%@",
             activityTypeString, confidenceString, startString ];

@@ -15,8 +15,7 @@
 
 #import "MJLogController.h"
 
-@interface MJLogController ()
-<UITableViewDataSource, UITableViewDelegate>
+@interface MJLogController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) MJPedoMeter *pedometerManager;
 @property (nonatomic, strong) MJActivityTypeMeter *typeManager;
 @end
@@ -35,12 +34,10 @@
 }
 
 - (void)viewDidLoad {
-    NSLog(@"%s", __func__);
     [super viewDidLoad];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"%s", __func__);
     [super viewDidAppear:animated];
     
     
@@ -71,16 +68,18 @@
     NSLog(@"%s", __func__);
     
     [_typeManager unregisterObserverKVO:self];
+    [_pedometerManager unregisterObserverKVO:self];
 }
 
 - (void)registerObserverKVO {
     NSLog(@"%s", __func__);
     
     [_typeManager registerObserverKVO:self];
+    [_pedometerManager registerObserverKVO:self];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    NSLog(@"%s: change:%@", __func__, change);
+//    NSLog(@"%s: keyPath:%@, change:%@", __func__, keyPath, change);
 
     if ([keyPath isEqualToString:@"records"] )
         [tableView reloadData];
@@ -100,6 +99,16 @@
 
 #pragma mark - UITableViewDataSource
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+            return @"Pedometer";
+        case 1:
+            return @"Activity Type";
+    }
+    return @"";
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
@@ -109,6 +118,7 @@
     
     if (section == 0) {
         count = [_pedometerManager.records count];
+        count = (count > 3) ? 3 : count;
     } else if (section == 1) {
         count = [_typeManager.records count];
     }

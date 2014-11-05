@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
+static void *MJPedometerUpdateContextKVO = &MJPedometerUpdateContextKVO;
 
 #import "MJPedoMeter.h"
 #import "MJTimeKeeper.h"
@@ -14,6 +15,7 @@
 @interface MJPedoMeter ()
 @property (nonatomic, strong) CMPedometer *pedometer;
 @property (nonatomic, strong) NSMutableArray *records;
+@property (nonatomic, assign) BOOL updatedRecords;
 @end
 
 @implementation MJPedoMeter
@@ -42,8 +44,28 @@
     return sharedInstance;
 }
 
-+ (BOOL)checkPedometerAvailableUI{
+#pragma mark - KVO
+
++ (NSSet *)keyPathsForValuesAffectingRecords {
     NSLog(@"%s", __func__);
+    return [NSSet setWithObjects:@"pedometer", @"updatedRecords", nil];
+}
+
+- (void)unregisterObserverKVO:(NSObject *)anObserver  {
+    NSLog(@"%s", __func__);
+    
+    [self removeObserver:anObserver forKeyPath:@"records" context:MJPedometerUpdateContextKVO];
+}
+
+- (void)registerObserverKVO:(NSObject *)anObserver {
+    NSLog(@"%s", __func__);
+    
+    [self addObserver:anObserver forKeyPath:@"records" options:(NSKeyValueObservingOptionNew |NSKeyValueObservingOptionOld ) context:MJPedometerUpdateContextKVO];
+}
+
+#pragma mark - checkActivityTypeAvailableUI
+
++ (BOOL)checkPedometerAvailableUI{
     static BOOL available = NO;
     if (! available) {
         available = [CMPedometer isStepCountingAvailable];
@@ -69,11 +91,11 @@
 }
 
 - (void)checkAuthorizationUI{
-    NSLog(@"%s", __func__);
     NSDate *startTime = [MJTimeKeeper startActivityDate];
     [_pedometer queryPedometerDataFromDate:startTime
                                     toDate:startTime
-                               withHandler:^(CMPedometerData *pedometerData, NSError *error)
+                               withHandler:
+     ^(CMPedometerData *pedometerData, NSError *error)
      {
          if (error) {
              UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
@@ -86,6 +108,8 @@
          }
      }];
 }
+
+#pragma mark - startPedometerUpdates
 
 - (void)stopPedometerUpdates{
     [_pedometer stopPedometerUpdates];
@@ -102,16 +126,30 @@
     
     NSDate *startTime = [MJTimeKeeper startActivityDate];
     [_pedometer stopPedometerUpdates];
-    [_pedometer startPedometerUpdatesFromDate:startTime withHandler:^(CMPedometerData *pedometerData, NSError *error)
+    [_pedometer startPedometerUpdatesFromDate:startTime withHandler:
+     ^(CMPedometerData *pedometerData, NSError *error)
     {
-        if (error) {
-            NSLog(@"%s: Description:%@, RecoverySuggestion:%@, FailureReason:%@", __func__, [error localizedDescription], [error localizedRecoverySuggestion], [error localizedFailureReason]);
-        }
+        if (error)
+            [self handleErrorUI:error];
         else {
             [_records insertObject:pedometerData atIndex:0];
+            [self setUpdatedRecords:! _updatedRecords];
             NSLog(@"%s: %@", __func__, [pedometerData debugDescription]);
         }
     }];
+}
+
+#pragma mark - NSError
+
+- (void)handleErrorUI:(NSError *)error {
+    NSLog(@"%s: Description:%@, RecoverySuggestion:%@, FailureReason:%@", __func__, [error localizedDescription], [error localizedRecoverySuggestion], [error localizedFailureReason]);
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                    message:[error localizedFailureReason]
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

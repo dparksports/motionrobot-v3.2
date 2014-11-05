@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
+static void *MJActivityTypeUpdateContextKVO = &MJActivityTypeUpdateContextKVO;
+
 #import "MJActivityTypeMeter.h"
 #import "MJTimeKeeper.h"
 
@@ -51,17 +53,18 @@
 - (void)unregisterObserverKVO:(NSObject *)anObserver  {
     NSLog(@"%s", __func__);
     
-    [self removeObserver:anObserver forKeyPath:@"records" context:MJRecordUpdateContextKVO];
+    [self removeObserver:anObserver forKeyPath:@"records" context:MJActivityTypeUpdateContextKVO];
 }
 
 - (void)registerObserverKVO:(NSObject *)anObserver {
     NSLog(@"%s", __func__);
     
-    [self addObserver:anObserver forKeyPath:@"records" options:(NSKeyValueObservingOptionNew |NSKeyValueObservingOptionOld ) context:MJRecordUpdateContextKVO];
+    [self addObserver:anObserver forKeyPath:@"records" options:(NSKeyValueObservingOptionNew |NSKeyValueObservingOptionOld ) context:MJActivityTypeUpdateContextKVO];
 }
 
+#pragma mark - checkActivityTypeAvailableUI
+
 + (BOOL)checkActivityTypeAvailableUI{
-    NSLog(@"%s", __func__);
     static BOOL available = NO;
     if (! available) {
         available = [CMMotionActivityManager isActivityAvailable];
@@ -78,13 +81,13 @@
 }
 
 - (void)checkAuthorizationUI{
-    NSLog(@"%s", __func__);
     NSDate *startTime = [MJTimeKeeper startActivityDate];
     
     [_activityTypeManager queryActivityStartingFromDate:startTime
                                                toDate:startTime
                                               toQueue:[NSOperationQueue mainQueue]
-                                          withHandler:^(NSArray *activities, NSError *error)
+                                          withHandler:
+     ^(NSArray *activities, NSError *error)
     {
         if (error || error.code == CMErrorMotionActivityNotAuthorized) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
@@ -97,6 +100,8 @@
         }
     }];
 }
+
+#pragma mark - startActivityUpdatesToQueue
 
 - (void)stopActivityUpdates{
     [_activityTypeManager stopActivityUpdates];
