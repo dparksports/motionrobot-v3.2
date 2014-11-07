@@ -10,7 +10,6 @@
 
 // This is an arbitrary calibration to define 0 db in the VU meter.
 #define MYVolumeUnitMeterView_CALIBRATION 12.0f
-
 #define DEGREE_TO_RADIAN M_PI / 180.0f
 
 static CGFloat convertValueToNeedleAngle(CGFloat value);

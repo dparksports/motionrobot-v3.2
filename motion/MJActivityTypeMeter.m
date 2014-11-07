@@ -108,13 +108,6 @@ static void *MJActivityTypeUpdateContextKVO = &MJActivityTypeUpdateContextKVO;
 }
 
 - (void)startActivityUpdatesToQueue{
-    NSLog(@"%s", __func__);
-    
-    if (! _records) {
-        NSUInteger initialCapacity = 10 * 24 * 7;
-        id instance = [[NSMutableArray alloc] initWithCapacity:initialCapacity];
-        [self setRecords:instance];
-    }
     
     [_activityTypeManager stopActivityUpdates];
     [_activityTypeManager startActivityUpdatesToQueue:[NSOperationQueue mainQueue]
@@ -123,7 +116,7 @@ static void *MJActivityTypeUpdateContextKVO = &MJActivityTypeUpdateContextKVO;
         if (activity) {
             [_records insertObject:activity atIndex:0];
             [self setUpdatedRecords:! _updatedRecords];
-            NSLog(@"%s: %@", __func__, [activity debugDescription]);
+//            NSLog(@"%s: %@", __func__, [activity debugDescription]);
         }
     }];
 }

@@ -6,15 +6,19 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
+#import "MJCloud.h"
 #import "CMGyroData+MJGyroData.h"
-
+#import "CMAccelerometerData+MJAccelerometerData.h"
 #import "MJMotionMeter.h"
 
 @interface MJMotionMeter () 
 @property (nonatomic, strong) CMMotionManager *motionManager;
+@property (nonatomic, strong) NSMutableArray *accelerationRecords;
+@property (nonatomic, strong) dispatch_queue_t cloudQueue;
 @end
 
-@implementation MJMotionMeter
+@implementation MJMotionMeter {
+}
 
 - (void)dealloc {
     [self setMotionManager:nil];
@@ -23,8 +27,12 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        id instance = [CMMotionManager new];
+        id instance = nil;
+        instance = [CMMotionManager new];
         [self setMotionManager:instance];
+
+        dispatch_queue_t queue = dispatch_queue_create("mj.cloudQueue", DISPATCH_QUEUE_SERIAL);
+        [self setCloudQueue:queue];
     }
     return self;
 }
@@ -101,7 +109,13 @@
 }
 
 - (void)startAccelerometerUpdatesToQueue {
-    [_motionManager setAccelerometerUpdateInterval:1/10.0];
+    if (! _accelerationRecords) {
+        NSUInteger initialCapacity = 10 * 24 * 7;
+        id instance = [[NSMutableArray alloc] initWithCapacity:initialCapacity];
+        [self setAccelerationRecords:instance];
+    }
+    
+    [_motionManager setAccelerometerUpdateInterval:1/10.0]; // 1/10.0
     [_motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:
      ^(CMAccelerometerData *accelerometerData, NSError *error)
     {
@@ -110,8 +124,30 @@
         else {
             if (self.delegate)
                 [self.delegate updateAccelerometerData:accelerometerData];
+            dispatch_async(self.cloudQueue, ^{
+                [self collectAndUploadToCloud:accelerometerData];
+            });
         }
     }];
+}
+
+- (void)collectAndUploadToCloud:(CMAccelerometerData *)accelerometerData {
+    [_accelerationRecords addObject:accelerometerData];
+    NSUInteger count = [_accelerationRecords count];
+    NSUInteger capacity = 100;
+    
+    if (count >= capacity) {
+        NSLog(@"%s: count:%lu", __func__, (unsigned long)count);
+        
+        NSMutableArray *mutable = [NSMutableArray arrayWithCapacity:capacity];
+        for (CMAccelerometerData *data in _accelerationRecords) {
+            NSDictionary *dictionary = [data jsonify];
+            if (dictionary)
+                [mutable addObject:dictionary];
+        }
+        [_accelerationRecords removeAllObjects];
+        [MJCloud uploadCollectionToCloud:mutable];
+    }
 }
 
 #pragma mark - CMError

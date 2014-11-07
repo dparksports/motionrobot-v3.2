@@ -6,14 +6,13 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
-@import CoreMotion;
-
 #import "MJPedoMeter.h"
 #import "MJActivityTypeMeter.h"
 #import "CMMotionActivity+MJMotionActivity.h"
 #import "CMPedometerData+MJPedometerData.h"
-
 #import "MJLogController.h"
+
+@import CoreMotion;
 
 @interface MJLogController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) MJPedoMeter *pedometerManager;

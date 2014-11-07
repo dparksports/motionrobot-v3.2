@@ -6,9 +6,13 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
-#import <CoreMotion/CoreMotion.h>
+#import "MJSONProtocol.h"
+@import CoreMotion;
 
-@interface CMAccelerometerData (MJAccelerometerData)
+@interface CMAccelerometerData (MJAccelerometerData) <MJSONProtocol>
+
+- (void)dejsonify:(NSDictionary *)dictionary;
+- (NSDictionary*)jsonify;
 
 - (NSString *)xDescription;
 - (NSString *)description;

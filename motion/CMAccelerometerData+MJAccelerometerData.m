@@ -11,6 +11,26 @@
 
 @implementation CMAccelerometerData (MJAccelerometerData)
 
+#pragma mark - MJSONProtocol
+
+- (void)dejsonify:(NSDictionary *)dictionary {
+    // todo
+}
+
+- (NSDictionary*)jsonify {
+    NSDictionary *dictionary = @{@"x": [NSString stringWithFormat:@"%1.3f",
+                                        self.acceleration.x],
+                                 @"y": [NSString stringWithFormat:@"%1.3f",
+                                        self.acceleration.y],
+                                 @"z": [NSString stringWithFormat:@"%1.3f",
+                                        self.acceleration.z],
+                                 @"t": [NSString stringWithFormat:@"%.6f",
+                                        self.timestamp]};
+    return dictionary;
+}
+
+#pragma mark - description
+
 - (NSString *)xDescription{
     return [NSString stringWithFormat:@"x:%1.5f, timestamp:%@",
             self.acceleration.x,

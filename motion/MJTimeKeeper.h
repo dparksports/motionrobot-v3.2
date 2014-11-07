@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+
 @interface MJTimeKeeper : NSObject
 
 + (NSDate *)startActivityDate;

@@ -8,9 +8,10 @@
 
 #import "MJMotionMeter.h"
 #import "MGLiveMeterView.h"
+#import "MJFuelGuageView.h"
+#import "MJPlasticCoverView.h"
 #import "CMGyroData+MJGyroData.h"
 #import "CMAccelerometerData+MJAccelerometerData.h"
-
 #import "MJGaugeController.h"
 
 @interface MJGaugeController () <MJMotionMeterDelegate>
@@ -18,9 +19,10 @@
 @end
 
 @implementation MJGaugeController {    
-    __weak IBOutlet MGLiveMeterView *liveMeterX;
-    __weak IBOutlet MGLiveMeterView *liveMeterY;
-    __weak IBOutlet MGLiveMeterView *liveMeterZ;
+    __weak IBOutlet MJPlasticCoverView *plasticCover;
+    __weak IBOutlet MJFuelGuageView *xAccelerationGauge;
+    __weak IBOutlet MJFuelGuageView *yAccelerationGauge;
+    __weak IBOutlet MJFuelGuageView *zAccelerationGauge;
     
     __weak IBOutlet UILabel *xGyroLabel;
     __weak IBOutlet UILabel *yGyroLabel;
@@ -60,35 +62,44 @@
 #pragma mark - addGauge
 
 - (void)addGauge {
-    [liveMeterX setupLayerTree];
-    [liveMeterY setupLayerTree];
-    [liveMeterZ setupLayerTree];
+    [xAccelerationGauge addNeedleLayer];
+    [yAccelerationGauge addNeedleLayer];
+    [zAccelerationGauge addNeedleLayer];
+    [plasticCover addUnitTick];
+
+    [xAccelerationGauge setNeedleColor:[UIColor redColor]];
+    [yAccelerationGauge setNeedleColor:[UIColor redColor]];
+    [zAccelerationGauge setNeedleColor:[UIColor redColor]];
+
+//    [xAccelerationGauge setNeedleColor:[UIColor redColor]];
+//    [yAccelerationGauge setNeedleColor:[UIColor greenColor]];
+//    [zAccelerationGauge setNeedleColor:[UIColor whiteColor]];
     
-    [liveMeterX setShadowColor:[UIColor orangeColor]];
-    [liveMeterY setShadowColor:[UIColor cyanColor]];
-    [liveMeterZ setShadowColor:[UIColor yellowColor]];
+//    [xAccelerationGauge setShadowColor:[UIColor orangeColor]];
+//    [yAccelerationGauge setShadowColor:[UIColor cyanColor]];
+//    [zAccelerationGauge setShadowColor:[UIColor redColor]];
 }
 
 #pragma mark - MJMotionMeterDelegate
 
 - (void)updateGyroData:(CMGyroData*)gyroData {
-    NSLog(@"%s: %@", __func__, [gyroData description]);
+//    NSLog(@"%s: %@", __func__, [gyroData description]);
     
-    xGyroLabel.text = [NSString stringWithFormat:@"%1.4f", gyroData.rotationRate.x];
-    yGyroLabel.text = [NSString stringWithFormat:@"%1.4f", gyroData.rotationRate.y];
-    zGyroLabel.text = [NSString stringWithFormat:@"%1.4f", gyroData.rotationRate.z];
+    xGyroLabel.text = [NSString stringWithFormat:@"%1.3f", gyroData.rotationRate.x];
+    yGyroLabel.text = [NSString stringWithFormat:@"%1.3f", gyroData.rotationRate.y];
+    zGyroLabel.text = [NSString stringWithFormat:@"%1.3f", gyroData.rotationRate.z];
 }
 
 - (void)updateAccelerometerData:(CMAccelerometerData*)accelerometerData {
 //    NSLog(@"%s: %@", __func__, [accelerometerData xDescription]);
     
-    xAccelerationLabel.text = [NSString stringWithFormat:@"%1.4f", accelerometerData.acceleration.x];
-    yAccelerationLabel.text = [NSString stringWithFormat:@"%1.4f", accelerometerData.acceleration.y];
-    zAccelerationLabel.text = [NSString stringWithFormat:@"%1.4f", accelerometerData.acceleration.z];
+    xAccelerationLabel.text = [NSString stringWithFormat:@"%1.3f", accelerometerData.acceleration.x];
+    yAccelerationLabel.text = [NSString stringWithFormat:@"%1.3f", accelerometerData.acceleration.y];
+    zAccelerationLabel.text = [NSString stringWithFormat:@"%1.3f", accelerometerData.acceleration.z];
     
-    [liveMeterX setValue:accelerometerData.acceleration.x];
-    [liveMeterY setValue:accelerometerData.acceleration.y];
-    [liveMeterZ setValue:accelerometerData.acceleration.z];
+    [xAccelerationGauge setValue:accelerometerData.acceleration.x];
+//    [yAccelerationGauge setValue:accelerometerData.acceleration.y];
+//    [zAccelerationGauge setValue:accelerometerData.acceleration.z];
 }
 
 
