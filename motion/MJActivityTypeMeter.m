@@ -72,7 +72,7 @@ static void *MJActivityTypeUpdateContextKVO = &MJActivityTypeUpdateContextKVO;
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
                                                             message:@"No activity counting is available."
                                                            delegate:nil
-                                                  cancelButtonTitle:@"Cancel"
+                                                  cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
             [alert show];
         }
@@ -94,7 +94,7 @@ static void *MJActivityTypeUpdateContextKVO = &MJActivityTypeUpdateContextKVO;
                                   
                                                             message:@"Please enable Motion Activity for this application."
                                                            delegate:nil
-                                                  cancelButtonTitle:@"Cancel"
+                                                  cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
             [alert show];
         }

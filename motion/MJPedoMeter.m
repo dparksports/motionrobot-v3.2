@@ -73,7 +73,7 @@ static void *MJPedometerUpdateContextKVO = &MJPedometerUpdateContextKVO;
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
                                                             message:@"No step counting is available"
                                                            delegate:nil
-                                                  cancelButtonTitle:@"Cancel"
+                                                  cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
             [alert show];
         }
@@ -102,7 +102,7 @@ static void *MJPedometerUpdateContextKVO = &MJPedometerUpdateContextKVO;
                                    
                                                              message:@"Please enable Motion Activity for this application."
                                                             delegate:nil
-                                                   cancelButtonTitle:@"Cancel"
+                                                   cancelButtonTitle:@"OK"
                                                    otherButtonTitles:nil];
              [alert show];
          }

@@ -10,5 +10,6 @@
 
 @interface MJTimeKeeper : NSObject
 
++ (NSDateFormatter *)dateFormatter;
 + (NSDate *)startActivityDate;
 @end

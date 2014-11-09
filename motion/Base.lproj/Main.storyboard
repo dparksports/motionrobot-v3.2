@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -66,7 +67,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Log" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Log" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="tableView" destination="fZL-6V-RYY" id="yPs-sO-dso"/>
                     </connections>
@@ -190,22 +191,46 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUB-p9-N5T" userLabel="Gauge Container">
                                 <rect key="frame" x="140" y="64" width="320" height="150"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p4o-ZN-FdA" userLabel="PlasticCover" customClass="MJPlasticCoverView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4o-ZN-FdA" userLabel="PlasticCover" customClass="MJPlasticCoverView">
                                         <rect key="frame" x="10" y="13" width="300" height="125"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="RII-qP-eUB"/>
+                                            <constraint firstAttribute="height" constant="125" id="y7C-fG-7eQ"/>
+                                        </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ktk-Xh-hTV" userLabel="zAccelerationGauge" customClass="MJFuelGuageView">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ktk-Xh-hTV" userLabel="zAccelerationGauge" customClass="MJFuelGuageView">
                                         <rect key="frame" x="10" y="13" width="300" height="125"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="125" id="eNt-8v-dny"/>
+                                            <constraint firstAttribute="width" constant="300" id="mfe-r9-aCr"/>
+                                        </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0nF-3N-YQT" userLabel="yAccelerationGauge" customClass="MJFuelGuageView">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nF-3N-YQT" userLabel="yAccelerationGauge" customClass="MJFuelGuageView">
                                         <rect key="frame" x="10" y="13" width="300" height="125"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="125" id="TOS-AG-Bnq"/>
+                                            <constraint firstAttribute="width" constant="300" id="h21-WB-eZx"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6cN-d2-xeZ" userLabel="xAccelerationGauge" customClass="MJFuelGuageView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cN-d2-xeZ" userLabel="xAccelerationGauge" customClass="MJFuelGuageView">
                                         <rect key="frame" x="10" y="12" width="300" height="125"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="125" id="2J6-sr-HIg"/>
+                                            <constraint firstAttribute="width" constant="300" id="T1d-7A-OLq"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="Ktk-Xh-hTV" secondAttribute="centerY" constant="-0.5" id="Ljg-4l-luV"/>
+                                    <constraint firstAttribute="centerX" secondItem="0nF-3N-YQT" secondAttribute="centerX" id="OX3-N6-JdU"/>
                                     <constraint firstAttribute="height" constant="150" id="VVx-4m-WHW"/>
+                                    <constraint firstAttribute="centerY" secondItem="p4o-ZN-FdA" secondAttribute="centerY" constant="-0.5" id="WcE-3S-jTO"/>
+                                    <constraint firstAttribute="centerY" secondItem="6cN-d2-xeZ" secondAttribute="centerY" constant="0.5" id="XGG-VL-BDm"/>
+                                    <constraint firstAttribute="centerY" secondItem="0nF-3N-YQT" secondAttribute="centerY" constant="-0.5" id="aZj-Nj-mci"/>
+                                    <constraint firstAttribute="centerX" secondItem="6cN-d2-xeZ" secondAttribute="centerX" id="ays-YT-So5"/>
+                                    <constraint firstAttribute="centerX" secondItem="p4o-ZN-FdA" secondAttribute="centerX" id="fc8-bM-gGa"/>
                                     <constraint firstAttribute="width" constant="320" id="g8Y-83-ldr"/>
+                                    <constraint firstAttribute="centerX" secondItem="Ktk-Xh-hTV" secondAttribute="centerX" id="o8u-lC-M82"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -214,6 +239,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="VFp-tv-bnm" secondAttribute="trailing" constant="-16" id="2St-Po-UIb"/>
                             <constraint firstItem="gFp-vn-AoQ" firstAttribute="top" secondItem="hOe-SU-MWb" secondAttribute="bottom" constant="8" id="43d-8c-XNc"/>
                             <constraint firstItem="8eG-Md-4co" firstAttribute="top" secondItem="M7a-3y-fB6" secondAttribute="bottom" constant="8" id="44X-bo-OeI"/>
+                            <constraint firstAttribute="centerY" secondItem="gUB-p9-N5T" secondAttribute="centerY" constant="161" id="46o-Ma-Zu5"/>
                             <constraint firstItem="gFp-vn-AoQ" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="6l6-Mk-ZHS"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="O3f-gl-eOx" secondAttribute="bottom" constant="8" id="78D-Y0-1FG"/>
                             <constraint firstItem="VFp-tv-bnm" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="8rL-pN-50I"/>
@@ -231,11 +257,16 @@
                             <constraint firstItem="O3f-gl-eOx" firstAttribute="top" secondItem="PMd-4S-Lav" secondAttribute="bottom" constant="8" id="d6c-t8-W5D"/>
                             <constraint firstItem="PMd-4S-Lav" firstAttribute="top" secondItem="8eG-Md-4co" secondAttribute="bottom" constant="8" id="fNh-Dx-5Lz"/>
                             <constraint firstItem="8eG-Md-4co" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="kWp-pb-3aI"/>
+                            <constraint firstAttribute="centerY" secondItem="gUB-p9-N5T" secondAttribute="centerY" id="mBo-fv-Q6n"/>
+                            <constraint firstItem="gUB-p9-N5T" firstAttribute="top" secondItem="VFp-tv-bnm" secondAttribute="bottom" id="mJQ-v9-rk0"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="tis-eP-4Qv" secondAttribute="bottom" constant="8" id="so5-Dl-yaY"/>
                             <constraint firstAttribute="centerY" secondItem="gUB-p9-N5T" secondAttribute="centerY" constant="161" id="xOG-1G-iki"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="46o-Ma-Zu5"/>
+                                <exclude reference="S0U-QM-o2t"/>
+                                <exclude reference="mBo-fv-Q6n"/>
                                 <exclude reference="xOG-1G-iki"/>
                             </mask>
                         </variation>
@@ -278,7 +309,4 @@
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="first" width="30" height="30"/>
-    </resources>
 </document>

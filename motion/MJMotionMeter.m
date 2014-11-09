@@ -7,17 +7,21 @@
 //
 
 #import "MJCloud.h"
+#import "CMLogItem+MJLogItem.h"
 #import "CMGyroData+MJGyroData.h"
 #import "CMAccelerometerData+MJAccelerometerData.h"
+
 #import "MJMotionMeter.h"
 
 @interface MJMotionMeter () 
 @property (nonatomic, strong) CMMotionManager *motionManager;
 @property (nonatomic, strong) NSMutableArray *accelerationRecords;
+@property (nonatomic, strong) NSMutableArray *gyroRecords;
 @property (nonatomic, strong) dispatch_queue_t cloudQueue;
 @end
 
 @implementation MJMotionMeter {
+    NSUInteger initialCapacity;
 }
 
 - (void)dealloc {
@@ -27,6 +31,8 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        initialCapacity = 10 * 24 * 7;
+        
         id instance = nil;
         instance = [CMMotionManager new];
         [self setMotionManager:instance];
@@ -58,7 +64,7 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
                                                             message:@"No Gyro Available is available"
                                                            delegate:nil
-                                                  cancelButtonTitle:@"Cancel"
+                                                  cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
             [alert show];
         }
@@ -72,6 +78,11 @@
 }
 
 - (void)startGyroUpdatesToQueue {
+    if (! _gyroRecords) {
+        id instance = [[NSMutableArray alloc] initWithCapacity:initialCapacity];
+        [self setGyroRecords:instance];
+    }
+
     [_motionManager setGyroUpdateInterval:1/1.0];
     [_motionManager startGyroUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:
      ^(CMGyroData *gyroData, NSError *error)
@@ -81,6 +92,9 @@
          else {
              if (self.delegate)
                  [self.delegate updateGyroData:gyroData];
+             dispatch_async(self.cloudQueue, ^{
+                 [self compressGyroData:gyroData];
+             });
          }
      }];
 }
@@ -95,7 +109,7 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
                                                             message:@"No Accelerometer Available is available"
                                                            delegate:nil
-                                                  cancelButtonTitle:@"Cancel"
+                                                  cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
             [alert show];
         }
@@ -110,7 +124,6 @@
 
 - (void)startAccelerometerUpdatesToQueue {
     if (! _accelerationRecords) {
-        NSUInteger initialCapacity = 10 * 24 * 7;
         id instance = [[NSMutableArray alloc] initWithCapacity:initialCapacity];
         [self setAccelerationRecords:instance];
     }
@@ -125,16 +138,67 @@
             if (self.delegate)
                 [self.delegate updateAccelerometerData:accelerometerData];
             dispatch_async(self.cloudQueue, ^{
-                [self collectAndUploadToCloud:accelerometerData];
+                [self compressAccelerometerData:accelerometerData];
             });
         }
     }];
 }
 
-- (void)collectAndUploadToCloud:(CMAccelerometerData *)accelerometerData {
+- (void)compressGyroData:(CMGyroData *)gyroData {
+    [_accelerationRecords addObject:gyroData];
+    NSUInteger count = [_accelerationRecords count];
+//    NSLog(@"%s: count:%lu", __func__, (unsigned long)count);
+    NSUInteger capacity = 1400;
+    
+    if (count >= capacity) {
+        NSMutableString *mutable = [NSMutableString stringWithCapacity:32 * 1024];
+        
+        CMAccelerometerData *data = [_accelerationRecords firstObject];
+        NSString *dateString = [data dateString];
+        [mutable appendString:dateString];
+        
+        for (int i = 0; i < count; i++) {
+            CMAccelerometerData *data = _accelerationRecords[i];
+            NSString *compressedString = [data compressedString];
+            [mutable appendString:compressedString];
+        }
+        [_accelerationRecords removeAllObjects];
+        [MJCloud sendStringToCloud:mutable];
+    }
+}
+
+- (void)compressAccelerometerData:(CMAccelerometerData *)accelerometerData {
     [_accelerationRecords addObject:accelerometerData];
     NSUInteger count = [_accelerationRecords count];
-    NSUInteger capacity = 100;
+    //    NSLog(@"%s: count:%lu", __func__, (unsigned long)count);
+    NSUInteger capacity = 1400;
+    
+    if (count >= capacity) {
+        NSMutableString *mutable = [NSMutableString stringWithCapacity:32 * 1024];
+        
+        CMAccelerometerData *data = [_accelerationRecords firstObject];
+        NSString *dateString = [data dateString];
+        [mutable appendString:dateString];
+        
+        for (int i = 0; i < count; i++) {
+            CMAccelerometerData *data = _accelerationRecords[i];
+            NSString *compressedString = [data compressedString];
+            [mutable appendString:compressedString];
+        }
+        [_accelerationRecords removeAllObjects];
+        [MJCloud sendStringToCloud:mutable];
+    }
+}
+
+- (void)batchUploadCompressedToCloud{
+//    [MJCloud sendStringToCloud:_gyroRecords];
+//    [MJCloud sendStringToCloud:_accelerationRecords];
+}
+
+- (void)collectAndUploadJSONToCloud:(CMAccelerometerData *)accelerometerData {
+    [_accelerationRecords addObject:accelerometerData];
+    NSUInteger count = [_accelerationRecords count];
+    NSUInteger capacity = 550;
     
     if (count >= capacity) {
         NSLog(@"%s: count:%lu", __func__, (unsigned long)count);

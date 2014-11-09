@@ -12,4 +12,8 @@
 
 - (void)dejsonify:(NSDictionary *)dictionary;
 - (NSDictionary*)jsonify;
+
+- (void)decompressString:(NSDictionary *)dictionary;
+- (NSString *)compressedString;
+
 @end

@@ -13,6 +13,19 @@
 
 #pragma mark - MJSONProtocol
 
+- (void)decompressString:(NSDictionary *)dictionary {
+    // todo
+}
+
+- (NSString *)compressedString {
+    NSString *string = [self millisecondString];
+    return [NSString stringWithFormat:@"%@:%1.1f %1.1f %1.1f;",
+            string,
+            self.rotationRate.x,
+            self.rotationRate.y,
+            self.rotationRate.z];
+}
+
 - (void)dejsonify:(NSDictionary *)dictionary {
     // todo
 }
@@ -35,7 +48,7 @@
             self.rotationRate.x,
             self.rotationRate.y,
             self.rotationRate.z,
-            [self timestampShortString]];
+            [self timeDateShortStyleString]];
 }
 
 - (NSString *)debugDescription{
@@ -43,6 +56,6 @@
             [@(self.rotationRate.x) stringValue],
             [@(self.rotationRate.y) stringValue],
             [@(self.rotationRate.z) stringValue],
-            [self timestampString]];
+            [self timeDateNoStyleString]];
 }
 @end

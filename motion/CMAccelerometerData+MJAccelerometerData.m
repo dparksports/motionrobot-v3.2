@@ -9,9 +9,26 @@
 #import "CMLogItem+MJLogItem.h"
 #import "CMAccelerometerData+MJAccelerometerData.h"
 
+@interface CMAccelerometerData ()
+@property(nonatomic) NSTimeInterval lastTimestamp;
+@end
+
 @implementation CMAccelerometerData (MJAccelerometerData)
 
 #pragma mark - MJSONProtocol
+
+- (void)decompressString:(NSDictionary *)dictionary {
+    // todo
+}
+
+- (NSString *)compressedString {
+    NSString *string = [self millisecondString];
+    return [NSString stringWithFormat:@"%@:%1.1f %1.1f %1.1f;",
+            string,
+            self.acceleration.x,
+            self.acceleration.y,
+            self.acceleration.z];
+}
 
 - (void)dejsonify:(NSDictionary *)dictionary {
     // todo
@@ -34,7 +51,7 @@
 - (NSString *)xDescription{
     return [NSString stringWithFormat:@"x:%1.5f, timestamp:%@",
             self.acceleration.x,
-            [self timestampShortString]];
+            [self timeDateShortStyleString]];
 }
 
 - (NSString *)description{
@@ -42,7 +59,7 @@
             self.acceleration.x,
             self.acceleration.y,
             self.acceleration.z,
-            [self timestampShortString]];
+            [self timeDateShortStyleString]];
 }
 
 - (NSString *)debugDescription{
@@ -50,7 +67,7 @@
             [@(self.acceleration.x) stringValue],
             [@(self.acceleration.y) stringValue],
             [@(self.acceleration.z) stringValue],
-            [self timestampString]];
+            [self timeDateNoStyleString]];
 }
 
 @end

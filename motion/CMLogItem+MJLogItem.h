@@ -11,6 +11,9 @@
 @interface CMLogItem (MJLogItem)
 
 - (NSDate *)bootTime;
-- (NSString *)timestampString;
-- (NSString *)timestampShortString;
+
+- (NSString *)dateString;
+- (NSString *)millisecondString;
+- (NSString *)timeDateNoStyleString;
+- (NSString *)timeDateShortStyleString;
 @end

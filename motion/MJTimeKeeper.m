@@ -10,6 +10,16 @@
 
 @implementation MJTimeKeeper
 
++ (NSDateFormatter *)dateFormatter{
+    static NSDateFormatter *dateFormatter = nil;
+    if (dateFormatter == nil) {
+        dateFormatter = [NSDateFormatter new];
+        [dateFormatter setLocale:[NSLocale currentLocale]];
+        [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
+    }
+    return dateFormatter;
+}
+
 + (NSDate *)startActivityDate{
     static NSDate *startTime = nil;
     if (! startTime) {

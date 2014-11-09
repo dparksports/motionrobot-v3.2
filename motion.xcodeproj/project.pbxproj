@@ -146,6 +146,30 @@
 			name = description;
 			sourceTree = "<group>";
 		};
+		598542C11A0D0946005712DE /* cloud */ = {
+			isa = PBXGroup;
+			children = (
+				59A2B1741A0CDD8F00D8912E /* MJError.h */,
+				59A2B1751A0CDD8F00D8912E /* MJError.m */,
+				59A2B1711A0CDC8F00D8912E /* MJSerialize.h */,
+				59A2B1721A0CDC8F00D8912E /* MJSerialize.m */,
+				59A2B1791A0CEA8200D8912E /* MJCloud.h */,
+				59A2B17A1A0CEA8200D8912E /* MJCloud.m */,
+			);
+			name = cloud;
+			sourceTree = "<group>";
+		};
+		598542C21A0D0962005712DE /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5906B1CB1A08468E00925D4D /* MJLogController.h */,
+				5906B1CC1A08468E00925D4D /* MJLogController.m */,
+				59CEE8F11A09C2FB00CBCC55 /* MJGaugeController.h */,
+				59CEE8F21A09C2FB00CBCC55 /* MJGaugeController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
 		59A2B1781A0CE9F600D8912E /* custom views */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,18 +223,10 @@
 		59D4D59C1A07344900A715B0 /* motion */ = {
 			isa = PBXGroup;
 			children = (
-				59A2B1741A0CDD8F00D8912E /* MJError.h */,
-				59A2B1751A0CDD8F00D8912E /* MJError.m */,
-				59A2B1711A0CDC8F00D8912E /* MJSerialize.h */,
-				59A2B1721A0CDC8F00D8912E /* MJSerialize.m */,
-				59A2B1791A0CEA8200D8912E /* MJCloud.h */,
-				59A2B17A1A0CEA8200D8912E /* MJCloud.m */,
+				598542C11A0D0946005712DE /* cloud */,
 				59A2B1781A0CE9F600D8912E /* custom views */,
 				59B7AE581A09B4CB006F71BE /* meters */,
-				5906B1CB1A08468E00925D4D /* MJLogController.h */,
-				5906B1CC1A08468E00925D4D /* MJLogController.m */,
-				59CEE8F11A09C2FB00CBCC55 /* MJGaugeController.h */,
-				59CEE8F21A09C2FB00CBCC55 /* MJGaugeController.m */,
+				598542C21A0D0962005712DE /* controllers */,
 				59D4D5A11A07344900A715B0 /* AppDelegate.h */,
 				59D4D5A21A07344900A715B0 /* AppDelegate.m */,
 				59D4D5AA1A07344900A715B0 /* Main.storyboard */,
@@ -448,7 +464,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -483,7 +499,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
