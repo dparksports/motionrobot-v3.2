@@ -33,10 +33,8 @@ static inline double radians(double degrees) { return degrees * M_PI / 180; }
 - (void)addUnitTickAtRotation:(CGFloat)degree majorTick:(BOOL)majorTick {
     CGAffineTransform transform = CGAffineTransformMakeScale(SCALE_NEEDLE, SCALE_NEEDLE);
     float radians = M_PI / 180.0 * degree;
-    NSLog(@"%s: degree:%1.4f, convert:%1.4f", __func__, degree, radians);
+//    NSLog(@"%s: degree:%1.4f, convert:%1.4f", __func__, degree, radians);
     transform = CGAffineTransformRotate(transform, radians);
-    
-//    transform = CGAffineTransformRotate(transform, rotation);
     
     CALayer *tickLayer = [CALayer layer];
     tickLayer.affineTransform = transform;

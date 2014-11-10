@@ -7,6 +7,7 @@
 //
 
 @import UIKit;
+@import CoreMotion;
 
 @interface MJLogController : UIViewController
 

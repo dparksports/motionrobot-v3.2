@@ -12,8 +12,6 @@
 #import "CMPedometerData+MJPedometerData.h"
 #import "MJLogController.h"
 
-@import CoreMotion;
-
 @interface MJLogController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) MJPedoMeter *pedometerManager;
 @property (nonatomic, strong) MJActivityTypeMeter *typeManager;
@@ -38,7 +36,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
     
     if ([MJPedoMeter checkPedometerAvailableUI]) {
         [self setPedometerManager:[MJPedoMeter sharedInstance]];

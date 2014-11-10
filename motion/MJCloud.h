@@ -10,7 +10,9 @@
 
 @interface MJCloud : NSObject
 
-+ (id)retrieveCollection;
-+ (void)uploadCollectionToCloud:(id)collection;
-+ (void)sendStringToCloud:(NSString *)string;
++ (instancetype)sharedInstance;
+
+- (id)retrieveCollection;
+- (void)uploadCollectionToCloud:(id)collection;
+- (void)sendStringToCloud:(NSString *)string;
 @end

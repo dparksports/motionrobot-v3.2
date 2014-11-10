@@ -13,9 +13,10 @@
 @implementation MJGaugePanel {
     __weak IBOutlet MJPlasticCoverView *plasticCover;
     __weak IBOutlet MJFuelGuageView *guageView;
-    __weak IBOutlet UILabel *xLabel;
-    __weak IBOutlet UILabel *yLabel;
-    __weak IBOutlet UILabel *zLabel;
+    
+    __weak IBOutlet UILabel *positiveMajorUnitLabel;
+    __weak IBOutlet UILabel *negativeMajorUnitLabel;
+    __weak IBOutlet UILabel *zeroMajorUnitLabel;
 }
 
 - (id)initWithFrame:(CGRect)frame {
