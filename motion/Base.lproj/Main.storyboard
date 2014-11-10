@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Log-->
+        <!--Log Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="MJLogController" sceneMemberID="viewController">
@@ -67,7 +67,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Log" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="tableView" destination="fZL-6V-RYY" id="yPs-sO-dso"/>
                     </connections>
@@ -116,7 +115,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rNP-aC-Pem" userLabel="X Accel Gauge Panel" customClass="MJGaugePanel">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNP-aC-Pem" userLabel="X Accel Gauge Panel" customClass="MJGaugePanel">
                                 <rect key="frame" x="140" y="106" width="320" height="75"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRT-CM-qBK" userLabel="PlasticCover" customClass="MJPlasticCoverView">
@@ -191,7 +190,7 @@
                                     <outlet property="zeroMajorUnitLabel" destination="LFr-Eh-RCv" id="qMo-4E-ahH"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E02-cQ-kli" userLabel="Y Accel Gauge Panel" customClass="MJGaugePanel">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E02-cQ-kli" userLabel="Y Accel Gauge Panel" customClass="MJGaugePanel">
                                 <rect key="frame" x="140" y="182" width="320" height="75"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c19-DB-NtL" userLabel="PlasticCover" customClass="MJPlasticCoverView">
@@ -263,7 +262,7 @@
                                     <outlet property="plasticCover" destination="c19-DB-NtL" id="ctc-NV-1v1"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z1J-I0-ISD" userLabel="Z Accel Gauge Panel" customClass="MJGaugePanel">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1J-I0-ISD" userLabel="Z Accel Gauge Panel" customClass="MJGaugePanel">
                                 <rect key="frame" x="140" y="258" width="320" height="75"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIO-jH-u58" userLabel="PlasticCover" customClass="MJPlasticCoverView">
@@ -335,7 +334,7 @@
                                     <outlet property="plasticCover" destination="OIO-jH-u58" id="JUY-CI-AUM"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7gu-mo-nla" userLabel="X Gyro Gauge Panel" customClass="MJGaugePanel">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gu-mo-nla" userLabel="X Gyro Gauge Panel" customClass="MJGaugePanel">
                                 <rect key="frame" x="140" y="334" width="320" height="75"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJ7-cm-Ruc" userLabel="PlasticCover" customClass="MJPlasticCoverView">
@@ -407,7 +406,7 @@
                                     <outlet property="plasticCover" destination="BJ7-cm-Ruc" id="DH4-et-8d9"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mAN-3P-DCS" userLabel="Y Gyro Gauge Panel" customClass="MJGaugePanel">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAN-3P-DCS" userLabel="Y Gyro Gauge Panel" customClass="MJGaugePanel">
                                 <rect key="frame" x="140" y="410" width="320" height="70"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLK-Cr-XU2" userLabel="PlasticCover" customClass="MJPlasticCoverView">
@@ -479,7 +478,7 @@
                                     <outlet property="plasticCover" destination="JLK-Cr-XU2" id="8ab-X8-zX1"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F7S-UI-Z43" userLabel="Z Gyro Gauge Panel" customClass="MJGaugePanel">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7S-UI-Z43" userLabel="Z Gyro Gauge Panel" customClass="MJGaugePanel">
                                 <rect key="frame" x="140" y="481" width="320" height="70"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Of-sJ-KGQ" userLabel="PlasticCover" customClass="MJPlasticCoverView">
@@ -558,7 +557,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="VFp-tv-bnm" secondAttribute="trailing" constant="-16" id="2St-Po-UIb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z1J-I0-ISD" secondAttribute="trailing" constant="-15" id="6lW-YC-rkT"/>
                             <constraint firstItem="VFp-tv-bnm" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="8rL-pN-50I"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="F7S-UI-Z43" secondAttribute="bottom" id="BTY-fK-t7c"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="F7S-UI-Z43" secondAttribute="bottom" constant="49" id="BTY-fK-t7c"/>
                             <constraint firstAttribute="centerX" secondItem="rNP-aC-Pem" secondAttribute="centerX" id="D1k-VA-VUO"/>
                             <constraint firstItem="mAN-3P-DCS" firstAttribute="top" secondItem="7gu-mo-nla" secondAttribute="bottom" constant="1" id="EOO-FP-eDV"/>
                             <constraint firstItem="mAN-3P-DCS" firstAttribute="top" secondItem="7gu-mo-nla" secondAttribute="bottom" constant="-17" id="I1R-7b-hso"/>

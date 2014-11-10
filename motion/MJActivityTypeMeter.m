@@ -108,6 +108,11 @@ static void *MJActivityTypeUpdateContextKVO = &MJActivityTypeUpdateContextKVO;
 }
 
 - (void)startActivityUpdatesToQueue{
+    if (! _records) {
+        NSUInteger initialCapacity = 10 * 24 * 7;
+        id instance = [[NSMutableArray alloc] initWithCapacity:initialCapacity];
+        [self setRecords:instance];
+    }
     
     [_activityTypeManager stopActivityUpdates];
     [_activityTypeManager startActivityUpdatesToQueue:[NSOperationQueue mainQueue]

@@ -123,21 +123,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)atableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [atableView dequeueReusableCellWithIdentifier:@"SubtitleCellID" forIndexPath:indexPath];
-//    UITableViewCell *cell = [atableView dequeueReusableCellWithIdentifier:@"RightDetailCellID" forIndexPath:indexPath];
-    
+
     if (indexPath.section == 0) {
         CMPedometerData *pedometerData = _pedometerManager.records[indexPath.row];
-//        cell.textLabel.text = [pedometerData timestampString];
-//        cell.detailTextLabel.text = [pedometerData description];
-        
         cell.textLabel.text = [pedometerData description];
         cell.detailTextLabel.text = [pedometerData timestampString];
     }
     else if (indexPath.section == 1) {
         CMMotionActivity *activity = _typeManager.records[indexPath.row];
-//        cell.textLabel.text = [activity timestampString];
-//        cell.detailTextLabel.text = [activity description];
-        
         cell.textLabel.text = [activity description];
         cell.detailTextLabel.text = [activity timestampString];
     }

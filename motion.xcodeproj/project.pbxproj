@@ -581,12 +581,12 @@
 			children = (
 				59B7AE4F1A09ADFB006F71BE /* MJMotionMeter.h */,
 				59B7AE501A09ADFB006F71BE /* MJMotionMeter.m */,
-				591BA6851A0758C500B9278D /* MJPedoMeter.h */,
-				591BA6861A0758C500B9278D /* MJPedoMeter.m */,
 				596C8A761A082C390099F9FF /* MJTimeKeeper.h */,
 				596C8A771A082C3A0099F9FF /* MJTimeKeeper.m */,
 				596C8A731A0829990099F9FF /* MJActivityTypeMeter.h */,
 				596C8A741A0829990099F9FF /* MJActivityTypeMeter.m */,
+				591BA6851A0758C500B9278D /* MJPedoMeter.h */,
+				591BA6861A0758C500B9278D /* MJPedoMeter.m */,
 			);
 			name = meters;
 			sourceTree = "<group>";
