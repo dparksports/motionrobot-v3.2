@@ -9,7 +9,6 @@
 @import UIKit;
 @import QuartzCore;
 
-@interface MJMaskView : UIView
+@interface MJDebugQuartz : UIView
 
-- (void)maskLayer;
 @end

@@ -41,7 +41,7 @@ static inline double radians(double degrees) { return degrees * M_PI / 180; }
     CALayer *tickLayer = [CALayer layer];
     tickLayer.affineTransform = transform;
     
-    CGFloat width = (majorTick) ? 5 : 3;
+    CGFloat width = (majorTick) ? 6 : 2;
     CGFloat height = (majorTick) ? 120 : 115;
     CGFloat heightOffset = (majorTick) ? 40 : 45;
     CGSize needleImageSize = CGSizeMake(width, height);
@@ -57,17 +57,7 @@ static inline double radians(double degrees) { return degrees * M_PI / 180; }
     [self.layer addSublayer:tickLayer];
 }
 
-- (void)addUnitTick {
-//    [self.layer setBackgroundColor:[UIColor clearColor].CGColor];
-//    self.layer.contents = (id)[[UIImage imageNamed:@"VUMeterBackground"] CGImage];
-    
-//    CALayer *foregroundLayer = [CALayer layer];
-//    foregroundLayer.anchorPoint = CGPointZero;
-//    foregroundLayer.bounds = viewLayerBounds;
-//    foregroundLayer.contents = (id)[[UIImage imageNamed:@"VUMeterForeground"] CGImage];
-//    foregroundLayer.position = CGPointZero;
-//    [self.layer addSublayer:foregroundLayer];
-    
+- (void)addUnitTicks {
     [self  maskLayer];
     [self  addUnitTickAtRotation:-180/4.0 majorTick:YES];
     [self  addUnitTickAtRotation:(-180/4.0)/3.0*2 majorTick:NO];
@@ -80,27 +70,22 @@ static inline double radians(double degrees) { return degrees * M_PI / 180; }
 
 - (void)maskLayer {
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-    //    [shapeLayer setBackgroundColor:[UIColor clearColor].CGColor];
-    //    [shapeLayer setBorderColor:[UIColor orangeColor].CGColor];
-    //    [shapeLayer setBorderWidth:10];
     
-//    CGRect viewLayerBounds = self.layer.bounds;
-    CGRect boundary = self.layer.bounds;
-//    CGRect boundary = self.frame;
-    NSLog(@"%s: boundary:%@", __func__, NSStringFromCGRect(boundary));
-    NSLog(@"%s: self.frame:%@", __func__, NSStringFromCGRect(self.frame));
+    CGRect bounds = self.layer.bounds;
+    CGPoint center =  {bounds.size.width/2.0,
+                        bounds.size.height/2.0 + 34};
+    float outerRadius = bounds.size.width/2.0;
+    float innerRadius = bounds.size.width/2.0 * 0.8;
     
-    float radius = boundary.size.width/2.0 * 0.9;
-    CGPoint center =  {boundary.size.width/2.0, boundary.size.height/2.0};
-    UIBezierPath *path = [[UIBezierPath alloc] init];
+    UIBezierPath *path = [UIBezierPath new];
     [path addArcWithCenter:center
-                    radius:radius
+                    radius:outerRadius
                 startAngle:radians(0)
                   endAngle:radians(-180)
                  clockwise:NO];
     
-    float innerRadius = radius * 0.6;
-    CGPoint halfEdge =  {boundary.size.width/2.0 - innerRadius, boundary.size.height/2.0};
+    CGPoint halfEdge =  {bounds.size.width/2.0 - innerRadius,
+                        bounds.size.height/2.0 + 34};
     [path addLineToPoint:halfEdge];
     
     [path addArcWithCenter:center
@@ -108,103 +93,11 @@ static inline double radians(double degrees) { return degrees * M_PI / 180; }
                 startAngle:radians(-180)
                   endAngle:radians(0)
                  clockwise:YES];
-    //    [path addLineToPoint:center];
     [path closePath];
-    //    [path setLineWidth:1.0];
-    //    [path setLineJoinStyle:kCGLineJoinRound];
-    //    [path closePath];
-    //    [path addClip];
-//    [[UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:1.0] set];
-    //    [[UIColor blackColor] set];
-//    [path fill];
-//    [path addClip];
-    
-    shapeLayer.position = CGPointMake(0, boundary.size.height/2.0 + 11);
+
+    shapeLayer.position = CGPointMake(0, bounds.size.height/2.0);
     [shapeLayer setPath:path.CGPath];
-//    [self.layer addSublayer:shapeLayer];
-    self.layer.mask = shapeLayer;
-    
-
-    
-//    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:viewLayerBounds];
-//    [shapeLayer setPath:[path CGPath]];
-//        shapeLayer.position = CGPointMake(CGRectGetWidth(viewLayerBounds) / 2.0, 80);
-//
-//    //    [self.layer setBackgroundColor:[UIColor blueColor].CGColor];
-//    self.layer.mask = shapeLayer;
-//    //    [self.layer setMasksToBounds:YES];
-//    
-//    
-//    [self setNeedsDisplay];
+    [self.layer setMask:shapeLayer];
 }
-
-
-//- (void)drawRect:(CGRect)rect {
-//    [super drawRect:rect];
-//    
-//    NSLog(@"%s", __func__);
-//
-//    CGRect boundary = self.frame;
-//    float radius = boundary.size.width/2.0;
-//    float centerSize = radius * .8;
-//    
-//    UIBezierPath *path;
-//    //    path = [[UIBezierPath alloc] init];
-//    //    [path addArcWithCenter:center
-//    //                    radius:radius
-//    //                startAngle:radians(0)
-//    //                  endAngle:radians(360)
-//    //                 clockwise:YES];
-//    //    [path addLineToPoint:center];
-//    //    [path closePath];
-//    //
-//    //    [path setLineWidth:1.];//0.5
-//    //    [path setLineJoinStyle:kCGLineJoinRound];
-//    //    [[UIColor colorWithRed:1 green:1 blue:0 alpha:1] set];
-//    //    [[UIColor colorWithWhite:0.7 alpha:1] set];
-//    //    [path fill];
-//    
-//    path = [[UIBezierPath alloc] init];
-//    
-//    CGPoint center =  {boundary.size.width/2.0, boundary.size.height/2.0};
-//    [path addArcWithCenter:center
-//                    radius:radius
-//                startAngle:radians(0)
-//                  endAngle:radians(-180)
-//                 clockwise:NO];
-//
-//    CGPoint halfEdge =  {boundary.size.width/2.0 - centerSize, boundary.size.height/2.0};
-//    [path addLineToPoint:halfEdge];
-//    //    [path closePath];
-//    //    [[UIColor colorWithRed:1 green:0 blue:0 alpha:1] set];
-//    //    [path fill];
-//    
-//    
-//    //    [path setLineWidth:1.];//0.5
-//    //    [path setLineJoinStyle:kCGLineJoinRound];
-//    //    [[UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:1.0] set];
-//    //    [path fill];
-//    //
-//    //    path = [[UIBezierPath alloc] init];
-//    
-//    center.x = boundary.size.width/2.0;
-//    center.y = boundary.size.height/2.0;
-//    [path addArcWithCenter:center
-//                    radius:centerSize
-//                startAngle:radians(-180)
-//                  endAngle:radians(0)
-//                 clockwise:YES];
-//    //    [path addLineToPoint:center];
-//    [path closePath];
-//    //    [path setLineWidth:1.0];
-//    //    [path setLineJoinStyle:kCGLineJoinRound];
-//    //    [path closePath];
-//    //    [path addClip];
-//    [[UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:1.0] set];
-//    //    [[UIColor blackColor] set];
-//    [path fill];
-//    [path addClip];
-//}
-
 
 @end

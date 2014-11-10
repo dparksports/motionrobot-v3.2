@@ -36,7 +36,7 @@
         // pubnub limit: 32KB/message
         networkBufferCapacity = 32 * 1024;
         accelerometerDataCapacity = 1400;
-        gyroDataCapacity = 800;
+        gyroDataCapacity = 1400;
         
         id instance = nil;
         instance = [CMMotionManager new];

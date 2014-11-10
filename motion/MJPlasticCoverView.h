@@ -10,5 +10,5 @@
 
 @interface MJPlasticCoverView : UIView
 
-- (void)addUnitTick;
+- (void)addUnitTicks;
 @end
