@@ -21,7 +21,9 @@
 @end
 
 @implementation MJMotionMeter {
-    NSUInteger initialCapacity;
+    NSUInteger accelerometerDataCapacity;
+    NSUInteger gyroDataCapacity;
+    NSUInteger networkBufferCapacity;
 }
 
 - (void)dealloc {
@@ -31,7 +33,10 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        initialCapacity = 10 * 24 * 7;
+        // pubnub limit: 32KB/message
+        networkBufferCapacity = 32 * 1024;
+        accelerometerDataCapacity = 1400;
+        gyroDataCapacity = 800;
         
         id instance = nil;
         instance = [CMMotionManager new];
@@ -79,11 +84,11 @@
 
 - (void)startGyroUpdatesToQueue {
     if (! _gyroRecords) {
-        id instance = [[NSMutableArray alloc] initWithCapacity:initialCapacity];
+        id instance = [[NSMutableArray alloc] initWithCapacity:gyroDataCapacity];
         [self setGyroRecords:instance];
     }
 
-    [_motionManager setGyroUpdateInterval:1/1.0];
+    [_motionManager setGyroUpdateInterval:1/10.0]; 
     [_motionManager startGyroUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:
      ^(CMGyroData *gyroData, NSError *error)
      {
@@ -124,7 +129,7 @@
 
 - (void)startAccelerometerUpdatesToQueue {
     if (! _accelerationRecords) {
-        id instance = [[NSMutableArray alloc] initWithCapacity:initialCapacity];
+        id instance = [[NSMutableArray alloc] initWithCapacity:accelerometerDataCapacity];
         [self setAccelerationRecords:instance];
     }
     
@@ -138,31 +143,29 @@
             if (self.delegate)
                 [self.delegate updateAccelerometerData:accelerometerData];
             dispatch_async(self.cloudQueue, ^{
-                [self compressAccelerometerData:accelerometerData];
+//                [self compressAccelerometerData:accelerometerData];
             });
         }
     }];
 }
 
 - (void)compressGyroData:(CMGyroData *)gyroData {
-    [_accelerationRecords addObject:gyroData];
-    NSUInteger count = [_accelerationRecords count];
-//    NSLog(@"%s: count:%lu", __func__, (unsigned long)count);
-    NSUInteger capacity = 1400;
+    [_gyroRecords addObject:gyroData];
+    NSUInteger count = [_gyroRecords count];
     
-    if (count >= capacity) {
-        NSMutableString *mutable = [NSMutableString stringWithCapacity:32 * 1024];
+    if (count >= gyroDataCapacity) {
+        NSMutableString *mutable = [NSMutableString stringWithCapacity:networkBufferCapacity];
         
-        CMAccelerometerData *data = [_accelerationRecords firstObject];
+        CMAccelerometerData *data = [_gyroRecords firstObject];
         NSString *dateString = [data dateString];
         [mutable appendString:dateString];
         
         for (int i = 0; i < count; i++) {
-            CMAccelerometerData *data = _accelerationRecords[i];
+            CMAccelerometerData *data = _gyroRecords[i];
             NSString *compressedString = [data compressedString];
             [mutable appendString:compressedString];
         }
-        [_accelerationRecords removeAllObjects];
+        [_gyroRecords removeAllObjects];
         [MJCloud sendStringToCloud:mutable];
     }
 }
@@ -170,11 +173,9 @@
 - (void)compressAccelerometerData:(CMAccelerometerData *)accelerometerData {
     [_accelerationRecords addObject:accelerometerData];
     NSUInteger count = [_accelerationRecords count];
-    //    NSLog(@"%s: count:%lu", __func__, (unsigned long)count);
-    NSUInteger capacity = 1400;
     
-    if (count >= capacity) {
-        NSMutableString *mutable = [NSMutableString stringWithCapacity:32 * 1024];
+    if (count >= accelerometerDataCapacity) {
+        NSMutableString *mutable = [NSMutableString stringWithCapacity:networkBufferCapacity];
         
         CMAccelerometerData *data = [_accelerationRecords firstObject];
         NSString *dateString = [data dateString];
@@ -190,9 +191,8 @@
     }
 }
 
-- (void)batchUploadCompressedToCloud{
-//    [MJCloud sendStringToCloud:_gyroRecords];
-//    [MJCloud sendStringToCloud:_accelerationRecords];
+- (void)uploadBatchToCloud{
+//    todo
 }
 
 - (void)collectAndUploadJSONToCloud:(CMAccelerometerData *)accelerometerData {

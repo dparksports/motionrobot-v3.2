@@ -1,4 +1,4 @@
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface MGLiveMeterView : UIView
 @property (nonatomic) float value;

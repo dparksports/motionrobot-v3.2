@@ -19,10 +19,15 @@
 @end
 
 @implementation MJGaugeController {    
-    __weak IBOutlet MJPlasticCoverView *plasticCover;
+    __weak IBOutlet MJPlasticCoverView *accelPlasticCover;
     __weak IBOutlet MJFuelGuageView *xAccelerationGauge;
     __weak IBOutlet MJFuelGuageView *yAccelerationGauge;
     __weak IBOutlet MJFuelGuageView *zAccelerationGauge;
+    
+    __weak IBOutlet MJPlasticCoverView *gyroPlasticCover;
+    __weak IBOutlet MJFuelGuageView *zGyroGauge;
+    __weak IBOutlet MJFuelGuageView *yGyroGauge;
+    __weak IBOutlet MJFuelGuageView *xGyroGauge;
     
     __weak IBOutlet UILabel *xGyroLabel;
     __weak IBOutlet UILabel *yGyroLabel;
@@ -45,7 +50,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self addGauge];
+    [self addGauges];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -61,23 +66,24 @@
 
 #pragma mark - addGauge
 
-- (void)addGauge {
+- (void)addGauges {
+    [xGyroGauge addNeedleLayer];
+    [yGyroGauge addNeedleLayer];
+    [zGyroGauge addNeedleLayer];
+    [accelPlasticCover addUnitTick];
+    
     [xAccelerationGauge addNeedleLayer];
     [yAccelerationGauge addNeedleLayer];
     [zAccelerationGauge addNeedleLayer];
-    [plasticCover addUnitTick];
+    [gyroPlasticCover addUnitTick];
 
+    [xGyroGauge setNeedleColor:[UIColor redColor]];
+    [yGyroGauge setNeedleColor:[UIColor redColor]];
+    [zGyroGauge setNeedleColor:[UIColor redColor]];
+    
     [xAccelerationGauge setNeedleColor:[UIColor redColor]];
     [yAccelerationGauge setNeedleColor:[UIColor redColor]];
     [zAccelerationGauge setNeedleColor:[UIColor redColor]];
-
-//    [xAccelerationGauge setNeedleColor:[UIColor redColor]];
-//    [yAccelerationGauge setNeedleColor:[UIColor greenColor]];
-//    [zAccelerationGauge setNeedleColor:[UIColor whiteColor]];
-    
-//    [xAccelerationGauge setShadowColor:[UIColor orangeColor]];
-//    [yAccelerationGauge setShadowColor:[UIColor cyanColor]];
-//    [zAccelerationGauge setShadowColor:[UIColor redColor]];
 }
 
 #pragma mark - MJMotionMeterDelegate
@@ -88,6 +94,10 @@
     xGyroLabel.text = [NSString stringWithFormat:@"%1.3f", gyroData.rotationRate.x];
     yGyroLabel.text = [NSString stringWithFormat:@"%1.3f", gyroData.rotationRate.y];
     zGyroLabel.text = [NSString stringWithFormat:@"%1.3f", gyroData.rotationRate.z];
+    
+    [xGyroGauge setValue:gyroData.rotationRate.x];
+//    [yGyroGauge setValue:gyroData.rotationRate.y];
+//    [zGyroGauge setValue:gyroData.rotationRate.z];
 }
 
 - (void)updateAccelerometerData:(CMAccelerometerData*)accelerometerData {

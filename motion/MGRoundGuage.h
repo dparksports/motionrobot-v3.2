@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 magicpoint.us. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h>
+@import UIKit;
+@import QuartzCore;
 
 @interface MGRoundGuage : UIView
 
