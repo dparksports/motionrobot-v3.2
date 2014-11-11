@@ -8,9 +8,9 @@
 
 @import UIKit;
 @import QuartzCore;
-#import "MJRoundPanel.h"
+#import "MJRoundPane.h"
 
-@interface MJCirclePanel : MJRoundPanel
+@interface MJCirclePane : MJRoundPane
 
 - (void)constructPanel;
 @end

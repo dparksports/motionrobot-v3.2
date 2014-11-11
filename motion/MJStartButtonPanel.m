@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
-#import "MJCirclePanel.h"
-#import "MJLogoPanel.h"
+#import "MJCirclePane.h"
+#import "MJLogoPane.h"
 #import "MJStartButtonPanel.h"
 
 @implementation MJStartButtonPanel {
-    __weak IBOutlet MJCirclePanel *circlePanel;
-    __weak IBOutlet MJLogoPanel *logoPanel;
+    __weak IBOutlet MJCirclePane *circlePanel;
+    __weak IBOutlet MJLogoPane *logoPanel;
     __weak IBOutlet UILabel *startMomentLabel;
 }
 
@@ -37,9 +37,9 @@
 
 - (void)toggleAccelerometerUpdates:(BOOL)isOn {
     if (isOn) {
-        startMomentLabel.text = @"STOP MOMENT";
+        startMomentLabel.text = @"STOP ACTIVITY";
     } else {
-        startMomentLabel.text = @"BEGIN MOMENT";
+        startMomentLabel.text = @"BEGIN ACTIVITY";
     }
     
     [UIView animateWithDuration:1/2.0

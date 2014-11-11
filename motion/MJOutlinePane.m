@@ -7,9 +7,9 @@
 //
 
 
-#import "MJDebugQuartz.h"
+#import "MJOutlinePane.h"
 
-@implementation MJDebugQuartz
+@implementation MJOutlinePane
 
 + (Class)layerClass {
     NSLog(@"%s", __func__);

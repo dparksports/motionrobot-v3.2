@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5906B1CD1A08468E00925D4D /* MJLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5906B1CC1A08468E00925D4D /* MJLogController.m */; };
 		591BA6871A0758C500B9278D /* MJPedoMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BA6861A0758C500B9278D /* MJPedoMeter.m */; };
-		5935D43B1A0F5E5400E4CDCC /* MJRoundPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5935D43A1A0F5E5400E4CDCC /* MJRoundPanel.m */; };
+		5935D43B1A0F5E5400E4CDCC /* MJRoundPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 5935D43A1A0F5E5400E4CDCC /* MJRoundPane.m */; };
 		5935D43E1A108C3F00E4CDCC /* MJGaugePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5935D43D1A108C3F00E4CDCC /* MJGaugePanel.m */; };
 		5960958A1A09F309006DCDE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5960957F1A09F2AF006DCDE6 /* CoreGraphics.framework */; };
 		5960958B1A09F309006DCDE6 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596095801A09F2AF006DCDE6 /* CoreMotion.framework */; };
@@ -21,10 +21,10 @@
 		596C8A781A082C3A0099F9FF /* MJTimeKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C8A771A082C3A0099F9FF /* MJTimeKeeper.m */; };
 		596C8A7B1A0838B50099F9FF /* CMPedometerData+MJPedometerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C8A7A1A0838B50099F9FF /* CMPedometerData+MJPedometerData.m */; };
 		596C8A7E1A083DB20099F9FF /* CMMotionActivity+MJMotionActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C8A7D1A083DB20099F9FF /* CMMotionActivity+MJMotionActivity.m */; };
-		5973CD091A11EA6F00BE8034 /* MJCirclePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5973CD081A11EA6F00BE8034 /* MJCirclePanel.m */; };
-		5973CD0C1A11F42E00BE8034 /* MJLogoPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5973CD0B1A11F42E00BE8034 /* MJLogoPanel.m */; };
+		5973CD091A11EA6F00BE8034 /* MJCirclePane.m in Sources */ = {isa = PBXBuildFile; fileRef = 5973CD081A11EA6F00BE8034 /* MJCirclePane.m */; };
+		5973CD0C1A11F42E00BE8034 /* MJLogoPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 5973CD0B1A11F42E00BE8034 /* MJLogoPane.m */; };
 		5986E3211A0AF31F000421DA /* MJFuelGuageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599E1F061A0AC4E1000B48CF /* MJFuelGuageView.m */; };
-		5986E3241A0AFD15000421DA /* MJDebugQuartz.m in Sources */ = {isa = PBXBuildFile; fileRef = 5986E3231A0AFD15000421DA /* MJDebugQuartz.m */; };
+		5986E3241A0AFD15000421DA /* MJOutlinePane.m in Sources */ = {isa = PBXBuildFile; fileRef = 5986E3231A0AFD15000421DA /* MJOutlinePane.m */; };
 		598F0AEE1A0ACE3200BB8858 /* MJPlasticCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 598F0AED1A0ACE3200BB8858 /* MJPlasticCoverView.m */; };
 		598F1C781A11FD9F00740646 /* MJStartButtonPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 598F1C771A11FD9F00740646 /* MJStartButtonPanel.m */; };
 		59A2B1731A0CDC8F00D8912E /* MJSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A2B1721A0CDC8F00D8912E /* MJSerialize.m */; };
@@ -165,8 +165,8 @@
 		5906B1CC1A08468E00925D4D /* MJLogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJLogController.m; sourceTree = "<group>"; };
 		591BA6851A0758C500B9278D /* MJPedoMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPedoMeter.h; sourceTree = "<group>"; };
 		591BA6861A0758C500B9278D /* MJPedoMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPedoMeter.m; sourceTree = "<group>"; };
-		5935D4391A0F5E5400E4CDCC /* MJRoundPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRoundPanel.h; sourceTree = "<group>"; };
-		5935D43A1A0F5E5400E4CDCC /* MJRoundPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRoundPanel.m; sourceTree = "<group>"; };
+		5935D4391A0F5E5400E4CDCC /* MJRoundPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRoundPane.h; sourceTree = "<group>"; };
+		5935D43A1A0F5E5400E4CDCC /* MJRoundPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRoundPane.m; sourceTree = "<group>"; };
 		5935D43C1A108C3F00E4CDCC /* MJGaugePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJGaugePanel.h; sourceTree = "<group>"; };
 		5935D43D1A108C3F00E4CDCC /* MJGaugePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJGaugePanel.m; sourceTree = "<group>"; };
 		5960957F1A09F2AF006DCDE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -183,12 +183,12 @@
 		596C8A7A1A0838B50099F9FF /* CMPedometerData+MJPedometerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMPedometerData+MJPedometerData.m"; sourceTree = "<group>"; };
 		596C8A7C1A083DB20099F9FF /* CMMotionActivity+MJMotionActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMMotionActivity+MJMotionActivity.h"; sourceTree = "<group>"; };
 		596C8A7D1A083DB20099F9FF /* CMMotionActivity+MJMotionActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMMotionActivity+MJMotionActivity.m"; sourceTree = "<group>"; };
-		5973CD071A11EA6F00BE8034 /* MJCirclePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCirclePanel.h; sourceTree = "<group>"; };
-		5973CD081A11EA6F00BE8034 /* MJCirclePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCirclePanel.m; sourceTree = "<group>"; };
-		5973CD0A1A11F42E00BE8034 /* MJLogoPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJLogoPanel.h; sourceTree = "<group>"; };
-		5973CD0B1A11F42E00BE8034 /* MJLogoPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJLogoPanel.m; sourceTree = "<group>"; };
-		5986E3221A0AFD15000421DA /* MJDebugQuartz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDebugQuartz.h; sourceTree = "<group>"; };
-		5986E3231A0AFD15000421DA /* MJDebugQuartz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDebugQuartz.m; sourceTree = "<group>"; };
+		5973CD071A11EA6F00BE8034 /* MJCirclePane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCirclePane.h; sourceTree = "<group>"; };
+		5973CD081A11EA6F00BE8034 /* MJCirclePane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCirclePane.m; sourceTree = "<group>"; };
+		5973CD0A1A11F42E00BE8034 /* MJLogoPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJLogoPane.h; sourceTree = "<group>"; };
+		5973CD0B1A11F42E00BE8034 /* MJLogoPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJLogoPane.m; sourceTree = "<group>"; };
+		5986E3221A0AFD15000421DA /* MJOutlinePane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJOutlinePane.h; sourceTree = "<group>"; };
+		5986E3231A0AFD15000421DA /* MJOutlinePane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJOutlinePane.m; sourceTree = "<group>"; };
 		598F0AEC1A0ACE3200BB8858 /* MJPlasticCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPlasticCoverView.h; sourceTree = "<group>"; };
 		598F0AED1A0ACE3200BB8858 /* MJPlasticCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPlasticCoverView.m; sourceTree = "<group>"; };
 		598F1C761A11FD9F00740646 /* MJStartButtonPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJStartButtonPanel.h; sourceTree = "<group>"; };
@@ -586,14 +586,14 @@
 				599E1F061A0AC4E1000B48CF /* MJFuelGuageView.m */,
 				598F0AEC1A0ACE3200BB8858 /* MJPlasticCoverView.h */,
 				598F0AED1A0ACE3200BB8858 /* MJPlasticCoverView.m */,
-				5986E3221A0AFD15000421DA /* MJDebugQuartz.h */,
-				5986E3231A0AFD15000421DA /* MJDebugQuartz.m */,
-				5935D4391A0F5E5400E4CDCC /* MJRoundPanel.h */,
-				5935D43A1A0F5E5400E4CDCC /* MJRoundPanel.m */,
-				5973CD071A11EA6F00BE8034 /* MJCirclePanel.h */,
-				5973CD081A11EA6F00BE8034 /* MJCirclePanel.m */,
-				5973CD0A1A11F42E00BE8034 /* MJLogoPanel.h */,
-				5973CD0B1A11F42E00BE8034 /* MJLogoPanel.m */,
+				5986E3221A0AFD15000421DA /* MJOutlinePane.h */,
+				5986E3231A0AFD15000421DA /* MJOutlinePane.m */,
+				5935D4391A0F5E5400E4CDCC /* MJRoundPane.h */,
+				5935D43A1A0F5E5400E4CDCC /* MJRoundPane.m */,
+				5973CD071A11EA6F00BE8034 /* MJCirclePane.h */,
+				5973CD081A11EA6F00BE8034 /* MJCirclePane.m */,
+				5973CD0A1A11F42E00BE8034 /* MJLogoPane.h */,
+				5973CD0B1A11F42E00BE8034 /* MJLogoPane.m */,
 			);
 			name = "custom views";
 			sourceTree = "<group>";
@@ -1188,13 +1188,13 @@
 				59BA4AD11A10B9A70017085B /* NSString+PNAddition.m in Sources */,
 				59BA4AB11A10B9A70017085B /* PNTimeTokenResponseParser.m in Sources */,
 				59BA4ABC1A10B9A70017085B /* PNConfiguration.m in Sources */,
-				5935D43B1A0F5E5400E4CDCC /* MJRoundPanel.m in Sources */,
+				5935D43B1A0F5E5400E4CDCC /* MJRoundPane.m in Sources */,
 				59BA4AA01A10B9A70017085B /* PNActionResponseParser.m in Sources */,
 				59BA4AAB1A10B9A70017085B /* PNGroupChannelsListChangeParser.m in Sources */,
 				59BA4AD01A10B9A70017085B /* NSSet+PNAdditions.m in Sources */,
 				59BA4ADA1A10B9A70017085B /* PNChannelGroupRemoveRequest.m in Sources */,
 				59BA4ABD1A10B9A70017085B /* PNDate.m in Sources */,
-				5973CD0C1A11F42E00BE8034 /* MJLogoPanel.m in Sources */,
+				5973CD0C1A11F42E00BE8034 /* MJLogoPane.m in Sources */,
 				59BA4AA11A10B9A70017085B /* PNChannelEventsResponseParser.m in Sources */,
 				598F0AEE1A0ACE3200BB8858 /* MJPlasticCoverView.m in Sources */,
 				59BA4AD41A10B9A70017085B /* PNLogger.m in Sources */,
@@ -1243,9 +1243,9 @@
 				598F1C781A11FD9F00740646 /* MJStartButtonPanel.m in Sources */,
 				59B7AE571A09B249006F71BE /* CMGyroData+MJGyroData.m in Sources */,
 				59BA4AAA1A10B9A70017085B /* PNErrorResponseParser.m in Sources */,
-				5973CD091A11EA6F00BE8034 /* MJCirclePanel.m in Sources */,
+				5973CD091A11EA6F00BE8034 /* MJCirclePane.m in Sources */,
 				59BA4AED1A10B9A70017085B /* PNNetworkHelper.m in Sources */,
-				5986E3241A0AFD15000421DA /* MJDebugQuartz.m in Sources */,
+				5986E3241A0AFD15000421DA /* MJOutlinePane.m in Sources */,
 				59A2B1761A0CDD8F00D8912E /* MJError.m in Sources */,
 				59BA4AEC1A10B9A70017085B /* PNMessagingChannel.m in Sources */,
 				59B7AE511A09ADFB006F71BE /* MJMotionMeter.m in Sources */,

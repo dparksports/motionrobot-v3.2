@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
-#import "MJRoundPanel.h"
+#import "MJRoundPane.h"
 
-@implementation MJRoundPanel
+@implementation MJRoundPane
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

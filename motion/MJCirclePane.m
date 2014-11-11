@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
-#import "MJCirclePanel.h"
+#import "MJCirclePane.h"
 
-@implementation MJCirclePanel
+@implementation MJCirclePane
 
 + (Class)layerClass {
     NSLog(@"%s", __func__);

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
-#import "MJLogoPanel.h"
+#import "MJLogoPane.h"
 
-@implementation MJLogoPanel
+@implementation MJLogoPane
 
 + (Class)layerClass {
     NSLog(@"%s", __func__);

@@ -7,9 +7,9 @@
 //
 
 @import UIKit;
-#import "MJRoundPanel.h"
+#import "MJRoundPane.h"
 
-@interface MJGaugePanel : MJRoundPanel
+@interface MJGaugePanel : MJRoundPane
 @property (nonatomic, readwrite) float value;
 
 - (void)constructPanel;

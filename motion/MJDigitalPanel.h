@@ -8,6 +8,7 @@
 
 @import Foundation;
 @import UIKit;
+#import "MJOutlinePane.h"
 
 @interface MJDigitalPanel : UIView
 

@@ -9,7 +9,7 @@
 @import UIKit;
 @import QuartzCore;
 
-@interface MJRoundPanel : UIView
+@interface MJRoundPane : UIView
 
 - (void)roundCorners:(CGFloat)cornerRadius;
 @end

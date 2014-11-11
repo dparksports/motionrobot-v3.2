@@ -12,7 +12,7 @@
 // custom views
 #import "MJDigitalPanel.h"
 #import "MJGaugePanel.h"
-#import "MJRoundPanel.h"
+#import "MJRoundPane.h"
 #import "MJStartButtonPanel.h"
 
 // descriptions

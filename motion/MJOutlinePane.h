@@ -9,6 +9,6 @@
 @import UIKit;
 @import QuartzCore;
 
-@interface MJDebugQuartz : UIView
+@interface MJOutlinePane : UIView
 
 @end
