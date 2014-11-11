@@ -29,4 +29,5 @@
 - (BOOL)checkAccelerometerAvailableUI;
 - (void)stopAccelerometerUpdates;
 - (void)startAccelerometerUpdatesToQueue;
+- (BOOL)isAccelerometerActive;
 @end

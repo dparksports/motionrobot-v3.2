@@ -144,93 +144,8 @@
                                     <outlet property="digitalLabel" destination="vz3-8M-YNh" id="HFI-jL-rew"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Noc-1L-E2X" userLabel="Distance Panel" customClass="MJDigitalPanel">
-                                <rect key="frame" x="140" y="98" width="320" height="70"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" image="edit-penalty-time" translatesAutoresizingMaskIntoConstraints="NO" id="kjx-Xl-XSL">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
-                                    </imageView>
-                                    <label hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="8,888.8" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHC-qJ-cbB" userLabel="backdropLabel">
-                                        <rect key="frame" x="0.0" y="3" width="290" height="60"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="EkB-S6-edh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="58"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIg-Ol-8a8" userLabel="digitalLabel">
-                                        <rect key="frame" x="0.0" y="3" width="290" height="60"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="58"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="left" text="ST" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvz-2n-OO0" userLabel="unitLabel">
-                                        <rect key="frame" x="292" y="50" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="XMw-A9-AXi"/>
-                                            <constraint firstAttribute="width" constant="20" id="apX-MX-gnY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="kjx-Xl-XSL" firstAttribute="bottom" secondItem="Noc-1L-E2X" secondAttribute="bottom" id="0Pg-vb-nZ2"/>
-                                    <constraint firstAttribute="trailing" secondItem="PHC-qJ-cbB" secondAttribute="trailing" constant="30" id="8ZZ-Ov-Cnz"/>
-                                    <constraint firstAttribute="height" constant="70" id="AtH-Yt-gSS"/>
-                                    <constraint firstItem="PHC-qJ-cbB" firstAttribute="leading" secondItem="Noc-1L-E2X" secondAttribute="leading" id="SsH-qg-PU5"/>
-                                    <constraint firstItem="iIg-Ol-8a8" firstAttribute="leading" secondItem="Noc-1L-E2X" secondAttribute="leading" id="UuM-Sg-eJ6"/>
-                                    <constraint firstItem="iIg-Ol-8a8" firstAttribute="top" secondItem="Noc-1L-E2X" secondAttribute="top" constant="3" id="XVK-hf-4M3"/>
-                                    <constraint firstItem="Fvz-2n-OO0" firstAttribute="trailing" secondItem="Noc-1L-E2X" secondAttribute="trailing" constant="-8" id="bLD-ql-J2X"/>
-                                    <constraint firstAttribute="width" constant="320" id="bM3-2p-X46"/>
-                                    <constraint firstAttribute="trailing" secondItem="iIg-Ol-8a8" secondAttribute="trailing" constant="30" id="gc8-eg-c8J"/>
-                                    <constraint firstItem="kjx-Xl-XSL" firstAttribute="leading" secondItem="Noc-1L-E2X" secondAttribute="leading" id="iI3-Iz-te8"/>
-                                    <constraint firstItem="kjx-Xl-XSL" firstAttribute="top" secondItem="Noc-1L-E2X" secondAttribute="top" id="kfJ-yF-MER"/>
-                                    <constraint firstAttribute="trailing" secondItem="kjx-Xl-XSL" secondAttribute="trailing" id="na4-vx-Q68"/>
-                                    <constraint firstItem="PHC-qJ-cbB" firstAttribute="baseline" secondItem="iIg-Ol-8a8" secondAttribute="baseline" id="pp3-1O-ys1"/>
-                                    <constraint firstItem="iIg-Ol-8a8" firstAttribute="top" secondItem="PHC-qJ-cbB" secondAttribute="top" id="qEr-Hm-owo"/>
-                                    <constraint firstItem="Fvz-2n-OO0" firstAttribute="bottom" secondItem="Noc-1L-E2X" secondAttribute="bottom" id="rfr-D0-LyP"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="backdropLabel" destination="PHC-qJ-cbB" id="4h3-hO-Jqc"/>
-                                    <outlet property="digitalLabel" destination="iIg-Ol-8a8" id="z6m-LX-1tA"/>
-                                </connections>
-                            </view>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFp-tv-bnm">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem systemItem="play" id="JZ2-2W-nrA">
-                                        <connections>
-                                            <action selector="startAccelerometerUpdates:" destination="8rJ-Kc-sve" id="Ihc-uc-24d"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Accel" id="4Me-mk-rNJ" userLabel="Accelerometer"/>
-                                    <barButtonItem systemItem="pause" id="Dwk-dO-MbO">
-                                        <connections>
-                                            <action selector="stopAccelerometerUpdates:" destination="8rJ-Kc-sve" id="JuM-F7-1Cx"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9SV-91-Oro"/>
-                                    <barButtonItem systemItem="pause" id="Pcu-Ho-jTg">
-                                        <connections>
-                                            <action selector="stopGyroUpdates:" destination="8rJ-Kc-sve" id="Dr2-3S-oqw"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Gyro" id="qKh-xW-yxI"/>
-                                    <barButtonItem systemItem="play" id="P6q-Nk-UQm">
-                                        <connections>
-                                            <action selector="startGyroUpdates:" destination="8rJ-Kc-sve" id="Nqs-05-cvg"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNP-aC-Pem" userLabel="X Accel Gauge Panel" customClass="MJGaugePanel">
-                                <rect key="frame" x="140" y="305" width="320" height="75"/>
+                                <rect key="frame" x="140" y="98" width="320" height="75"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRT-CM-qBK" userLabel="PlasticCover" customClass="MJPlasticCoverView">
                                         <rect key="frame" x="10" y="-8" width="300" height="125"/>
@@ -279,7 +194,7 @@
                                         </variation>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="fRT-CM-qBK" secondAttribute="centerY" constant="-0.5" id="3Kl-SP-iZ7"/>
                                     <constraint firstAttribute="centerY" secondItem="QOY-Zd-dck" secondAttribute="centerY" constant="-0.5" id="Upj-2B-SSE"/>
@@ -305,7 +220,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E02-cQ-kli" userLabel="Y Accel Gauge Panel" customClass="MJGaugePanel">
-                                <rect key="frame" x="140" y="388" width="320" height="75"/>
+                                <rect key="frame" x="140" y="181" width="320" height="75"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c19-DB-NtL" userLabel="PlasticCover" customClass="MJPlasticCoverView">
                                         <rect key="frame" x="10" y="-8" width="300" height="125"/>
@@ -354,7 +269,7 @@
                                         </variation>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="c19-DB-NtL" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="top" constant="-8" id="3b0-EG-gqd"/>
                                     <constraint firstAttribute="height" constant="75" id="BZg-CZ-aTO"/>
@@ -377,7 +292,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1J-I0-ISD" userLabel="Z Accel Gauge Panel" customClass="MJGaugePanel">
-                                <rect key="frame" x="140" y="471" width="320" height="75"/>
+                                <rect key="frame" x="140" y="264" width="320" height="75"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIO-jH-u58" userLabel="PlasticCover" customClass="MJPlasticCoverView">
                                         <rect key="frame" x="10" y="-8" width="300" height="125"/>
@@ -426,7 +341,7 @@
                                         </variation>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="OIO-jH-u58" firstAttribute="top" secondItem="Z1J-I0-ISD" secondAttribute="top" constant="-8" id="YLf-7G-1Fo"/>
                                     <constraint firstAttribute="centerX" secondItem="OIO-jH-u58" secondAttribute="centerX" id="Yud-1c-M2K"/>
@@ -448,54 +363,96 @@
                                     <outlet property="plasticCover" destination="OIO-jH-u58" id="JUY-CI-AUM"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqm-iA-SZ9" customClass="MJLogoPanel">
+                                <rect key="frame" x="255" y="461" width="90" height="90"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="JuP-cp-x9t"/>
+                                    <constraint firstAttribute="height" constant="90" id="hUm-7b-jOu"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tml-hC-Uuv" customClass="MJCirclePanel">
+                                <rect key="frame" x="255" y="461" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="EPd-bl-aUe"/>
+                                    <constraint firstAttribute="height" constant="90" id="S8e-x0-rqL"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJ4-R7-W04">
+                                <rect key="frame" x="255" y="461" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="dHr-MK-lE8"/>
+                                    <constraint firstAttribute="height" constant="90" id="rJK-AX-seI"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleAccelerometerUpdates:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="iub-1G-w8N"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEGIN MOMENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCR-oC-int">
+                                <rect key="frame" x="230" y="559" width="140" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="2KO-kg-U2v"/>
+                                    <constraint firstAttribute="height" constant="21" id="pU4-qZ-WN8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="VFp-tv-bnm" secondAttribute="trailing" constant="-16" id="2St-Po-UIb"/>
                             <constraint firstItem="E02-cQ-kli" firstAttribute="top" secondItem="rNP-aC-Pem" secondAttribute="bottom" constant="8" id="3tx-As-Sp0"/>
                             <constraint firstAttribute="centerX" secondItem="yCx-PE-ovx" secondAttribute="centerX" id="5by-zk-gIv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z1J-I0-ISD" secondAttribute="trailing" constant="-15" id="6lW-YC-rkT"/>
-                            <constraint firstAttribute="centerX" secondItem="Noc-1L-E2X" secondAttribute="centerX" id="8l3-SG-stC"/>
-                            <constraint firstItem="VFp-tv-bnm" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="8rL-pN-50I"/>
+                            <constraint firstItem="dCR-oC-int" firstAttribute="top" secondItem="mqm-iA-SZ9" secondAttribute="bottom" constant="8" id="7QU-eg-PCO"/>
+                            <constraint firstItem="rNP-aC-Pem" firstAttribute="top" secondItem="yCx-PE-ovx" secondAttribute="bottom" constant="8" id="7Wj-Ai-q5a"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="tml-hC-Uuv" secondAttribute="bottom" constant="49" id="9Jy-3G-XqC"/>
                             <constraint firstItem="yCx-PE-ovx" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="AUZ-Cz-ahr"/>
                             <constraint firstAttribute="centerX" secondItem="rNP-aC-Pem" secondAttribute="centerX" id="D1k-VA-VUO"/>
-                            <constraint firstItem="VFp-tv-bnm" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-16" id="K3O-VG-8ZO"/>
+                            <constraint firstAttribute="centerX" secondItem="dCR-oC-int" secondAttribute="centerX" id="ERl-p4-fDy"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="dCR-oC-int" secondAttribute="bottom" constant="20" id="GpP-kd-GL8"/>
+                            <constraint firstItem="dCR-oC-int" firstAttribute="top" secondItem="mqm-iA-SZ9" secondAttribute="bottom" constant="70" id="Jer-2T-WwW"/>
                             <constraint firstItem="rNP-aC-Pem" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="-1" id="Mqi-bK-MB4"/>
-                            <constraint firstItem="VFp-tv-bnm" firstAttribute="top" secondItem="Z1J-I0-ISD" secondAttribute="bottom" constant="1" id="PjR-px-2eO"/>
+                            <constraint firstItem="dCR-oC-int" firstAttribute="top" secondItem="tml-hC-Uuv" secondAttribute="bottom" constant="8" id="NAm-0n-8Hw"/>
+                            <constraint firstAttribute="centerX" secondItem="mqm-iA-SZ9" secondAttribute="centerX" id="R5k-2Z-3lu"/>
                             <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="8" id="dbE-RE-nS2"/>
-                            <constraint firstItem="VFp-tv-bnm" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="fGC-Zf-lJU"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="JJ4-R7-W04" secondAttribute="bottom" constant="49" id="dz5-i8-5tz"/>
+                            <constraint firstItem="JJ4-R7-W04" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="eN7-XA-JSs"/>
                             <constraint firstAttribute="centerX" secondItem="Z1J-I0-ISD" secondAttribute="centerX" id="gfC-7h-9nK"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="VFp-tv-bnm" secondAttribute="bottom" constant="8" id="hRp-7H-whb"/>
-                            <constraint firstItem="rNP-aC-Pem" firstAttribute="top" secondItem="VFp-tv-bnm" secondAttribute="bottom" constant="1" id="hsO-O1-vXg"/>
-                            <constraint firstAttribute="centerY" secondItem="VFp-tv-bnm" secondAttribute="centerY" id="hxt-ZK-kQC"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="mqm-iA-SZ9" secondAttribute="bottom" constant="8" symbolic="YES" id="jVJ-3h-Jb0"/>
+                            <constraint firstItem="dCR-oC-int" firstAttribute="top" secondItem="JJ4-R7-W04" secondAttribute="bottom" constant="8" id="jj5-eB-vwx"/>
+                            <constraint firstAttribute="centerX" secondItem="JJ4-R7-W04" secondAttribute="centerX" id="juv-Sj-6xn"/>
                             <constraint firstItem="E02-cQ-kli" firstAttribute="top" secondItem="rNP-aC-Pem" secondAttribute="bottom" constant="32" id="pVy-Jf-CDg"/>
                             <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="1" id="pn4-TT-5fz"/>
-                            <constraint firstItem="Noc-1L-E2X" firstAttribute="top" secondItem="yCx-PE-ovx" secondAttribute="bottom" constant="8" id="tBD-hd-6v2"/>
+                            <constraint firstItem="dCR-oC-int" firstAttribute="top" secondItem="tml-hC-Uuv" secondAttribute="bottom" constant="8" id="qwB-hZ-neL"/>
+                            <constraint firstAttribute="centerX" secondItem="tml-hC-Uuv" secondAttribute="centerX" id="va3-wd-KhK"/>
                             <constraint firstAttribute="centerX" secondItem="E02-cQ-kli" secondAttribute="centerX" id="vfw-ZF-vrT"/>
                             <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="8" id="wKM-7a-a5C"/>
-                            <constraint firstItem="VFp-tv-bnm" firstAttribute="top" secondItem="Z1J-I0-ISD" secondAttribute="bottom" constant="10" id="wyg-hZ-Tb7"/>
                             <constraint firstItem="E02-cQ-kli" firstAttribute="top" secondItem="rNP-aC-Pem" secondAttribute="bottom" constant="8" id="xfH-Iq-VVk"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="VFp-tv-bnm" secondAttribute="bottom" id="yT1-EB-0Rr"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Mqi-bK-MB4"/>
-                                <exclude reference="hsO-O1-vXg"/>
                                 <exclude reference="pVy-Jf-CDg"/>
                                 <exclude reference="6lW-YC-rkT"/>
                                 <exclude reference="pn4-TT-5fz"/>
-                                <exclude reference="8rL-pN-50I"/>
-                                <exclude reference="PjR-px-2eO"/>
-                                <exclude reference="fGC-Zf-lJU"/>
-                                <exclude reference="hxt-ZK-kQC"/>
-                                <exclude reference="hRp-7H-whb"/>
+                                <exclude reference="eN7-XA-JSs"/>
+                                <exclude reference="9Jy-3G-XqC"/>
+                                <exclude reference="dz5-i8-5tz"/>
+                                <exclude reference="jVJ-3h-Jb0"/>
+                                <exclude reference="Jer-2T-WwW"/>
+                                <exclude reference="NAm-0n-8Hw"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Gauge" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="circlePanel" destination="tml-hC-Uuv" id="rJW-Ge-lVI"/>
                         <outlet property="distanceDigitalPanel" destination="yCx-PE-ovx" id="bqZ-RW-fSX"/>
-                        <outlet property="stepsDigitalPanel" destination="Noc-1L-E2X" id="ZFj-y1-JxR"/>
+                        <outlet property="logoPanel" destination="mqm-iA-SZ9" id="wTV-Bi-WIR"/>
                         <outlet property="xAccelGaugePanel" destination="rNP-aC-Pem" id="Hd6-Tx-xEa"/>
                         <outlet property="yAccelGaugePanel" destination="E02-cQ-kli" id="PcY-rE-nim"/>
                         <outlet property="zAccelGaugePanel" destination="Z1J-I0-ISD" id="wJA-bx-JLE"/>

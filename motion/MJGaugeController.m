@@ -6,10 +6,17 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
+// meters
 #import "MJPedoMeter.h"
 #import "MJMotionMeter.h"
+// custom views
 #import "MJDigitalPanel.h"
 #import "MJGaugePanel.h"
+#import "MJRoundPanel.h"
+#import "MJCirclePanel.h"
+#import "MJLogoPanel.h"
+
+// descriptions
 #import "CMGyroData+MJGyroData.h"
 #import "CMAccelerometerData+MJAccelerometerData.h"
 #import "CMPedometerData+MJPedometerData.h"
@@ -26,7 +33,8 @@
     __weak IBOutlet MJGaugePanel *zAccelGaugePanel;
     
     __weak IBOutlet MJDigitalPanel *distanceDigitalPanel;
-    __weak IBOutlet MJDigitalPanel *stepsDigitalPanel;
+    __weak IBOutlet MJCirclePanel *circlePanel;
+    __weak IBOutlet MJLogoPanel *logoPanel;
 }
 
 - (void)dealloc {
@@ -84,11 +92,8 @@
         
         NSUInteger normalizedDistance = [pedometerData normalizedFractalDistance];
         [distanceDigitalPanel updateValue:normalizedDistance];
-        NSUInteger normalizedSteps = [pedometerData normalizedFractalSteps];
-        [stepsDigitalPanel updateValue:normalizedSteps];
         
         NSLog(@"%s: normalizedDistance:%lu", __func__, (unsigned long)normalizedDistance);
-        NSLog(@"%s: normalizedSteps:%lu", __func__, (unsigned long)normalizedSteps);
     }
     else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
@@ -100,7 +105,8 @@
     [yAccelGaugePanel constructPanel];
     [zAccelGaugePanel constructPanel];
     [distanceDigitalPanel constructPanel];
-    [stepsDigitalPanel constructPanel];
+    [circlePanel constructPanel];
+    [logoPanel constructPanel];    
 }
 
 #pragma mark - MJMotionMeterDelegate
@@ -135,6 +141,15 @@
 - (IBAction)startAccelerometerUpdates:(id)sender {
     if ([_motionMeter checkAccelerometerAvailableUI])
         [_motionMeter startAccelerometerUpdatesToQueue];
+}
+
+- (IBAction)toggleAccelerometerUpdates:(id)sender {
+    if ([_motionMeter isAccelerometerActive]) {
+        [_motionMeter stopAccelerometerUpdates];
+    } else {
+        if ([_motionMeter checkAccelerometerAvailableUI])
+            [_motionMeter startAccelerometerUpdatesToQueue];
+    }
 }
 
 @end

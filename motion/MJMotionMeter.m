@@ -123,6 +123,10 @@
     return available;
 }
 
+- (BOOL)isAccelerometerActive {
+    return [_motionManager isAccelerometerActive];
+}
+
 - (void)stopAccelerometerUpdates {
     if ([_motionManager isAccelerometerActive])
         [_motionManager stopAccelerometerUpdates];

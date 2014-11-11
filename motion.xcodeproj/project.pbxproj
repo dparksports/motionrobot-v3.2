@@ -21,6 +21,8 @@
 		596C8A781A082C3A0099F9FF /* MJTimeKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C8A771A082C3A0099F9FF /* MJTimeKeeper.m */; };
 		596C8A7B1A0838B50099F9FF /* CMPedometerData+MJPedometerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C8A7A1A0838B50099F9FF /* CMPedometerData+MJPedometerData.m */; };
 		596C8A7E1A083DB20099F9FF /* CMMotionActivity+MJMotionActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C8A7D1A083DB20099F9FF /* CMMotionActivity+MJMotionActivity.m */; };
+		5973CD091A11EA6F00BE8034 /* MJCirclePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5973CD081A11EA6F00BE8034 /* MJCirclePanel.m */; };
+		5973CD0C1A11F42E00BE8034 /* MJLogoPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5973CD0B1A11F42E00BE8034 /* MJLogoPanel.m */; };
 		5986E3211A0AF31F000421DA /* MJFuelGuageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599E1F061A0AC4E1000B48CF /* MJFuelGuageView.m */; };
 		5986E3241A0AFD15000421DA /* MJDebugQuartz.m in Sources */ = {isa = PBXBuildFile; fileRef = 5986E3231A0AFD15000421DA /* MJDebugQuartz.m */; };
 		598F0AEE1A0ACE3200BB8858 /* MJPlasticCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 598F0AED1A0ACE3200BB8858 /* MJPlasticCoverView.m */; };
@@ -180,6 +182,10 @@
 		596C8A7A1A0838B50099F9FF /* CMPedometerData+MJPedometerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMPedometerData+MJPedometerData.m"; sourceTree = "<group>"; };
 		596C8A7C1A083DB20099F9FF /* CMMotionActivity+MJMotionActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMMotionActivity+MJMotionActivity.h"; sourceTree = "<group>"; };
 		596C8A7D1A083DB20099F9FF /* CMMotionActivity+MJMotionActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMMotionActivity+MJMotionActivity.m"; sourceTree = "<group>"; };
+		5973CD071A11EA6F00BE8034 /* MJCirclePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCirclePanel.h; sourceTree = "<group>"; };
+		5973CD081A11EA6F00BE8034 /* MJCirclePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCirclePanel.m; sourceTree = "<group>"; };
+		5973CD0A1A11F42E00BE8034 /* MJLogoPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJLogoPanel.h; sourceTree = "<group>"; };
+		5973CD0B1A11F42E00BE8034 /* MJLogoPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJLogoPanel.m; sourceTree = "<group>"; };
 		5986E3221A0AFD15000421DA /* MJDebugQuartz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDebugQuartz.h; sourceTree = "<group>"; };
 		5986E3231A0AFD15000421DA /* MJDebugQuartz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDebugQuartz.m; sourceTree = "<group>"; };
 		598F0AEC1A0ACE3200BB8858 /* MJPlasticCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPlasticCoverView.h; sourceTree = "<group>"; };
@@ -579,6 +585,10 @@
 				5986E3231A0AFD15000421DA /* MJDebugQuartz.m */,
 				5935D4391A0F5E5400E4CDCC /* MJRoundPanel.h */,
 				5935D43A1A0F5E5400E4CDCC /* MJRoundPanel.m */,
+				5973CD071A11EA6F00BE8034 /* MJCirclePanel.h */,
+				5973CD081A11EA6F00BE8034 /* MJCirclePanel.m */,
+				5973CD0A1A11F42E00BE8034 /* MJLogoPanel.h */,
+				5973CD0B1A11F42E00BE8034 /* MJLogoPanel.m */,
 			);
 			name = "custom views";
 			sourceTree = "<group>";
@@ -1179,6 +1189,7 @@
 				59BA4AD01A10B9A70017085B /* NSSet+PNAdditions.m in Sources */,
 				59BA4ADA1A10B9A70017085B /* PNChannelGroupRemoveRequest.m in Sources */,
 				59BA4ABD1A10B9A70017085B /* PNDate.m in Sources */,
+				5973CD0C1A11F42E00BE8034 /* MJLogoPanel.m in Sources */,
 				59BA4AA11A10B9A70017085B /* PNChannelEventsResponseParser.m in Sources */,
 				598F0AEE1A0ACE3200BB8858 /* MJPlasticCoverView.m in Sources */,
 				59BA4AD41A10B9A70017085B /* PNLogger.m in Sources */,
@@ -1226,6 +1237,7 @@
 				5986E3211A0AF31F000421DA /* MJFuelGuageView.m in Sources */,
 				59B7AE571A09B249006F71BE /* CMGyroData+MJGyroData.m in Sources */,
 				59BA4AAA1A10B9A70017085B /* PNErrorResponseParser.m in Sources */,
+				5973CD091A11EA6F00BE8034 /* MJCirclePanel.m in Sources */,
 				59BA4AED1A10B9A70017085B /* PNNetworkHelper.m in Sources */,
 				5986E3241A0AFD15000421DA /* MJDebugQuartz.m in Sources */,
 				59A2B1761A0CDD8F00D8912E /* MJError.m in Sources */,

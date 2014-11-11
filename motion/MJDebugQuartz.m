@@ -35,14 +35,14 @@
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
 
-//    CGContextRef contextRef = UIGraphicsGetCurrentContext();
-//    CGContextSaveGState(contextRef);
-//    {
-//        CGContextSetLineWidth(contextRef, 1.0);
-//        CGContextSetStrokeColorWithColor(contextRef, [UIColor colorWithRed:1 green:0 blue:0 alpha:1].CGColor);
-//        CGContextStrokeRect(contextRef, rect);
-//    }
-//    CGContextRestoreGState(contextRef);
+    CGContextRef contextRef = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(contextRef);
+    {
+        CGContextSetLineWidth(contextRef, 1.0);
+        CGContextSetStrokeColorWithColor(contextRef, [UIColor colorWithRed:1 green:0 blue:0 alpha:1].CGColor);
+        CGContextStrokeRect(contextRef, rect);
+    }
+    CGContextRestoreGState(contextRef);
 }
 
 @end
