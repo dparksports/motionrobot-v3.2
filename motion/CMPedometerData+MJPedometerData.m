@@ -11,16 +11,20 @@
 @implementation CMPedometerData (MJPedometerData)
 
 
-- (NSUInteger)unsignedNumberOfSteps {
-    return [self.numberOfSteps unsignedIntegerValue];
+- (NSUInteger)normalizedFractalSteps {
+    float value = [self.numberOfSteps floatValue] * 10;
+    NSLog(@"%s: value:%lf", __func__, value);
+    
+    float normalizeFraction = ceilf(value);
+    NSUInteger fraction = (NSUInteger) normalizeFraction;
+    return fraction;
 }
 
 - (NSUInteger)normalizedFractalDistance {
-    float value = [self.distance floatValue];
+    float value = [self.distance floatValue] * 10;
     NSLog(@"%s: value:%lf", __func__, value);
     
-    float normalizeFraction = value * 10;
-    normalizeFraction = ceilf(normalizeFraction);
+    float normalizeFraction = ceilf(value);
     NSUInteger fraction = (NSUInteger) normalizeFraction;
     return fraction;
 }
@@ -57,8 +61,8 @@
     NSString *startString = [NSDateFormatter localizedStringFromDate:self.startDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterMediumStyle];
     NSString *endString = [self timestampShortString];
     
-    return [NSString stringWithFormat:@"steps:%lu, distance:%lf(m), ascended:%lu, descended:%lu, start:%@, end:%@",
-            [self.numberOfSteps longValue],
+    return [NSString stringWithFormat:@"steps:%lf, distance:%lf(m), ascended:%lu, descended:%lu, start:%@, end:%@",
+            [self.numberOfSteps floatValue],
             [self.distance floatValue],
             [self.floorsAscended longValue],
             [self.floorsDescended longValue],

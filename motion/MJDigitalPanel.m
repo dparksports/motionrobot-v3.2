@@ -41,8 +41,8 @@
     [digitalLabel setFont:ionfont];
     [backdropLabel setFont:ionfont];
     [backdropLabel setHidden:NO];
-    [backdropLabel setTextColor:[UIColor colorWithWhite:1 alpha:1/20.0]];
-    [digitalLabel setTextColor:[UIColor colorWithWhite:1 alpha:3/10.0]];
+    [backdropLabel setTextColor:[UIColor colorWithWhite:1.0 alpha:1/20.0]];
+    [digitalLabel setTextColor:[UIColor colorWithWhite:1.0 alpha:1.0]];
 }
 
 - (NSString*)processTimeString {

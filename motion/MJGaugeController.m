@@ -21,11 +21,12 @@
 @end
 
 @implementation MJGaugeController {
-    
     __weak IBOutlet MJGaugePanel *xAccelGaugePanel;
     __weak IBOutlet MJGaugePanel *yAccelGaugePanel;
     __weak IBOutlet MJGaugePanel *zAccelGaugePanel;
+    
     __weak IBOutlet MJDigitalPanel *distanceDigitalPanel;
+    __weak IBOutlet MJDigitalPanel *stepsDigitalPanel;
 }
 
 - (void)dealloc {
@@ -80,9 +81,14 @@
     
     if ([keyPath isEqualToString:@"records"] ) {
         CMPedometerData *pedometerData = [_pedometerManager.records lastObject];
-        NSUInteger normalizedFraction = [pedometerData normalizedFractalDistance];
-        NSLog(@"%s: normalizedFraction:%lu", __func__, (unsigned long)normalizedFraction);
-        [distanceDigitalPanel updateValue:normalizedFraction];
+        
+        NSUInteger normalizedDistance = [pedometerData normalizedFractalDistance];
+        [distanceDigitalPanel updateValue:normalizedDistance];
+        NSUInteger normalizedSteps = [pedometerData normalizedFractalSteps];
+        [stepsDigitalPanel updateValue:normalizedSteps];
+        
+        NSLog(@"%s: normalizedDistance:%lu", __func__, (unsigned long)normalizedDistance);
+        NSLog(@"%s: normalizedSteps:%lu", __func__, (unsigned long)normalizedSteps);
     }
     else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
@@ -94,7 +100,7 @@
     [yAccelGaugePanel constructPanel];
     [zAccelGaugePanel constructPanel];
     [distanceDigitalPanel constructPanel];
-    
+    [stepsDigitalPanel constructPanel];
 }
 
 #pragma mark - MJMotionMeterDelegate
