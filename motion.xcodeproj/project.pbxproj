@@ -135,6 +135,8 @@
 		59BA4AF71A10B9C70017085B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59BA4AF41A10B9C70017085B /* CFNetwork.framework */; };
 		59BA4AF81A10B9C70017085B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59BA4AF51A10B9C70017085B /* SystemConfiguration.framework */; };
 		59BA4AFB1A10BA740017085B /* MJPubnubProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA4AFA1A10BA740017085B /* MJPubnubProxy.m */; };
+		59BA4AFF1A11624E0017085B /* MJDigitalPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA4AFE1A11624D0017085B /* MJDigitalPanel.m */; };
+		59BA4B011A1167BC0017085B /* Urtd - IONC-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59BA4B001A1163A90017085B /* Urtd - IONC-Bold.otf */; };
 		59CEE8F31A09C2FB00CBCC55 /* MJGaugeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CEE8F21A09C2FB00CBCC55 /* MJGaugeController.m */; };
 		59CEE8F61A09D9DC00CBCC55 /* CMAccelerometerData+MJAccelerometerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CEE8F51A09D9DC00CBCC55 /* CMAccelerometerData+MJAccelerometerData.m */; };
 		59CEE8F91A09DA7000CBCC55 /* CMLogItem+MJLogItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CEE8F81A09DA7000CBCC55 /* CMLogItem+MJLogItem.m */; };
@@ -470,6 +472,9 @@
 		59BA4AF91A10BA740017085B /* MJPubnubProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPubnubProxy.h; sourceTree = "<group>"; };
 		59BA4AFA1A10BA740017085B /* MJPubnubProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPubnubProxy.m; sourceTree = "<group>"; };
 		59BA4AFC1A10BE6D0017085B /* MJCloudProxyProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCloudProxyProtocol.h; sourceTree = "<group>"; };
+		59BA4AFD1A11624D0017085B /* MJDigitalPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDigitalPanel.h; sourceTree = "<group>"; };
+		59BA4AFE1A11624D0017085B /* MJDigitalPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDigitalPanel.m; sourceTree = "<group>"; };
+		59BA4B001A1163A90017085B /* Urtd - IONC-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urtd - IONC-Bold.otf"; sourceTree = "<group>"; };
 		59CEE8F11A09C2FB00CBCC55 /* MJGaugeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJGaugeController.h; sourceTree = "<group>"; };
 		59CEE8F21A09C2FB00CBCC55 /* MJGaugeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJGaugeController.m; sourceTree = "<group>"; };
 		59CEE8F41A09D9DC00CBCC55 /* CMAccelerometerData+MJAccelerometerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMAccelerometerData+MJAccelerometerData.h"; sourceTree = "<group>"; };
@@ -562,6 +567,8 @@
 		59A2B1781A0CE9F600D8912E /* custom views */ = {
 			isa = PBXGroup;
 			children = (
+				59BA4AFD1A11624D0017085B /* MJDigitalPanel.h */,
+				59BA4AFE1A11624D0017085B /* MJDigitalPanel.m */,
 				5935D43C1A108C3F00E4CDCC /* MJGaugePanel.h */,
 				5935D43D1A108C3F00E4CDCC /* MJGaugePanel.m */,
 				599E1F051A0AC4E1000B48CF /* MJFuelGuageView.h */,
@@ -1027,6 +1034,7 @@
 		59D4D59D1A07344900A715B0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				59BA4B001A1163A90017085B /* Urtd - IONC-Bold.otf */,
 				59D4D59E1A07344900A715B0 /* Info.plist */,
 				59D4D59F1A07344900A715B0 /* main.m */,
 				59BA4AF31A10B9C70017085B /* libz.dylib */,
@@ -1141,6 +1149,7 @@
 			files = (
 				59D4D5AC1A07344900A715B0 /* Main.storyboard in Resources */,
 				596095921A09FB3D006DCDE6 /* Images.xcassets in Resources */,
+				59BA4B011A1167BC0017085B /* Urtd - IONC-Bold.otf in Resources */,
 				59BA4AF21A10B9A70017085B /* PNLoggerSymbols.plist in Resources */,
 				59D4D5B11A07344900A715B0 /* LaunchScreen.xib in Resources */,
 			);
@@ -1228,6 +1237,7 @@
 				59BA4A8D1A10B9A70017085B /* PNObservationCenter.m in Sources */,
 				59BA4ACA1A10B9A70017085B /* NSDictionary+PNAdditions.m in Sources */,
 				59BA4A9E1A10B9A70017085B /* PNCryptoHelper.m in Sources */,
+				59BA4AFF1A11624E0017085B /* MJDigitalPanel.m in Sources */,
 				59BA4AEE1A10B9A70017085B /* PNReachability.m in Sources */,
 				59BA4A901A10B9A70017085B /* PubNub+Cipher.m in Sources */,
 				59BA4ABF1A10B9A70017085B /* PNHereNow.m in Sources */,

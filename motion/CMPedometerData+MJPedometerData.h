@@ -15,4 +15,8 @@
 
 - (NSString *)description;
 - (NSString *)debugDescription;
+
+- (NSUInteger)unsignedNumberOfSteps;
+- (NSUInteger)normalizedFractalDistance;
+
 @end

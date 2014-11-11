@@ -132,7 +132,7 @@ static void *MJPedometerUpdateContextKVO = &MJPedometerUpdateContextKVO;
         if (error)
             [self handleErrorUI:error];
         else {
-            [_records insertObject:pedometerData atIndex:0];
+            [_records addObject:pedometerData];
             [self setUpdatedRecords:! _updatedRecords];
             NSLog(@"%s: %@", __func__, [pedometerData debugDescription]);
         }

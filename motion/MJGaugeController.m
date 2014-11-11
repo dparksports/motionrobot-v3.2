@@ -6,24 +6,26 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
+#import "MJPedoMeter.h"
 #import "MJMotionMeter.h"
+#import "MJDigitalPanel.h"
 #import "MJGaugePanel.h"
 #import "CMGyroData+MJGyroData.h"
 #import "CMAccelerometerData+MJAccelerometerData.h"
+#import "CMPedometerData+MJPedometerData.h"
 #import "MJGaugeController.h"
 
 @interface MJGaugeController () <MJMotionMeterDelegate>
 @property (nonatomic, strong) MJMotionMeter *motionMeter;
+@property (nonatomic, strong) MJPedoMeter *pedometerManager;
 @end
 
-@implementation MJGaugeController {    
+@implementation MJGaugeController {
+    
     __weak IBOutlet MJGaugePanel *xAccelGaugePanel;
     __weak IBOutlet MJGaugePanel *yAccelGaugePanel;
     __weak IBOutlet MJGaugePanel *zAccelGaugePanel;
-
-    __weak IBOutlet MJGaugePanel *xGyroGaugePanel;
-    __weak IBOutlet MJGaugePanel *yGyroGaugePanel;
-    __weak IBOutlet MJGaugePanel *zGyroGaugePanel;
+    __weak IBOutlet MJDigitalPanel *distanceDigitalPanel;
 }
 
 - (void)dealloc {
@@ -45,14 +47,44 @@
     
     [self setMotionMeter:[MJMotionMeter sharedInstance]];
     [_motionMeter setDelegate:self];
+    
+    if ([MJPedoMeter checkPedometerAvailableUI]) {
+        [self setPedometerManager:[MJPedoMeter sharedInstance]];
+        [_pedometerManager checkAuthorizationUI];
+        [_pedometerManager startPedometerUpdates];
+        [self registerObserverKVO];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
+    [self unregisterObserverKVO];
 }
 
-- (BOOL)prefersStatusBarHidden {
-    return YES;
+#pragma mark - KVO - MJPedoMeter
+
+- (void)unregisterObserverKVO {
+    NSLog(@"%s", __func__);
+    
+    [_pedometerManager unregisterObserverKVO:self];
+}
+
+- (void)registerObserverKVO {
+    NSLog(@"%s", __func__);
+    
+    [_pedometerManager registerObserverKVO:self];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    //    NSLog(@"%s: keyPath:%@, change:%@", __func__, keyPath, change);
+    
+    if ([keyPath isEqualToString:@"records"] ) {
+        CMPedometerData *pedometerData = [_pedometerManager.records lastObject];
+        NSUInteger normalizedFraction = [pedometerData normalizedFractalDistance];
+        NSLog(@"%s: normalizedFraction:%lu", __func__, (unsigned long)normalizedFraction);
+        [distanceDigitalPanel updateValue:normalizedFraction];
+    }
+    else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
 
 #pragma mark - addGauge
@@ -61,20 +93,14 @@
     [xAccelGaugePanel constructPanel];
     [yAccelGaugePanel constructPanel];
     [zAccelGaugePanel constructPanel];
+    [distanceDigitalPanel constructPanel];
     
-    [xGyroGaugePanel constructPanel];
-    [yGyroGaugePanel constructPanel];
-    [zGyroGaugePanel constructPanel];
 }
 
 #pragma mark - MJMotionMeterDelegate
 
 - (void)updateGyroData:(CMGyroData*)gyroData {
 //    NSLog(@"%s: %@", __func__, [gyroData description]);
-    
-    [xGyroGaugePanel setValue:gyroData.rotationRate.x];
-    [yGyroGaugePanel setValue:gyroData.rotationRate.y];
-    [zGyroGaugePanel setValue:gyroData.rotationRate.z];
 }
 
 - (void)updateAccelerometerData:(CMAccelerometerData*)accelerometerData {

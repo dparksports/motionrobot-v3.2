@@ -193,10 +193,6 @@
     }
 }
 
-- (void)uploadBatchToCloud{
-//    todo
-}
-
 #pragma mark - CMError
 
 - (void)handleErrorUI:(NSError *)error {
