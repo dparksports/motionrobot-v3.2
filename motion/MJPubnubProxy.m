@@ -52,12 +52,8 @@
      {
          if (error) {
              UIAlertView *infoAlertView = [UIAlertView new];
-             infoAlertView.title = [NSString stringWithFormat:@"%@(%@)",
-                                    [error localizedDescription],
-                                    NSStringFromClass([self class])];
-             infoAlertView.message = [NSString stringWithFormat:@"Reason:\n%@\nSuggestion:\n%@",
-                                      [error localizedFailureReason],
-                                      [error localizedRecoverySuggestion]];
+             infoAlertView.title = nil;
+             infoAlertView.message = [error localizedFailureReason];
              [infoAlertView addButtonWithTitle:@"OK"];
              [infoAlertView show];
          }

@@ -33,11 +33,12 @@
 
 - (void)constructPanel {
     [self maskLayer];
+    self.alpha = 0.0;
 }
 
 - (void)maskLayer {
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-    UIImage *image = [UIImage imageNamed:@"rules-whatcounts-icon"];
+    UIImage *image = [UIImage imageNamed:@"share_black_bar_swoosh"];
     shapeLayer.contents = (id)[image CGImage];
     
     CGRect bounds = self.layer.bounds;

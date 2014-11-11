@@ -75,7 +75,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Gauge-->
+        <!--Gauge Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="MJGaugeController" sceneMemberID="viewController">
@@ -145,7 +145,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNP-aC-Pem" userLabel="X Accel Gauge Panel" customClass="MJGaugePanel">
-                                <rect key="frame" x="140" y="98" width="320" height="75"/>
+                                <rect key="frame" x="140" y="106" width="320" height="75"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRT-CM-qBK" userLabel="PlasticCover" customClass="MJPlasticCoverView">
                                         <rect key="frame" x="10" y="-8" width="300" height="125"/>
@@ -173,7 +173,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAE-DF-K1i">
-                                        <rect key="frame" x="246" y="8" width="65" height="31"/>
+                                        <rect key="frame" x="270" y="8" width="42" height="31"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -220,7 +220,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E02-cQ-kli" userLabel="Y Accel Gauge Panel" customClass="MJGaugePanel">
-                                <rect key="frame" x="140" y="181" width="320" height="75"/>
+                                <rect key="frame" x="140" y="197" width="320" height="75"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c19-DB-NtL" userLabel="PlasticCover" customClass="MJPlasticCoverView">
                                         <rect key="frame" x="10" y="-8" width="300" height="125"/>
@@ -248,7 +248,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Y" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGX-Jn-02V">
-                                        <rect key="frame" x="245" y="8" width="65" height="31"/>
+                                        <rect key="frame" x="268" y="8" width="42" height="31"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -269,7 +269,7 @@
                                         </variation>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="c19-DB-NtL" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="top" constant="-8" id="3b0-EG-gqd"/>
                                     <constraint firstAttribute="height" constant="75" id="BZg-CZ-aTO"/>
@@ -292,7 +292,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1J-I0-ISD" userLabel="Z Accel Gauge Panel" customClass="MJGaugePanel">
-                                <rect key="frame" x="140" y="264" width="320" height="75"/>
+                                <rect key="frame" x="140" y="288" width="320" height="75"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIO-jH-u58" userLabel="PlasticCover" customClass="MJPlasticCoverView">
                                         <rect key="frame" x="10" y="-8" width="300" height="125"/>
@@ -320,7 +320,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Z" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8z-8F-wNZ">
-                                        <rect key="frame" x="245" y="8" width="65" height="31"/>
+                                        <rect key="frame" x="268" y="8" width="42" height="31"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -363,75 +363,91 @@
                                     <outlet property="plasticCover" destination="OIO-jH-u58" id="JUY-CI-AUM"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqm-iA-SZ9" customClass="MJLogoPanel">
-                                <rect key="frame" x="255" y="461" width="90" height="90"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0x3-Ft-B83" customClass="MJStartButtonPanel">
+                                <rect key="frame" x="200" y="400" width="200" height="200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqm-iA-SZ9" customClass="MJLogoPanel">
+                                        <rect key="frame" x="40" y="31" width="120" height="120"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="JuP-cp-x9t"/>
+                                            <constraint firstAttribute="height" constant="120" id="hUm-7b-jOu"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tml-hC-Uuv" customClass="MJCirclePanel">
+                                        <rect key="frame" x="40" y="31" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="EPd-bl-aUe"/>
+                                            <constraint firstAttribute="height" constant="120" id="S8e-x0-rqL"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJ4-R7-W04">
+                                        <rect key="frame" x="40" y="31" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="dHr-MK-lE8"/>
+                                            <constraint firstAttribute="height" constant="120" id="rJK-AX-seI"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggleAccelerometerUpdates:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="iub-1G-w8N"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEGIN MOMENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCR-oC-int">
+                                        <rect key="frame" x="30" y="159" width="140" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="2KO-kg-U2v"/>
+                                            <constraint firstAttribute="height" constant="21" id="pU4-qZ-WN8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="JuP-cp-x9t"/>
-                                    <constraint firstAttribute="height" constant="90" id="hUm-7b-jOu"/>
+                                    <constraint firstItem="JJ4-R7-W04" firstAttribute="top" secondItem="0x3-Ft-B83" secondAttribute="top" constant="31" id="4DA-B5-zpd"/>
+                                    <constraint firstAttribute="bottom" secondItem="dCR-oC-int" secondAttribute="bottom" constant="1" id="6va-AF-qVu"/>
+                                    <constraint firstAttribute="width" constant="200" id="8rJ-pr-gry"/>
+                                    <constraint firstAttribute="centerX" secondItem="JJ4-R7-W04" secondAttribute="centerX" id="B0Y-XQ-Rkw"/>
+                                    <constraint firstAttribute="height" constant="200" id="F68-rP-rqy"/>
+                                    <constraint firstAttribute="centerX" secondItem="mqm-iA-SZ9" secondAttribute="centerX" id="P5v-kh-4Ki"/>
+                                    <constraint firstAttribute="centerX" secondItem="tml-hC-Uuv" secondAttribute="centerX" id="Rpd-Jo-tLA"/>
+                                    <constraint firstItem="dCR-oC-int" firstAttribute="top" secondItem="JJ4-R7-W04" secondAttribute="bottom" constant="8" id="VdH-iy-x6D"/>
+                                    <constraint firstItem="mqm-iA-SZ9" firstAttribute="top" secondItem="0x3-Ft-B83" secondAttribute="top" constant="31" id="aab-ou-Ize"/>
+                                    <constraint firstItem="tml-hC-Uuv" firstAttribute="top" secondItem="0x3-Ft-B83" secondAttribute="top" constant="31" id="uSX-1C-Uww"/>
+                                    <constraint firstAttribute="centerX" secondItem="dCR-oC-int" secondAttribute="centerX" id="wil-5l-9Iz"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tml-hC-Uuv" customClass="MJCirclePanel">
-                                <rect key="frame" x="255" y="461" width="90" height="90"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="EPd-bl-aUe"/>
-                                    <constraint firstAttribute="height" constant="90" id="S8e-x0-rqL"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJ4-R7-W04">
-                                <rect key="frame" x="255" y="461" width="90" height="90"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="dHr-MK-lE8"/>
-                                    <constraint firstAttribute="height" constant="90" id="rJK-AX-seI"/>
-                                </constraints>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6va-AF-qVu"/>
+                                    </mask>
+                                </variation>
                                 <connections>
-                                    <action selector="toggleAccelerometerUpdates:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="iub-1G-w8N"/>
+                                    <outlet property="circlePanel" destination="tml-hC-Uuv" id="chp-Vb-duy"/>
+                                    <outlet property="logoPanel" destination="mqm-iA-SZ9" id="nGu-5n-iyX"/>
+                                    <outlet property="startMomentLabel" destination="dCR-oC-int" id="kBB-Wj-Q9A"/>
                                 </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEGIN MOMENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCR-oC-int">
-                                <rect key="frame" x="230" y="559" width="140" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="2KO-kg-U2v"/>
-                                    <constraint firstAttribute="height" constant="21" id="pU4-qZ-WN8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="E02-cQ-kli" firstAttribute="top" secondItem="rNP-aC-Pem" secondAttribute="bottom" constant="8" id="3tx-As-Sp0"/>
+                            <constraint firstItem="E02-cQ-kli" firstAttribute="top" secondItem="rNP-aC-Pem" secondAttribute="bottom" constant="16" id="3tx-As-Sp0"/>
                             <constraint firstAttribute="centerX" secondItem="yCx-PE-ovx" secondAttribute="centerX" id="5by-zk-gIv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z1J-I0-ISD" secondAttribute="trailing" constant="-15" id="6lW-YC-rkT"/>
-                            <constraint firstItem="dCR-oC-int" firstAttribute="top" secondItem="mqm-iA-SZ9" secondAttribute="bottom" constant="8" id="7QU-eg-PCO"/>
-                            <constraint firstItem="rNP-aC-Pem" firstAttribute="top" secondItem="yCx-PE-ovx" secondAttribute="bottom" constant="8" id="7Wj-Ai-q5a"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="tml-hC-Uuv" secondAttribute="bottom" constant="49" id="9Jy-3G-XqC"/>
+                            <constraint firstItem="rNP-aC-Pem" firstAttribute="top" secondItem="yCx-PE-ovx" secondAttribute="bottom" constant="16" id="7Wj-Ai-q5a"/>
+                            <constraint firstAttribute="centerX" secondItem="0x3-Ft-B83" secondAttribute="centerX" id="8MY-nG-Cl0"/>
                             <constraint firstItem="yCx-PE-ovx" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="AUZ-Cz-ahr"/>
                             <constraint firstAttribute="centerX" secondItem="rNP-aC-Pem" secondAttribute="centerX" id="D1k-VA-VUO"/>
-                            <constraint firstAttribute="centerX" secondItem="dCR-oC-int" secondAttribute="centerX" id="ERl-p4-fDy"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="dCR-oC-int" secondAttribute="bottom" constant="20" id="GpP-kd-GL8"/>
-                            <constraint firstItem="dCR-oC-int" firstAttribute="top" secondItem="mqm-iA-SZ9" secondAttribute="bottom" constant="70" id="Jer-2T-WwW"/>
                             <constraint firstItem="rNP-aC-Pem" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="-1" id="Mqi-bK-MB4"/>
-                            <constraint firstItem="dCR-oC-int" firstAttribute="top" secondItem="tml-hC-Uuv" secondAttribute="bottom" constant="8" id="NAm-0n-8Hw"/>
-                            <constraint firstAttribute="centerX" secondItem="mqm-iA-SZ9" secondAttribute="centerX" id="R5k-2Z-3lu"/>
-                            <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="8" id="dbE-RE-nS2"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="JJ4-R7-W04" secondAttribute="bottom" constant="49" id="dz5-i8-5tz"/>
-                            <constraint firstItem="JJ4-R7-W04" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="eN7-XA-JSs"/>
+                            <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="16" id="dbE-RE-nS2"/>
                             <constraint firstAttribute="centerX" secondItem="Z1J-I0-ISD" secondAttribute="centerX" id="gfC-7h-9nK"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="mqm-iA-SZ9" secondAttribute="bottom" constant="8" symbolic="YES" id="jVJ-3h-Jb0"/>
-                            <constraint firstItem="dCR-oC-int" firstAttribute="top" secondItem="JJ4-R7-W04" secondAttribute="bottom" constant="8" id="jj5-eB-vwx"/>
-                            <constraint firstAttribute="centerX" secondItem="JJ4-R7-W04" secondAttribute="centerX" id="juv-Sj-6xn"/>
                             <constraint firstItem="E02-cQ-kli" firstAttribute="top" secondItem="rNP-aC-Pem" secondAttribute="bottom" constant="32" id="pVy-Jf-CDg"/>
                             <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="1" id="pn4-TT-5fz"/>
-                            <constraint firstItem="dCR-oC-int" firstAttribute="top" secondItem="tml-hC-Uuv" secondAttribute="bottom" constant="8" id="qwB-hZ-neL"/>
-                            <constraint firstAttribute="centerX" secondItem="tml-hC-Uuv" secondAttribute="centerX" id="va3-wd-KhK"/>
                             <constraint firstAttribute="centerX" secondItem="E02-cQ-kli" secondAttribute="centerX" id="vfw-ZF-vrT"/>
-                            <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="8" id="wKM-7a-a5C"/>
-                            <constraint firstItem="E02-cQ-kli" firstAttribute="top" secondItem="rNP-aC-Pem" secondAttribute="bottom" constant="8" id="xfH-Iq-VVk"/>
+                            <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="16" id="wKM-7a-a5C"/>
+                            <constraint firstItem="E02-cQ-kli" firstAttribute="top" secondItem="rNP-aC-Pem" secondAttribute="bottom" constant="16" id="xfH-Iq-VVk"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="0x3-Ft-B83" secondAttribute="bottom" id="xr2-Yo-k9j"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -439,20 +455,12 @@
                                 <exclude reference="pVy-Jf-CDg"/>
                                 <exclude reference="6lW-YC-rkT"/>
                                 <exclude reference="pn4-TT-5fz"/>
-                                <exclude reference="eN7-XA-JSs"/>
-                                <exclude reference="9Jy-3G-XqC"/>
-                                <exclude reference="dz5-i8-5tz"/>
-                                <exclude reference="jVJ-3h-Jb0"/>
-                                <exclude reference="Jer-2T-WwW"/>
-                                <exclude reference="NAm-0n-8Hw"/>
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Gauge" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="circlePanel" destination="tml-hC-Uuv" id="rJW-Ge-lVI"/>
                         <outlet property="distanceDigitalPanel" destination="yCx-PE-ovx" id="bqZ-RW-fSX"/>
-                        <outlet property="logoPanel" destination="mqm-iA-SZ9" id="wTV-Bi-WIR"/>
+                        <outlet property="startButtonPanel" destination="0x3-Ft-B83" id="gC4-LO-kzb"/>
                         <outlet property="xAccelGaugePanel" destination="rNP-aC-Pem" id="Hd6-Tx-xEa"/>
                         <outlet property="yAccelGaugePanel" destination="E02-cQ-kli" id="PcY-rE-nim"/>
                         <outlet property="zAccelGaugePanel" destination="Z1J-I0-ISD" id="wJA-bx-JLE"/>

@@ -26,6 +26,7 @@
 		5986E3211A0AF31F000421DA /* MJFuelGuageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599E1F061A0AC4E1000B48CF /* MJFuelGuageView.m */; };
 		5986E3241A0AFD15000421DA /* MJDebugQuartz.m in Sources */ = {isa = PBXBuildFile; fileRef = 5986E3231A0AFD15000421DA /* MJDebugQuartz.m */; };
 		598F0AEE1A0ACE3200BB8858 /* MJPlasticCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 598F0AED1A0ACE3200BB8858 /* MJPlasticCoverView.m */; };
+		598F1C781A11FD9F00740646 /* MJStartButtonPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 598F1C771A11FD9F00740646 /* MJStartButtonPanel.m */; };
 		59A2B1731A0CDC8F00D8912E /* MJSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A2B1721A0CDC8F00D8912E /* MJSerialize.m */; };
 		59A2B1761A0CDD8F00D8912E /* MJError.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A2B1751A0CDD8F00D8912E /* MJError.m */; };
 		59A2B17B1A0CEA8200D8912E /* MJCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A2B17A1A0CEA8200D8912E /* MJCloud.m */; };
@@ -190,6 +191,8 @@
 		5986E3231A0AFD15000421DA /* MJDebugQuartz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDebugQuartz.m; sourceTree = "<group>"; };
 		598F0AEC1A0ACE3200BB8858 /* MJPlasticCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPlasticCoverView.h; sourceTree = "<group>"; };
 		598F0AED1A0ACE3200BB8858 /* MJPlasticCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPlasticCoverView.m; sourceTree = "<group>"; };
+		598F1C761A11FD9F00740646 /* MJStartButtonPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJStartButtonPanel.h; sourceTree = "<group>"; };
+		598F1C771A11FD9F00740646 /* MJStartButtonPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJStartButtonPanel.m; sourceTree = "<group>"; };
 		599E1F051A0AC4E1000B48CF /* MJFuelGuageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFuelGuageView.h; sourceTree = "<group>"; };
 		599E1F061A0AC4E1000B48CF /* MJFuelGuageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFuelGuageView.m; sourceTree = "<group>"; };
 		59A2B1711A0CDC8F00D8912E /* MJSerialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSerialize.h; sourceTree = "<group>"; };
@@ -577,6 +580,8 @@
 				59BA4AFE1A11624D0017085B /* MJDigitalPanel.m */,
 				5935D43C1A108C3F00E4CDCC /* MJGaugePanel.h */,
 				5935D43D1A108C3F00E4CDCC /* MJGaugePanel.m */,
+				598F1C761A11FD9F00740646 /* MJStartButtonPanel.h */,
+				598F1C771A11FD9F00740646 /* MJStartButtonPanel.m */,
 				599E1F051A0AC4E1000B48CF /* MJFuelGuageView.h */,
 				599E1F061A0AC4E1000B48CF /* MJFuelGuageView.m */,
 				598F0AEC1A0ACE3200BB8858 /* MJPlasticCoverView.h */,
@@ -1235,6 +1240,7 @@
 				59BA4A971A10B9A70017085B /* PubNub+Subscription.m in Sources */,
 				59BA4AEB1A10B9A70017085B /* PNWhereNowRequest.m in Sources */,
 				5986E3211A0AF31F000421DA /* MJFuelGuageView.m in Sources */,
+				598F1C781A11FD9F00740646 /* MJStartButtonPanel.m in Sources */,
 				59B7AE571A09B249006F71BE /* CMGyroData+MJGyroData.m in Sources */,
 				59BA4AAA1A10B9A70017085B /* PNErrorResponseParser.m in Sources */,
 				5973CD091A11EA6F00BE8034 /* MJCirclePanel.m in Sources */,

@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
-#import "MJRoundPanel.h"
 @import UIKit;
+#import "MJRoundPanel.h"
 
 @interface MJGaugePanel : MJRoundPanel
 @property (nonatomic, readwrite) float value;

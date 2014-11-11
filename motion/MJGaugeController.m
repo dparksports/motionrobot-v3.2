@@ -13,8 +13,7 @@
 #import "MJDigitalPanel.h"
 #import "MJGaugePanel.h"
 #import "MJRoundPanel.h"
-#import "MJCirclePanel.h"
-#import "MJLogoPanel.h"
+#import "MJStartButtonPanel.h"
 
 // descriptions
 #import "CMGyroData+MJGyroData.h"
@@ -33,8 +32,7 @@
     __weak IBOutlet MJGaugePanel *zAccelGaugePanel;
     
     __weak IBOutlet MJDigitalPanel *distanceDigitalPanel;
-    __weak IBOutlet MJCirclePanel *circlePanel;
-    __weak IBOutlet MJLogoPanel *logoPanel;
+    __weak IBOutlet MJStartButtonPanel *startButtonPanel;
 }
 
 - (void)dealloc {
@@ -68,6 +66,10 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self unregisterObserverKVO];
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 #pragma mark - KVO - MJPedoMeter
@@ -105,8 +107,8 @@
     [yAccelGaugePanel constructPanel];
     [zAccelGaugePanel constructPanel];
     [distanceDigitalPanel constructPanel];
-    [circlePanel constructPanel];
-    [logoPanel constructPanel];    
+    [startButtonPanel constructPanel];
+    
 }
 
 #pragma mark - MJMotionMeterDelegate
@@ -146,9 +148,12 @@
 - (IBAction)toggleAccelerometerUpdates:(id)sender {
     if ([_motionMeter isAccelerometerActive]) {
         [_motionMeter stopAccelerometerUpdates];
+        [startButtonPanel toggleAccelerometerUpdates:NO];
     } else {
-        if ([_motionMeter checkAccelerometerAvailableUI])
+        if ([_motionMeter checkAccelerometerAvailableUI]) {
             [_motionMeter startAccelerometerUpdatesToQueue];
+            [startButtonPanel toggleAccelerometerUpdates:YES];
+        }
     }
 }
 
