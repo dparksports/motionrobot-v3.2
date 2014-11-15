@@ -11,9 +11,12 @@
 
 @interface CMGyroData (MJGyroData) <MJSONProtocol>
 
-- (void)dejsonify:(NSDictionary *)dictionary;
-- (NSDictionary*)jsonify;
-
 - (NSString *)description;
 - (NSString *)debugDescription;
+
+// MJSONProtocol
+- (void)dejsonify:(NSDictionary *)dictionary;
+- (NSDictionary*)jsonify;
+- (void)decompressString:(NSDictionary *)dictionary;
+- (NSString *)compressedString;
 @end

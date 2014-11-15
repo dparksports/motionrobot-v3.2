@@ -11,6 +11,21 @@
 
 @implementation CMDeviceMotion (MJDeviceMotion)
 
+- (double)velocity{
+    double sigma = 0;
+    sigma += self.userAcceleration.x*self.userAcceleration.x;
+    sigma += self.userAcceleration.y*self.userAcceleration.y;
+    sigma += self.userAcceleration.z*self.userAcceleration.z;
+    double vectorAcceleration = sqrt(sigma);
+    NSTimeInterval samplingRate = 1/10.0;
+    double vectorVelocity = vectorAcceleration * samplingRate;
+    
+//    NSString *string = [NSString stringWithFormat:@"sigma:%1.6f vectorAcceleration:%1.6f vectorVelocity:%1.6f", sigma, vectorAcceleration, vectorVelocity];
+//    NSLog(@"%@", string);
+    
+    return vectorVelocity;
+}
+
 #pragma mark - MJSONProtocol
 
 - (void)decompressString:(NSDictionary *)dictionary {

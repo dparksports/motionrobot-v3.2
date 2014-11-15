@@ -11,7 +11,7 @@
 @import CoreMotion;
 
 @protocol MJMotionMeterDelegate <NSObject>
-- (void)updateMotionData:(CMDeviceMotion*)motionData;
+- (void)updateMotionData:(CMDeviceMotion*)motionData sum:(double)deviceMotionSum;
 - (void)updateGyroData:(CMGyroData*)gyroData;
 - (void)updateAccelerometerData:(CMAccelerometerData*)accelerometerData;
 @end

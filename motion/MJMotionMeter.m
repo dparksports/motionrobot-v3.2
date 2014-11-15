@@ -10,6 +10,7 @@
 #import "CMLogItem+MJLogItem.h"
 #import "CMGyroData+MJGyroData.h"
 #import "CMAccelerometerData+MJAccelerometerData.h"
+#import "CMDeviceMotion+MJDeviceMotion.h"
 
 #import "MJMotionMeter.h"
 
@@ -23,6 +24,9 @@
 @end
 
 @implementation MJMotionMeter {
+    double deviceMotionSum;
+    double deviceMotionSigma;
+    NSUInteger deviceMotionCount;
     NSUInteger accelerometerDataCapacity;
     NSUInteger gyroDataCapacity;
     NSUInteger deviceMotionDataCapacity;
@@ -100,15 +104,24 @@
         [self setDeviceMotionRecords:instance];
     }
     
-    [_motionManager setDeviceMotionUpdateInterval:1/8.0];  // 1/10.0
+    [_motionManager setDeviceMotionUpdateInterval:1/10.0];  // 1/10.0
     [_motionManager startDeviceMotionUpdatesToQueue:_deviceMotionQueue withHandler:
      ^(CMDeviceMotion *motion, NSError *error)
      {
          if (error)
              [self handleErrorUI:error];
          else {
+             deviceMotionCount++;
+             if (deviceMotionCount % 10 == 0) {
+//                 deviceMotionSigma = 3.28 * deviceMotionSigma;
+                 deviceMotionSum += deviceMotionSigma;
+                 NSString *string = [NSString stringWithFormat:@"deviceMotionSum:%1.3f , deviceMotionSigma:%1.3f", deviceMotionSum, deviceMotionSigma];
+                 NSLog(@"%@", string);
+                 deviceMotionSigma = 0;
+             }
+             else deviceMotionSigma += [motion velocity];
              if (self.delegate)
-                 [self.delegate updateMotionData:motion];
+                 [self.delegate updateMotionData:motion sum:deviceMotionSum];
          }
      }];
 }

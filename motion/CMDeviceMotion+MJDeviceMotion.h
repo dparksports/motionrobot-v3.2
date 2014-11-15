@@ -11,10 +11,13 @@
 
 @interface CMDeviceMotion (MJDeviceMotion) <MJSONProtocol>
 
-- (void)dejsonify:(NSDictionary *)dictionary;
-- (NSDictionary*)jsonify;
-
-- (NSString *)xDescription;
+- (double)velocity;
 - (NSString *)description;
 - (NSString *)debugDescription;
+
+// MJSONProtocol
+- (void)dejsonify:(NSDictionary *)dictionary;
+- (NSDictionary*)jsonify;
+- (void)decompressString:(NSDictionary *)dictionary;
+- (NSString *)compressedString;
 @end

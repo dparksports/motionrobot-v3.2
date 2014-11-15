@@ -28,11 +28,14 @@
 @end
 
 @implementation MJGaugeController {
+    double deviceMotionSum;
+
     __weak IBOutlet MJGaugePanel *xAccelGaugePanel;
     __weak IBOutlet MJGaugePanel *yAccelGaugePanel;
     __weak IBOutlet MJGaugePanel *zAccelGaugePanel;
     
     __weak IBOutlet MJDigitalPanel *distanceDigitalPanel;
+    __weak IBOutlet MJDigitalPanel *calculatedDigitalPanel;
     __weak IBOutlet MJStartButtonPanel *startButtonPanel;
 }
 
@@ -106,6 +109,11 @@
         NSUInteger normalizedDistance = [pedometerData normalizedFractalDistance];
         [distanceDigitalPanel updateValue:normalizedDistance];
         
+        float value = deviceMotionSum * 10;
+        float normalizeFraction = ceilf(value);
+        NSUInteger distance = (NSUInteger) normalizeFraction;
+        [calculatedDigitalPanel updateValue:distance];
+        
         NSLog(@"%s: normalizedDistance:%lu", __func__, (unsigned long)normalizedDistance);
     }
     else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -118,17 +126,20 @@
     [yAccelGaugePanel constructPanel];
     [zAccelGaugePanel constructPanel];
     [distanceDigitalPanel constructPanel];
+    [calculatedDigitalPanel constructPanel];
     [startButtonPanel constructPanel];
-    
 }
 
 #pragma mark - MJMotionMeterDelegate
 
-- (void)updateMotionData:(CMDeviceMotion*)motionData {
+- (void)updateMotionData:(CMDeviceMotion*)motionData sum:(double)motionSum{
 //    NSLog(@"%s: %@", __func__, [motionData description]);
     
+    deviceMotionSum = motionSum;
+    double vectorVelocity = [motionData velocity];
     [xAccelGaugePanel setValue:motionData.userAcceleration.x];
-    [yAccelGaugePanel setValue:motionData.userAcceleration.y];
+    [yAccelGaugePanel setValue:vectorVelocity];
+//    [yAccelGaugePanel setValue:motionData.userAcceleration.y];
     [zAccelGaugePanel setValue:motionData.userAcceleration.z];
 }
 
