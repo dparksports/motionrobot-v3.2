@@ -11,6 +11,7 @@
 @import CoreMotion;
 
 @protocol MJMotionMeterDelegate <NSObject>
+- (void)updateMotionData:(CMDeviceMotion*)motionData;
 - (void)updateGyroData:(CMGyroData*)gyroData;
 - (void)updateAccelerometerData:(CMAccelerometerData*)accelerometerData;
 @end
@@ -20,10 +21,17 @@
 
 + (instancetype)sharedInstance;
 
+// DeviceMotion
+- (BOOL)checkDeviceMotionAvailableUI;
+- (void)stopDeviceMotionUpdates;
+- (void)startDeviceMotionUpdatesToQueue;
+- (BOOL)isDeviceMotionActive;
+
 // Gyro
 - (BOOL)checkGyroAvailableUI;
 - (void)stopGyroUpdates;
 - (void)startGyroUpdatesToQueue;
+- (BOOL)isGyroActive;
 
 // Accelerometer
 - (BOOL)checkAccelerometerAvailableUI;

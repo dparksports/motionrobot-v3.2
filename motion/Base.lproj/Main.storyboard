@@ -1,80 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8rJ-Kc-sve">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Log Controller-->
-        <scene sceneID="hNz-n2-bh7">
-            <objects>
-                <viewController id="9pv-A4-QxB" customClass="MJLogController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fZL-6V-RYY">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubtitleCellID" textLabel="lLH-a0-k86" detailTextLabel="f0W-J4-0Tl" style="IBUITableViewCellStyleSubtitle" id="GXU-mv-6zK">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GXU-mv-6zK" id="Dsg-eB-6VG">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lLH-a0-k86">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f0W-J4-0Tl">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="SOh-pY-492"/>
-                                    <outlet property="delegate" destination="9pv-A4-QxB" id="Iqh-WM-VmF"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="fZL-6V-RYY" secondAttribute="trailing" constant="-16" id="2tT-nF-2QU"/>
-                            <constraint firstAttribute="trailing" secondItem="fZL-6V-RYY" secondAttribute="trailing" id="Hd5-7b-Dkj"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="fZL-6V-RYY" secondAttribute="bottom" id="OyG-z5-bRK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fZL-6V-RYY" secondAttribute="trailing" constant="-16" id="Ozq-Id-qsU"/>
-                            <constraint firstItem="fZL-6V-RYY" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="aAi-Ww-Iy4"/>
-                            <constraint firstItem="fZL-6V-RYY" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="ntW-R5-Uib"/>
-                            <constraint firstItem="fZL-6V-RYY" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="v7t-qh-jYM"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Hd5-7b-Dkj"/>
-                                <exclude reference="Ozq-Id-qsU"/>
-                                <exclude reference="v7t-qh-jYM"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="fZL-6V-RYY" id="yPs-sO-dso"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
-        </scene>
         <!--Gauge Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -90,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCx-PE-ovx" userLabel="Distance Panel" customClass="MJDigitalPanel">
                                 <rect key="frame" x="140" y="28" width="320" height="70"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" image="edit-penalty-time" translatesAutoresizingMaskIntoConstraints="NO" id="OAk-pv-t4T">
+                                    <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleToFill" image="edit-penalty-time" translatesAutoresizingMaskIntoConstraints="NO" id="OAk-pv-t4T">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                     </imageView>
                                     <label hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="8,888.8" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwh-l5-Elt" userLabel="backdropLabel">
@@ -391,7 +321,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="toggleAccelerometerUpdates:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="iub-1G-w8N"/>
+                                            <action selector="toggleDeviceMotionUpdates:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="yJQ-yV-Gb5"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEGIN ACTIVITY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCR-oC-int">

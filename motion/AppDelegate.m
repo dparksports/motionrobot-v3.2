@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Dan Park. All rights reserved.
 //
 
+#import "Flurry.h"
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
@@ -16,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [Flurry startSession:@"2R7KH2SZ5MPVFMC6S23Y"];
     return YES;
 }
 

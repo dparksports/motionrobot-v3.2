@@ -38,8 +38,6 @@ static CGFloat convertValueWithinDisplayAngle(CGFloat value) {
     return self;
 }
 
-#define SCALE_NEEDLE 1.25
-
 - (void)addNeedleLayer {
     CGRect viewLayerBounds = self.layer.bounds;
     [self.layer setBackgroundColor:[UIColor clearColor].CGColor];
@@ -58,7 +56,7 @@ static CGFloat convertValueWithinDisplayAngle(CGFloat value) {
     [_needleLayer setBackgroundColor:[UIColor redColor].CGColor];
     [_needleLayer setOpacity:1.0];
     
-    CGAffineTransform transform = CGAffineTransformMakeScale(SCALE_NEEDLE, SCALE_NEEDLE);
+    CGAffineTransform transform = CGAffineTransformMakeScale(1.25, 1.25);
     transform = CGAffineTransformRotate(transform, (DEGREE_TO_RADIAN * -38.0));
     _needleLayer.affineTransform = transform;
     _needleLayer.drawsAsynchronously = YES;
@@ -82,12 +80,15 @@ static CGFloat convertValueWithinDisplayAngle(CGFloat value) {
     if (_value != value) {
         _value = value;
         
-        float convert = convertValueWithinDisplayAngle(value);
-//        NSLog(@"%s: %1.4f, convert:%1.4f", __func__, value, convert);
-        
-        CGAffineTransform transform = CGAffineTransformMakeScale(SCALE_NEEDLE, SCALE_NEEDLE);
-        transform = CGAffineTransformRotate(transform, convert);
-        _needleLayer.affineTransform = transform;
+
+        dispatch_async(dispatch_get_main_queue(), ^() {
+            float convert = convertValueWithinDisplayAngle(value);
+//            NSLog(@"%s: %1.4f, convert:%1.4f", __func__, value, convert);
+            
+            CGAffineTransform transform = CGAffineTransformMakeScale(1.25, 1.25);
+            transform = CGAffineTransformRotate(transform, convert);
+            _needleLayer.affineTransform = transform;
+        });
     }
 }
 

@@ -14,7 +14,6 @@
 - (void)dejsonify:(NSDictionary *)dictionary;
 - (NSDictionary*)jsonify;
 
-- (NSString *)xDescription;
 - (NSString *)description;
 - (NSString *)debugDescription;
 @end

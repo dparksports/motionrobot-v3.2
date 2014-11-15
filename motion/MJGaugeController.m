@@ -16,6 +16,7 @@
 #import "MJStartButtonPanel.h"
 
 // descriptions
+#import "CMDeviceMotion+MJDeviceMotion.h"
 #import "CMGyroData+MJGyroData.h"
 #import "CMAccelerometerData+MJAccelerometerData.h"
 #import "CMPedometerData+MJPedometerData.h"
@@ -72,6 +73,16 @@
     return YES;
 }
 
+- (NSUInteger)supportedInterfaceOrientations {
+    UIInterfaceOrientationMask mask = UIInterfaceOrientationMaskPortrait;
+    return mask;
+}
+
+- (BOOL)shouldAutorotate{
+    // support the portrait view only.
+    return NO;
+}
+
 #pragma mark - KVO - MJPedoMeter
 
 - (void)unregisterObserverKVO {
@@ -113,6 +124,14 @@
 
 #pragma mark - MJMotionMeterDelegate
 
+- (void)updateMotionData:(CMDeviceMotion*)motionData {
+//    NSLog(@"%s: %@", __func__, [motionData description]);
+    
+    [xAccelGaugePanel setValue:motionData.userAcceleration.x];
+    [yAccelGaugePanel setValue:motionData.userAcceleration.y];
+    [zAccelGaugePanel setValue:motionData.userAcceleration.z];
+}
+
 - (void)updateGyroData:(CMGyroData*)gyroData {
 //    NSLog(@"%s: %@", __func__, [gyroData description]);
 }
@@ -120,9 +139,9 @@
 - (void)updateAccelerometerData:(CMAccelerometerData*)accelerometerData {
 //    NSLog(@"%s: %@", __func__, [accelerometerData xDescription]);
     
-    [xAccelGaugePanel setValue:accelerometerData.acceleration.x];
-    [yAccelGaugePanel setValue:accelerometerData.acceleration.y];
-    [zAccelGaugePanel setValue:accelerometerData.acceleration.z];
+//    [xAccelGaugePanel setValue:accelerometerData.acceleration.x];
+//    [yAccelGaugePanel setValue:accelerometerData.acceleration.y];
+//    [zAccelGaugePanel setValue:accelerometerData.acceleration.z];
 }
 
 #pragma mark - IBAction
@@ -152,6 +171,18 @@
     } else {
         if ([_motionMeter checkAccelerometerAvailableUI]) {
             [_motionMeter startAccelerometerUpdatesToQueue];
+            [startButtonPanel toggleAccelerometerUpdates:YES];
+        }
+    }
+}
+
+- (IBAction)toggleDeviceMotionUpdates:(id)sender {
+    if ([_motionMeter isDeviceMotionActive]) {
+        [_motionMeter stopDeviceMotionUpdates];
+        [startButtonPanel toggleAccelerometerUpdates:NO];
+    } else {
+        if ([_motionMeter checkDeviceMotionAvailableUI]) {
+            [_motionMeter startDeviceMotionUpdatesToQueue];
             [startButtonPanel toggleAccelerometerUpdates:YES];
         }
     }

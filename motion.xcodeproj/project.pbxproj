@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5906B1CD1A08468E00925D4D /* MJLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5906B1CC1A08468E00925D4D /* MJLogController.m */; };
 		591BA6871A0758C500B9278D /* MJPedoMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BA6861A0758C500B9278D /* MJPedoMeter.m */; };
+		591BCAE41A174AD80076343D /* CMDeviceMotion+MJDeviceMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 591BCAE31A174AD80076343D /* CMDeviceMotion+MJDeviceMotion.m */; };
 		5935D43B1A0F5E5400E4CDCC /* MJRoundPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 5935D43A1A0F5E5400E4CDCC /* MJRoundPane.m */; };
 		5935D43E1A108C3F00E4CDCC /* MJGaugePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5935D43D1A108C3F00E4CDCC /* MJGaugePanel.m */; };
 		5960958A1A09F309006DCDE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5960957F1A09F2AF006DCDE6 /* CoreGraphics.framework */; };
@@ -30,6 +31,8 @@
 		59A2B1731A0CDC8F00D8912E /* MJSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A2B1721A0CDC8F00D8912E /* MJSerialize.m */; };
 		59A2B1761A0CDD8F00D8912E /* MJError.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A2B1751A0CDD8F00D8912E /* MJError.m */; };
 		59A2B17B1A0CEA8200D8912E /* MJCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A2B17A1A0CEA8200D8912E /* MJCloud.m */; };
+		59A322581A12E1E500D5A1DF /* libFlurry_5.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A322571A12E1E500D5A1DF /* libFlurry_5.4.0.a */; };
+		59A3225B1A12E27200D5A1DF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A322591A12E25B00D5A1DF /* Security.framework */; };
 		59B7AE511A09ADFB006F71BE /* MJMotionMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B7AE501A09ADFB006F71BE /* MJMotionMeter.m */; };
 		59B7AE571A09B249006F71BE /* CMGyroData+MJGyroData.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B7AE561A09B249006F71BE /* CMGyroData+MJGyroData.m */; };
 		59BA4A8D1A10B9A70017085B /* PNObservationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA49751A10B9A60017085B /* PNObservationCenter.m */; };
@@ -165,6 +168,8 @@
 		5906B1CC1A08468E00925D4D /* MJLogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJLogController.m; sourceTree = "<group>"; };
 		591BA6851A0758C500B9278D /* MJPedoMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPedoMeter.h; sourceTree = "<group>"; };
 		591BA6861A0758C500B9278D /* MJPedoMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPedoMeter.m; sourceTree = "<group>"; };
+		591BCAE21A174AD80076343D /* CMDeviceMotion+MJDeviceMotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMDeviceMotion+MJDeviceMotion.h"; sourceTree = "<group>"; };
+		591BCAE31A174AD80076343D /* CMDeviceMotion+MJDeviceMotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMDeviceMotion+MJDeviceMotion.m"; sourceTree = "<group>"; };
 		5935D4391A0F5E5400E4CDCC /* MJRoundPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRoundPane.h; sourceTree = "<group>"; };
 		5935D43A1A0F5E5400E4CDCC /* MJRoundPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRoundPane.m; sourceTree = "<group>"; };
 		5935D43C1A108C3F00E4CDCC /* MJGaugePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJGaugePanel.h; sourceTree = "<group>"; };
@@ -202,6 +207,9 @@
 		59A2B1771A0CE6D300D8912E /* MJSONProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSONProtocol.h; sourceTree = "<group>"; };
 		59A2B1791A0CEA8200D8912E /* MJCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCloud.h; sourceTree = "<group>"; };
 		59A2B17A1A0CEA8200D8912E /* MJCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCloud.m; sourceTree = "<group>"; };
+		59A322561A12E1E500D5A1DF /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		59A322571A12E1E500D5A1DF /* libFlurry_5.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.4.0.a; sourceTree = "<group>"; };
+		59A322591A12E25B00D5A1DF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		59B7AE4F1A09ADFB006F71BE /* MJMotionMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJMotionMeter.h; sourceTree = "<group>"; };
 		59B7AE501A09ADFB006F71BE /* MJMotionMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJMotionMeter.m; sourceTree = "<group>"; };
 		59B7AE551A09B249006F71BE /* CMGyroData+MJGyroData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMGyroData+MJGyroData.h"; sourceTree = "<group>"; };
@@ -490,7 +498,7 @@
 		59CEE8F51A09D9DC00CBCC55 /* CMAccelerometerData+MJAccelerometerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMAccelerometerData+MJAccelerometerData.m"; sourceTree = "<group>"; };
 		59CEE8F71A09DA7000CBCC55 /* CMLogItem+MJLogItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMLogItem+MJLogItem.h"; sourceTree = "<group>"; };
 		59CEE8F81A09DA7000CBCC55 /* CMLogItem+MJLogItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMLogItem+MJLogItem.m"; sourceTree = "<group>"; };
-		59D4D59A1A07344900A715B0 /* motion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = motion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59D4D59A1A07344900A715B0 /* Motion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59D4D59E1A07344900A715B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59D4D59F1A07344900A715B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59D4D5A11A07344900A715B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -507,6 +515,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59A3225B1A12E27200D5A1DF /* Security.framework in Frameworks */,
 				5960958A1A09F309006DCDE6 /* CoreGraphics.framework in Frameworks */,
 				5960958B1A09F309006DCDE6 /* CoreMotion.framework in Frameworks */,
 				59BA4AF71A10B9C70017085B /* CFNetwork.framework in Frameworks */,
@@ -515,6 +524,7 @@
 				5960958E1A09F309006DCDE6 /* UIKit.framework in Frameworks */,
 				59BA4AF81A10B9C70017085B /* SystemConfiguration.framework in Frameworks */,
 				59BA4AF61A10B9C70017085B /* libz.dylib in Frameworks */,
+				59A322581A12E1E500D5A1DF /* libFlurry_5.4.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +544,8 @@
 				59A2B1771A0CE6D300D8912E /* MJSONProtocol.h */,
 				59CEE8F71A09DA7000CBCC55 /* CMLogItem+MJLogItem.h */,
 				59CEE8F81A09DA7000CBCC55 /* CMLogItem+MJLogItem.m */,
+				591BCAE21A174AD80076343D /* CMDeviceMotion+MJDeviceMotion.h */,
+				591BCAE31A174AD80076343D /* CMDeviceMotion+MJDeviceMotion.m */,
 				59B7AE551A09B249006F71BE /* CMGyroData+MJGyroData.h */,
 				59B7AE561A09B249006F71BE /* CMGyroData+MJGyroData.m */,
 				59CEE8F41A09D9DC00CBCC55 /* CMAccelerometerData+MJAccelerometerData.h */,
@@ -596,6 +608,15 @@
 				5973CD0B1A11F42E00BE8034 /* MJLogoPane.m */,
 			);
 			name = "custom views";
+			sourceTree = "<group>";
+		};
+		59A322551A12E1E500D5A1DF /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				59A322561A12E1E500D5A1DF /* Flurry.h */,
+				59A322571A12E1E500D5A1DF /* libFlurry_5.4.0.a */,
+			);
+			path = Flurry;
 			sourceTree = "<group>";
 		};
 		59B7AE581A09B4CB006F71BE /* meters */ = {
@@ -1021,7 +1042,7 @@
 		59D4D59B1A07344900A715B0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				59D4D59A1A07344900A715B0 /* motion.app */,
+				59D4D59A1A07344900A715B0 /* Motion.app */,
 				59D4D5B61A07344900A715B0 /* motionTests.xctest */,
 			);
 			name = Products;
@@ -1040,6 +1061,7 @@
 				59D4D5AA1A07344900A715B0 /* Main.storyboard */,
 				59D4D5AF1A07344900A715B0 /* LaunchScreen.xib */,
 				596095911A09FB3D006DCDE6 /* Images.xcassets */,
+				59A322551A12E1E500D5A1DF /* Flurry */,
 				59BA49701A10B9A60017085B /* libs */,
 				59D4D59D1A07344900A715B0 /* Supporting Files */,
 			);
@@ -1053,6 +1075,7 @@
 				59D4D59E1A07344900A715B0 /* Info.plist */,
 				59D4D59F1A07344900A715B0 /* main.m */,
 				59BA4AF31A10B9C70017085B /* libz.dylib */,
+				59A322591A12E25B00D5A1DF /* Security.framework */,
 				59BA4AF41A10B9C70017085B /* CFNetwork.framework */,
 				59BA4AF51A10B9C70017085B /* SystemConfiguration.framework */,
 				5960957F1A09F2AF006DCDE6 /* CoreGraphics.framework */,
@@ -1084,9 +1107,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		59D4D5991A07344900A715B0 /* motion */ = {
+		59D4D5991A07344900A715B0 /* Motion */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 59D4D5C01A07344900A715B0 /* Build configuration list for PBXNativeTarget "motion" */;
+			buildConfigurationList = 59D4D5C01A07344900A715B0 /* Build configuration list for PBXNativeTarget "Motion" */;
 			buildPhases = (
 				59D4D5961A07344900A715B0 /* Sources */,
 				59D4D5971A07344900A715B0 /* Frameworks */,
@@ -1096,9 +1119,9 @@
 			);
 			dependencies = (
 			);
-			name = motion;
+			name = Motion;
 			productName = motion;
-			productReference = 59D4D59A1A07344900A715B0 /* motion.app */;
+			productReference = 59D4D59A1A07344900A715B0 /* Motion.app */;
 			productType = "com.apple.product-type.application";
 		};
 		59D4D5B51A07344900A715B0 /* motionTests */ = {
@@ -1151,7 +1174,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				59D4D5991A07344900A715B0 /* motion */,
+				59D4D5991A07344900A715B0 /* Motion */,
 				59D4D5B51A07344900A715B0 /* motionTests */,
 			);
 		};
@@ -1208,6 +1231,7 @@
 				59BA4A981A10B9A70017085B /* PubNub+Time.m in Sources */,
 				59BA4A991A10B9A70017085B /* PubNub.m in Sources */,
 				59BA4A8F1A10B9A70017085B /* PubNub+ChannelRegistry.m in Sources */,
+				591BCAE41A174AD80076343D /* CMDeviceMotion+MJDeviceMotion.m in Sources */,
 				59BA4A9B1A10B9A70017085B /* PNChannel.m in Sources */,
 				59BA4AAD1A10B9A70017085B /* PNOperationStatusResponseParser.m in Sources */,
 				59BA4AAE1A10B9A70017085B /* PNPushNotificationsEnabledChannelsParser.m in Sources */,
@@ -1327,7 +1351,7 @@
 /* Begin PBXTargetDependency section */
 		59D4D5B81A07344900A715B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 59D4D5991A07344900A715B0 /* motion */;
+			target = 59D4D5991A07344900A715B0 /* Motion */;
 			targetProxy = 59D4D5B71A07344900A715B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1369,6 +1393,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1386,7 +1411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1410,7 +1435,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1421,7 +1447,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1434,7 +1460,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = motion/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/motion/Flurry",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1445,7 +1476,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = motion/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/motion/Flurry",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -1496,7 +1532,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		59D4D5C01A07344900A715B0 /* Build configuration list for PBXNativeTarget "motion" */ = {
+		59D4D5C01A07344900A715B0 /* Build configuration list for PBXNativeTarget "Motion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59D4D5C11A07344900A715B0 /* Debug */,

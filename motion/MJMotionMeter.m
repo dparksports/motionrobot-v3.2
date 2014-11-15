@@ -17,12 +17,15 @@
 @property (nonatomic, strong) CMMotionManager *motionManager;
 @property (nonatomic, strong) NSMutableArray *accelerationRecords;
 @property (nonatomic, strong) NSMutableArray *gyroRecords;
+@property (nonatomic, strong) NSMutableArray *deviceMotionRecords;
 @property (nonatomic, strong) dispatch_queue_t cloudQueue;
+@property (nonatomic, strong) NSOperationQueue *deviceMotionQueue;
 @end
 
 @implementation MJMotionMeter {
     NSUInteger accelerometerDataCapacity;
     NSUInteger gyroDataCapacity;
+    NSUInteger deviceMotionDataCapacity;
     NSUInteger networkBufferCapacity;
 }
 
@@ -36,6 +39,7 @@
         // pubnub limit: 32KB/message
         networkBufferCapacity = 32 * 1024;
         accelerometerDataCapacity = 1100;//1200:404
+        deviceMotionDataCapacity = 1100;
         gyroDataCapacity = 1100;
         
         id instance = nil;
@@ -44,6 +48,10 @@
 
         dispatch_queue_t queue = dispatch_queue_create("mj.cloudQueue", DISPATCH_QUEUE_SERIAL);
         [self setCloudQueue:queue];
+        
+        NSOperationQueue *operationQueue = [NSOperationQueue new];
+        [operationQueue setMaxConcurrentOperationCount:1];
+        [self setDeviceMotionQueue:operationQueue];
     }
     return self;
 }
@@ -57,6 +65,52 @@
         });
     }
     return sharedInstance;
+}
+
+#pragma mark - startGyroUpdatesToQueue
+
+- (BOOL)checkDeviceMotionAvailableUI {
+    static BOOL available = NO;
+    if (! available) {
+        available = [_motionManager isDeviceMotionAvailable];
+        if (! available) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                            message:@"No Device Motion Available is available"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+    }
+    return available;
+}
+
+- (BOOL)isDeviceMotionActive {
+    return [_motionManager isDeviceMotionActive];
+}
+
+- (void)stopDeviceMotionUpdates {
+    if ([_motionManager isDeviceMotionActive])
+        [_motionManager stopDeviceMotionUpdates];
+}
+
+- (void)startDeviceMotionUpdatesToQueue {
+    if (! _deviceMotionRecords) {
+        id instance = [[NSMutableArray alloc] initWithCapacity:deviceMotionDataCapacity];
+        [self setDeviceMotionRecords:instance];
+    }
+    
+    [_motionManager setDeviceMotionUpdateInterval:1/8.0];  // 1/10.0
+    [_motionManager startDeviceMotionUpdatesToQueue:_deviceMotionQueue withHandler:
+     ^(CMDeviceMotion *motion, NSError *error)
+     {
+         if (error)
+             [self handleErrorUI:error];
+         else {
+             if (self.delegate)
+                 [self.delegate updateMotionData:motion];
+         }
+     }];
 }
 
 #pragma mark - startGyroUpdatesToQueue
@@ -77,6 +131,10 @@
     return available;
 }
 
+- (BOOL)isGyroActive {
+    return [_motionManager isGyroActive];
+}
+
 - (void)stopGyroUpdates {
     if ([_motionManager isGyroActive])
         [_motionManager stopGyroUpdates];
@@ -86,11 +144,11 @@
     if (! _gyroRecords) {
         id instance = [[NSMutableArray alloc] initWithCapacity:gyroDataCapacity];
         [self setGyroRecords:instance];
-        [MJCloud sharedInstance];
+//        [MJCloud sharedInstance];
     }
 
     [_motionManager setGyroUpdateInterval:1/10.0]; 
-    [_motionManager startGyroUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:
+    [_motionManager startGyroUpdatesToQueue:_deviceMotionQueue withHandler:
      ^(CMGyroData *gyroData, NSError *error)
      {
          if (error)
@@ -140,7 +198,7 @@
     }
     
     [_motionManager setAccelerometerUpdateInterval:1/10.0]; // 1/10.0
-    [_motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:
+    [_motionManager startAccelerometerUpdatesToQueue:_deviceMotionQueue withHandler:
      ^(CMAccelerometerData *accelerometerData, NSError *error)
     {
         if (error)
