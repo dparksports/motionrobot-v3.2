@@ -9,10 +9,12 @@
 #import "MJFuelGuageView.h"
 #import "MJPlasticCoverView.h"
 #import "MJGaugePanel.h"
+#import "MJVelocityGuageView.h"
 
 @implementation MJGaugePanel {
     __weak IBOutlet MJPlasticCoverView *plasticCover;
     __weak IBOutlet MJFuelGuageView *guageView;
+    __weak IBOutlet MJVelocityGuageView *velocityView;
     
     __weak IBOutlet UILabel *positiveMajorUnitLabel;
     __weak IBOutlet UILabel *negativeMajorUnitLabel;
@@ -35,11 +37,17 @@
 
 - (void)constructPanel {
     [plasticCover addUnitTicks];
-    [guageView addNeedleLayer];
+    if (guageView)
+        [guageView addNeedleLayer];
+    if (velocityView)
+        [velocityView addNeedleLayer];
 }
 
 - (void)setValue:(float)value {
-    [guageView setValue:value];
+    if (guageView)
+        [guageView setValue:value];
+    if (velocityView)
+        [velocityView setValue:value];
 }
 
 @end

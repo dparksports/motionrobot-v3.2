@@ -115,8 +115,10 @@
              if (deviceMotionCount % 10 == 0) {
 //                 deviceMotionSigma = 3.28 * deviceMotionSigma;
                  deviceMotionSum += deviceMotionSigma;
-                 NSString *string = [NSString stringWithFormat:@"deviceMotionSum:%1.3f , deviceMotionSigma:%1.3f", deviceMotionSum, deviceMotionSigma];
-                 NSLog(@"%@", string);
+                 
+//                 NSString *string = [NSString stringWithFormat:@"deviceMotionSum:%1.3f , deviceMotionSigma:%1.3f", deviceMotionSum, deviceMotionSigma];
+//                 NSLog(@"%@", string);
+                 
                  deviceMotionSigma = 0;
              }
              else deviceMotionSigma += [motion velocity];

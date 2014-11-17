@@ -9,11 +9,14 @@
 #import "MJVelocityGuageView.h"
 
 #define DEGREE_TO_RADIAN M_PI / 180.0f
+#define ANGLE_AT_REST -45
 
-// Note: This calculation is just an approximation to map the artwork.
-static CGFloat convertValueWithinDisplayAngle(CGFloat value) {
-    float degree = value * 60.0 * (4/5.0);
-    return (DEGREE_TO_RADIAN * degree);
+static CGFloat convertVelocityToDisplayAngle(CGFloat value) {
+    float amphlified = value * 2;
+    float degree = amphlified * 60;
+    float degreeAtOrigin = degree + ANGLE_AT_REST;
+    float radians = M_PI / 180.0 * degreeAtOrigin;
+    return radians;
 }
 
 @implementation MJVelocityGuageView {
@@ -53,7 +56,7 @@ static CGFloat convertValueWithinDisplayAngle(CGFloat value) {
     [_needleLayer setOpacity:1.0];
     
     CGAffineTransform transform = CGAffineTransformMakeScale(1.25, 1.25);
-    transform = CGAffineTransformRotate(transform, (DEGREE_TO_RADIAN * -38.0));
+    transform = CGAffineTransformRotate(transform, (DEGREE_TO_RADIAN * ANGLE_AT_REST));
     _needleLayer.affineTransform = transform;
     _needleLayer.drawsAsynchronously = YES;
     _needleLayer.anchorPoint = CGPointMake(0.5, 1.0);
@@ -76,8 +79,9 @@ static CGFloat convertValueWithinDisplayAngle(CGFloat value) {
     if (_value != value) {
         _value = value;
         
-        dispatch_async(dispatch_get_main_queue(), ^() {
-            float convert = convertValueWithinDisplayAngle(value);
+        dispatch_async(dispatch_get_main_queue(), ^()
+        {
+            float convert = convertVelocityToDisplayAngle(value);
             //            NSLog(@"%s: %1.4f, convert:%1.4f", __func__, value, convert);
             
             CGAffineTransform transform = CGAffineTransformMakeScale(1.25, 1.25);

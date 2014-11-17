@@ -10,7 +10,6 @@
 
 #define DEGREE_TO_RADIAN M_PI / 180.0f
 
-// Note: This calculation is just an approximation to map the artwork.
 static CGFloat convertValueWithinDisplayAngle(CGFloat value) {
     float degree = value * 60.0 * (4/5.0);
     return (DEGREE_TO_RADIAN * degree);

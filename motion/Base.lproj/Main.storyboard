@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8rJ-Kc-sve">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -20,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3VT-X1-biZ" userLabel="Calculated Panel" customClass="MJDigitalPanel">
                                 <rect key="frame" x="140" y="20" width="320" height="70"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.10000000149011612" contentMode="scaleToFill" image="edit-penalty-time" translatesAutoresizingMaskIntoConstraints="NO" id="yWk-z2-f3R">
+                                    <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" image="edit-penalty-time" translatesAutoresizingMaskIntoConstraints="NO" id="yWk-z2-f3R">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                     </imageView>
                                     <label hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="8,888.8" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWL-vY-B71" userLabel="backdropLabel">
@@ -131,117 +132,42 @@
                                     <outlet property="digitalLabel" destination="vz3-8M-YNh" id="HFI-jL-rew"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNP-aC-Pem" userLabel="X Accel Gauge Panel" customClass="MJGaugePanel">
-                                <rect key="frame" x="140" y="176" width="320" height="75"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRT-CM-qBK" userLabel="PlasticCover" customClass="MJPlasticCoverView">
-                                        <rect key="frame" x="10" y="-8" width="300" height="125"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="VY7-EI-YJ2"/>
-                                            <constraint firstAttribute="height" constant="125" id="qiK-gs-D3s"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCU-8M-jJb">
-                                        <rect key="frame" x="8" y="44" width="42" height="31"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 G" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFr-Eh-RCv">
-                                        <rect key="frame" x="139" y="44" width="42" height="31"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhb-JS-TH3">
-                                        <rect key="frame" x="270" y="44" width="42" height="31"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAE-DF-K1i">
-                                        <rect key="frame" x="270" y="8" width="42" height="31"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <color key="textColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOY-Zd-dck" userLabel="gauge" customClass="MJFuelGuageView">
-                                        <rect key="frame" x="10" y="-8" width="300" height="90"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="125" id="99X-pE-TAN"/>
-                                            <constraint firstAttribute="width" constant="300" id="G3a-Dw-7ZC"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="SsQ-sk-q4e"/>
-                                            <constraint firstAttribute="height" constant="90" id="rLb-X4-6oX"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="99X-pE-TAN"/>
-                                                <exclude reference="SsQ-sk-q4e"/>
-                                            </mask>
-                                        </variation>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerY" secondItem="fRT-CM-qBK" secondAttribute="centerY" constant="-0.5" id="3Kl-SP-iZ7"/>
-                                    <constraint firstAttribute="centerY" secondItem="QOY-Zd-dck" secondAttribute="centerY" constant="-0.5" id="Upj-2B-SSE"/>
-                                    <constraint firstAttribute="width" constant="320" id="UvV-AH-SNs"/>
-                                    <constraint firstAttribute="height" constant="75" id="mRe-Os-zqa"/>
-                                    <constraint firstItem="QOY-Zd-dck" firstAttribute="top" secondItem="rNP-aC-Pem" secondAttribute="top" constant="-8" id="pcq-dh-ZAf"/>
-                                    <constraint firstAttribute="centerX" secondItem="fRT-CM-qBK" secondAttribute="centerX" id="pns-Ie-KeX"/>
-                                    <constraint firstItem="fRT-CM-qBK" firstAttribute="top" secondItem="rNP-aC-Pem" secondAttribute="top" constant="-8" id="uTC-zg-9Po"/>
-                                    <constraint firstAttribute="centerX" secondItem="QOY-Zd-dck" secondAttribute="centerX" id="zLa-Lf-rDO"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Upj-2B-SSE"/>
-                                        <exclude reference="3Kl-SP-iZ7"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <outlet property="guageView" destination="QOY-Zd-dck" id="JE9-aa-VWV"/>
-                                    <outlet property="negativeMajorUnitLabel" destination="oCU-8M-jJb" id="SLb-Yb-UZh"/>
-                                    <outlet property="plasticCover" destination="fRT-CM-qBK" id="8uU-8f-3Lp"/>
-                                    <outlet property="positiveMajorUnitLabel" destination="Jhb-JS-TH3" id="AmO-bO-NX4"/>
-                                    <outlet property="zeroMajorUnitLabel" destination="LFr-Eh-RCv" id="qMo-4E-ahH"/>
-                                </connections>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E02-cQ-kli" userLabel="Y Accel Gauge Panel" customClass="MJGaugePanel">
-                                <rect key="frame" x="140" y="267" width="320" height="75"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E02-cQ-kli" userLabel="velocityGaugePanel" customClass="MJGaugePanel">
+                                <rect key="frame" x="140" y="200" width="320" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c19-DB-NtL" userLabel="PlasticCover" customClass="MJPlasticCoverView">
-                                        <rect key="frame" x="10" y="-8" width="300" height="125"/>
+                                        <rect key="frame" x="10" y="20" width="300" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="aCf-u0-1fA"/>
                                             <constraint firstAttribute="height" constant="125" id="wMz-EZ-e0J"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMx-HB-0sl">
-                                        <rect key="frame" x="10" y="44" width="42" height="31"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMx-HB-0sl">
+                                        <rect key="frame" x="10" y="34" width="42" height="31"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 G" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFK-O0-CpD">
-                                        <rect key="frame" x="139" y="44" width="42" height="31"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFK-O0-CpD">
+                                        <rect key="frame" x="139" y="0.0" width="42" height="31"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyU-HX-lUO">
-                                        <rect key="frame" x="268" y="44" width="42" height="31"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="meter / second" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQw-Bi-lIr">
+                                        <rect key="frame" x="100" y="69" width="120" height="31"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyU-HX-lUO">
+                                        <rect key="frame" x="268" y="34" width="42" height="31"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Y" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGX-Jn-02V">
-                                        <rect key="frame" x="268" y="8" width="42" height="31"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <color key="textColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ttd-sS-qbQ" userLabel="gauge" customClass="MJFuelGuageView">
-                                        <rect key="frame" x="10" y="-8" width="300" height="90"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ttd-sS-qbQ" userLabel="gauge" customClass="MJVelocityGuageView">
+                                        <rect key="frame" x="10" y="20" width="300" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="34b-kN-B9a"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="HA2-a2-dri"/>
@@ -256,14 +182,14 @@
                                         </variation>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="c19-DB-NtL" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="top" constant="-8" id="3b0-EG-gqd"/>
-                                    <constraint firstAttribute="height" constant="75" id="BZg-CZ-aTO"/>
+                                    <constraint firstItem="c19-DB-NtL" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="top" constant="20" symbolic="YES" id="3b0-EG-gqd"/>
+                                    <constraint firstAttribute="height" constant="100" id="BZg-CZ-aTO"/>
                                     <constraint firstAttribute="centerX" secondItem="c19-DB-NtL" secondAttribute="centerX" id="BwR-gv-ffv"/>
                                     <constraint firstAttribute="centerY" secondItem="c19-DB-NtL" secondAttribute="centerY" constant="-0.5" id="V1D-BO-7AF"/>
                                     <constraint firstAttribute="width" constant="320" id="fyk-lz-cBR"/>
-                                    <constraint firstItem="Ttd-sS-qbQ" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="top" constant="-8" id="mYc-9Y-te8"/>
+                                    <constraint firstItem="Ttd-sS-qbQ" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="top" constant="20" symbolic="YES" id="mYc-9Y-te8"/>
                                     <constraint firstAttribute="centerX" secondItem="Ttd-sS-qbQ" secondAttribute="centerX" id="pEB-FK-p3V"/>
                                     <constraint firstAttribute="centerY" secondItem="Ttd-sS-qbQ" secondAttribute="centerY" constant="-0.5" id="rR0-sJ-eAn"/>
                                 </constraints>
@@ -274,8 +200,8 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outlet property="guageView" destination="Ttd-sS-qbQ" id="ZZo-SK-j8S"/>
                                     <outlet property="plasticCover" destination="c19-DB-NtL" id="ctc-NV-1v1"/>
+                                    <outlet property="velocityView" destination="Ttd-sS-qbQ" id="DJB-BD-mgq"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1J-I0-ISD" userLabel="Z Accel Gauge Panel" customClass="MJGaugePanel">
@@ -410,31 +336,24 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="E02-cQ-kli" firstAttribute="top" secondItem="rNP-aC-Pem" secondAttribute="bottom" constant="16" id="3tx-As-Sp0"/>
                             <constraint firstAttribute="centerX" secondItem="yCx-PE-ovx" secondAttribute="centerX" id="5by-zk-gIv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z1J-I0-ISD" secondAttribute="trailing" constant="-15" id="6lW-YC-rkT"/>
-                            <constraint firstItem="rNP-aC-Pem" firstAttribute="top" secondItem="yCx-PE-ovx" secondAttribute="bottom" constant="8" id="7Wj-Ai-q5a"/>
                             <constraint firstAttribute="centerX" secondItem="0x3-Ft-B83" secondAttribute="centerX" id="8MY-nG-Cl0"/>
                             <constraint firstItem="yCx-PE-ovx" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="78" id="AUZ-Cz-ahr"/>
-                            <constraint firstAttribute="centerX" secondItem="rNP-aC-Pem" secondAttribute="centerX" id="D1k-VA-VUO"/>
+                            <constraint firstItem="E02-cQ-kli" firstAttribute="top" secondItem="yCx-PE-ovx" secondAttribute="bottom" constant="32" id="INc-sf-FYH"/>
                             <constraint firstItem="yCx-PE-ovx" firstAttribute="top" secondItem="3VT-X1-biZ" secondAttribute="bottom" constant="8" id="Lqf-wE-Oud"/>
-                            <constraint firstItem="rNP-aC-Pem" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="-1" id="Mqi-bK-MB4"/>
                             <constraint firstItem="3VT-X1-biZ" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="P3d-3f-wmu"/>
-                            <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="16" id="dbE-RE-nS2"/>
+                            <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="58" id="dbE-RE-nS2"/>
                             <constraint firstAttribute="centerX" secondItem="Z1J-I0-ISD" secondAttribute="centerX" id="gfC-7h-9nK"/>
-                            <constraint firstItem="E02-cQ-kli" firstAttribute="top" secondItem="rNP-aC-Pem" secondAttribute="bottom" constant="32" id="pVy-Jf-CDg"/>
                             <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="1" id="pn4-TT-5fz"/>
                             <constraint firstAttribute="centerX" secondItem="3VT-X1-biZ" secondAttribute="centerX" id="tI6-LF-0mX"/>
                             <constraint firstAttribute="centerX" secondItem="E02-cQ-kli" secondAttribute="centerX" id="vfw-ZF-vrT"/>
-                            <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="16" id="wKM-7a-a5C"/>
-                            <constraint firstItem="E02-cQ-kli" firstAttribute="top" secondItem="rNP-aC-Pem" secondAttribute="bottom" constant="16" id="xfH-Iq-VVk"/>
+                            <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="58" id="wKM-7a-a5C"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="0x3-Ft-B83" secondAttribute="bottom" constant="20" id="xr2-Yo-k9j"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="AUZ-Cz-ahr"/>
-                                <exclude reference="Mqi-bK-MB4"/>
-                                <exclude reference="pVy-Jf-CDg"/>
                                 <exclude reference="6lW-YC-rkT"/>
                                 <exclude reference="pn4-TT-5fz"/>
                             </mask>
@@ -444,14 +363,13 @@
                         <outlet property="calculatedDigitalPanel" destination="3VT-X1-biZ" id="Xcp-KW-5Gg"/>
                         <outlet property="distanceDigitalPanel" destination="yCx-PE-ovx" id="bqZ-RW-fSX"/>
                         <outlet property="startButtonPanel" destination="0x3-Ft-B83" id="gC4-LO-kzb"/>
-                        <outlet property="xAccelGaugePanel" destination="rNP-aC-Pem" id="Hd6-Tx-xEa"/>
-                        <outlet property="yAccelGaugePanel" destination="E02-cQ-kli" id="PcY-rE-nim"/>
+                        <outlet property="velocityGaugePanel" destination="E02-cQ-kli" id="EQr-H6-qJz"/>
                         <outlet property="zAccelGaugePanel" destination="Z1J-I0-ISD" id="wJA-bx-JLE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="541" y="418"/>
         </scene>
     </scenes>
     <resources>

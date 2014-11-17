@@ -30,8 +30,7 @@
 @implementation MJGaugeController {
     double deviceMotionSum;
 
-    __weak IBOutlet MJGaugePanel *xAccelGaugePanel;
-    __weak IBOutlet MJGaugePanel *yAccelGaugePanel;
+    __weak IBOutlet MJGaugePanel *velocityGaugePanel;
     __weak IBOutlet MJGaugePanel *zAccelGaugePanel;
     
     __weak IBOutlet MJDigitalPanel *distanceDigitalPanel;
@@ -122,8 +121,7 @@
 #pragma mark - addGauge
 
 - (void)addGauges {
-    [xAccelGaugePanel constructPanel];
-    [yAccelGaugePanel constructPanel];
+    [velocityGaugePanel constructPanel];
     [zAccelGaugePanel constructPanel];
     [distanceDigitalPanel constructPanel];
     [calculatedDigitalPanel constructPanel];
@@ -137,9 +135,7 @@
     
     deviceMotionSum = motionSum;
     double vectorVelocity = [motionData velocity];
-    [xAccelGaugePanel setValue:motionData.userAcceleration.x];
-    [yAccelGaugePanel setValue:vectorVelocity];
-//    [yAccelGaugePanel setValue:motionData.userAcceleration.y];
+    [velocityGaugePanel setValue:vectorVelocity];
     [zAccelGaugePanel setValue:motionData.userAcceleration.z];
 }
 
@@ -149,10 +145,6 @@
 
 - (void)updateAccelerometerData:(CMAccelerometerData*)accelerometerData {
 //    NSLog(@"%s: %@", __func__, [accelerometerData xDescription]);
-    
-//    [xAccelGaugePanel setValue:accelerometerData.acceleration.x];
-//    [yAccelGaugePanel setValue:accelerometerData.acceleration.y];
-//    [zAccelGaugePanel setValue:accelerometerData.acceleration.z];
 }
 
 #pragma mark - IBAction
