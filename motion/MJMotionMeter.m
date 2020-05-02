@@ -162,7 +162,7 @@
 //        [MJCloud sharedInstance];
     }
 
-    [_motionManager setGyroUpdateInterval:1/10.0]; 
+    [_motionManager setGyroUpdateInterval:1.0];
     [_motionManager startGyroUpdatesToQueue:_deviceMotionQueue withHandler:
      ^(CMGyroData *gyroData, NSError *error)
      {

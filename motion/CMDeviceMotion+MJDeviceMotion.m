@@ -20,9 +20,8 @@
     NSTimeInterval samplingRate = 1/10.0;
     double vectorVelocity = vectorAcceleration * samplingRate;
     
-    NSString *string = [NSString stringWithFormat:@"sigma:%1.6f vectorAcceleration:%1.6f vectorVelocity:%1.6f", sigma, vectorAcceleration, vectorVelocity];
-    NSLog(@"%@", string);
-    
+//    NSString *string = [NSString stringWithFormat:@"sigma:%1.6f vectorAcceleration:%1.6f vectorVelocity:%1.6f", sigma, vectorAcceleration, vectorVelocity];
+//    NSLog(@"%@", string);
     return vectorVelocity;
 }
 

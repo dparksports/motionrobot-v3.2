@@ -108,10 +108,10 @@
         NSUInteger normalizedDistance = [pedometerData normalizedFractalDistance];
         [distanceDigitalPanel updateValue:normalizedDistance];
         
-        float value = deviceMotionSum * 10;
-        float normalizeFraction = ceilf(value);
-        NSUInteger distance = (NSUInteger) normalizeFraction;
-        [calculatedDigitalPanel updateValue:distance];
+//        float value = deviceMotionSum * 10;
+//        float normalizeFraction = ceilf(value);
+//        NSUInteger distance = (NSUInteger) normalizeFraction;
+//        [calculatedDigitalPanel updateValue:distance];
         
         NSLog(@"%s: normalizedDistance:%lu", __func__, (unsigned long)normalizedDistance);
     }
@@ -141,6 +141,11 @@
 
 - (void)updateGyroData:(CMGyroData*)gyroData {
 //    NSLog(@"%s: %@", __func__, [gyroData description]);
+    
+    float value = deviceMotionSum * 10;
+    float normalizeFraction = ceilf(value);
+    NSUInteger distance = (NSUInteger) normalizeFraction;
+    [calculatedDigitalPanel updateValue:distance];
 }
 
 - (void)updateAccelerometerData:(CMAccelerometerData*)accelerometerData {
@@ -180,11 +185,15 @@
 }
 
 - (IBAction)toggleDeviceMotionUpdates:(id)sender {
-    if ([_motionMeter isDeviceMotionActive]) {
+    if ([_motionMeter isDeviceMotionActive] &&
+        [_motionMeter isGyroActive]) {
+        [_motionMeter stopGyroUpdates];
         [_motionMeter stopDeviceMotionUpdates];
         [startButtonPanel toggleAccelerometerUpdates:NO];
     } else {
-        if ([_motionMeter checkDeviceMotionAvailableUI]) {
+        if ([_motionMeter checkDeviceMotionAvailableUI] &&
+            [_motionMeter checkGyroAvailableUI]) {
+            [_motionMeter startGyroUpdatesToQueue];
             [_motionMeter startDeviceMotionUpdatesToQueue];
             [startButtonPanel toggleAccelerometerUpdates:YES];
         }

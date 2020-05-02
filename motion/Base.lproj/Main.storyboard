@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3VT-X1-biZ" userLabel="Calculated Panel" customClass="MJDigitalPanel">
-                                <rect key="frame" x="140" y="20" width="320" height="70"/>
+                                <rect key="frame" x="140" y="27" width="320" height="70"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" image="edit-penalty-time" translatesAutoresizingMaskIntoConstraints="NO" id="yWk-z2-f3R">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
@@ -75,65 +75,8 @@
                                     <outlet property="digitalLabel" destination="jTY-lW-lwb" id="eZQ-E9-NDG"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCx-PE-ovx" userLabel="Distance Panel" customClass="MJDigitalPanel">
-                                <rect key="frame" x="140" y="98" width="320" height="70"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleToFill" image="edit-penalty-time" translatesAutoresizingMaskIntoConstraints="NO" id="OAk-pv-t4T">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
-                                    </imageView>
-                                    <label hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="8,888.8" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwh-l5-Elt" userLabel="backdropLabel">
-                                        <rect key="frame" x="0.0" y="3" width="290" height="60"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="2Lh-23-x1j"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="58"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vz3-8M-YNh" userLabel="digitalLabel">
-                                        <rect key="frame" x="0.0" y="3" width="290" height="60"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="58"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="left" text="M" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYo-c2-nMX" userLabel="unitLabel">
-                                        <rect key="frame" x="292" y="50" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="28C-2h-SyV"/>
-                                            <constraint firstAttribute="width" constant="20" id="eyH-j0-vqQ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="vz3-8M-YNh" firstAttribute="top" secondItem="yCx-PE-ovx" secondAttribute="top" constant="3" id="1p8-yd-daH"/>
-                                    <constraint firstItem="vz3-8M-YNh" firstAttribute="leading" secondItem="yCx-PE-ovx" secondAttribute="leading" id="9ay-qa-hfm"/>
-                                    <constraint firstItem="OAk-pv-t4T" firstAttribute="leading" secondItem="yCx-PE-ovx" secondAttribute="leading" id="A47-1e-WnR"/>
-                                    <constraint firstAttribute="trailing" secondItem="iwh-l5-Elt" secondAttribute="trailing" constant="30" id="Deh-0k-Zsa"/>
-                                    <constraint firstItem="iwh-l5-Elt" firstAttribute="baseline" secondItem="vz3-8M-YNh" secondAttribute="baseline" id="JyY-pK-lL0"/>
-                                    <constraint firstAttribute="width" constant="320" id="LWa-WZ-aC8"/>
-                                    <constraint firstAttribute="trailing" secondItem="OAk-pv-t4T" secondAttribute="trailing" id="PQk-zL-XQN"/>
-                                    <constraint firstItem="zYo-c2-nMX" firstAttribute="bottom" secondItem="yCx-PE-ovx" secondAttribute="bottom" id="ct9-xV-SPN"/>
-                                    <constraint firstAttribute="height" constant="70" id="dui-ua-80R"/>
-                                    <constraint firstItem="zYo-c2-nMX" firstAttribute="trailing" secondItem="yCx-PE-ovx" secondAttribute="trailing" constant="-8" id="hW3-qw-zG4"/>
-                                    <constraint firstAttribute="trailing" secondItem="vz3-8M-YNh" secondAttribute="trailing" constant="30" id="s53-2e-LON"/>
-                                    <constraint firstItem="vz3-8M-YNh" firstAttribute="top" secondItem="iwh-l5-Elt" secondAttribute="top" id="tNB-gm-CbK"/>
-                                    <constraint firstItem="iwh-l5-Elt" firstAttribute="leading" secondItem="yCx-PE-ovx" secondAttribute="leading" id="uW1-pO-HNu"/>
-                                    <constraint firstItem="OAk-pv-t4T" firstAttribute="top" secondItem="yCx-PE-ovx" secondAttribute="top" id="vuu-aD-Fj2"/>
-                                    <constraint firstItem="OAk-pv-t4T" firstAttribute="bottom" secondItem="yCx-PE-ovx" secondAttribute="bottom" id="yY4-tX-lbr"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="backdropLabel" destination="iwh-l5-Elt" id="ema-4B-fmP"/>
-                                    <outlet property="digitalLabel" destination="vz3-8M-YNh" id="HFI-jL-rew"/>
-                                </connections>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E02-cQ-kli" userLabel="velocityGaugePanel" customClass="MJGaugePanel">
-                                <rect key="frame" x="140" y="200" width="320" height="100"/>
+                                <rect key="frame" x="140" y="115" width="320" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c19-DB-NtL" userLabel="PlasticCover" customClass="MJPlasticCoverView">
                                         <rect key="frame" x="10" y="20" width="300" height="125"/>
@@ -143,7 +86,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMx-HB-0sl">
-                                        <rect key="frame" x="10" y="34" width="42" height="31"/>
+                                        <rect key="frame" x="10" y="49" width="42" height="31"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -161,7 +104,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyU-HX-lUO">
-                                        <rect key="frame" x="268" y="34" width="42" height="31"/>
+                                        <rect key="frame" x="268" y="49" width="42" height="31"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -205,7 +148,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1J-I0-ISD" userLabel="Z Accel Gauge Panel" customClass="MJGaugePanel">
-                                <rect key="frame" x="140" y="358" width="320" height="75"/>
+                                <rect key="frame" x="140" y="233" width="320" height="75"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIO-jH-u58" userLabel="PlasticCover" customClass="MJPlasticCoverView">
                                         <rect key="frame" x="10" y="-8" width="300" height="125"/>
@@ -336,32 +279,34 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="yCx-PE-ovx" secondAttribute="centerX" id="5by-zk-gIv"/>
+                            <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="18" id="0wu-lQ-qZh"/>
+                            <constraint firstAttribute="centerX" secondItem="Z1J-I0-ISD" secondAttribute="centerX" id="3FE-mX-cjD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z1J-I0-ISD" secondAttribute="trailing" constant="-15" id="6lW-YC-rkT"/>
                             <constraint firstAttribute="centerX" secondItem="0x3-Ft-B83" secondAttribute="centerX" id="8MY-nG-Cl0"/>
-                            <constraint firstItem="yCx-PE-ovx" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="78" id="AUZ-Cz-ahr"/>
-                            <constraint firstItem="E02-cQ-kli" firstAttribute="top" secondItem="yCx-PE-ovx" secondAttribute="bottom" constant="32" id="INc-sf-FYH"/>
-                            <constraint firstItem="yCx-PE-ovx" firstAttribute="top" secondItem="3VT-X1-biZ" secondAttribute="bottom" constant="8" id="Lqf-wE-Oud"/>
-                            <constraint firstItem="3VT-X1-biZ" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="P3d-3f-wmu"/>
-                            <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="58" id="dbE-RE-nS2"/>
+                            <constraint firstItem="3VT-X1-biZ" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="7" id="P3d-3f-wmu"/>
+                            <constraint firstItem="E02-cQ-kli" firstAttribute="top" secondItem="3VT-X1-biZ" secondAttribute="bottom" constant="18" id="cO6-Fc-1Aj"/>
+                            <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="153" id="dbE-RE-nS2"/>
                             <constraint firstAttribute="centerX" secondItem="Z1J-I0-ISD" secondAttribute="centerX" id="gfC-7h-9nK"/>
                             <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="1" id="pn4-TT-5fz"/>
                             <constraint firstAttribute="centerX" secondItem="3VT-X1-biZ" secondAttribute="centerX" id="tI6-LF-0mX"/>
                             <constraint firstAttribute="centerX" secondItem="E02-cQ-kli" secondAttribute="centerX" id="vfw-ZF-vrT"/>
-                            <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="58" id="wKM-7a-a5C"/>
+                            <constraint firstItem="Z1J-I0-ISD" firstAttribute="top" secondItem="E02-cQ-kli" secondAttribute="bottom" constant="153" id="wKM-7a-a5C"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="0x3-Ft-B83" secondAttribute="bottom" constant="20" id="xr2-Yo-k9j"/>
+                            <constraint firstAttribute="centerY" secondItem="Z1J-I0-ISD" secondAttribute="centerY" constant="49.5" id="y8z-7t-mAo"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="AUZ-Cz-ahr"/>
                                 <exclude reference="6lW-YC-rkT"/>
+                                <exclude reference="dbE-RE-nS2"/>
+                                <exclude reference="gfC-7h-9nK"/>
                                 <exclude reference="pn4-TT-5fz"/>
+                                <exclude reference="wKM-7a-a5C"/>
+                                <exclude reference="y8z-7t-mAo"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="calculatedDigitalPanel" destination="3VT-X1-biZ" id="Xcp-KW-5Gg"/>
-                        <outlet property="distanceDigitalPanel" destination="yCx-PE-ovx" id="bqZ-RW-fSX"/>
                         <outlet property="startButtonPanel" destination="0x3-Ft-B83" id="gC4-LO-kzb"/>
                         <outlet property="velocityGaugePanel" destination="E02-cQ-kli" id="EQr-H6-qJz"/>
                         <outlet property="zAccelGaugePanel" destination="Z1J-I0-ISD" id="wJA-bx-JLE"/>
